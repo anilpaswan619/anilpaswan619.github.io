@@ -1,0 +1,13 @@
+$primary-color: #000000;
+$secondary-color: #515151;
+$tertiary-color: #b1b1b1;
+$bg-color: #fffaff;
+
+body {
+  background-color: $bg-color !important;
+  font-family: "Roboto", sans-serif !important;
+}
+.navbar {
+  --bs-navbar-color: white !important;
+  --bs-navbar-brand-color: white !important;
+}
