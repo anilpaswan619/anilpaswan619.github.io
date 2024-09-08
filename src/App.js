@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Anil Paswan</h1>
-        <p>Web Developer & Designer</p>
+        <p>Frontend & UI Developer</p>
         <nav>
           <ul>
             <li>
