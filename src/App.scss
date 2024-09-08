@@ -10,4 +10,16 @@ body {
 .navbar {
   --bs-navbar-color: white !important;
   --bs-navbar-brand-color: white !important;
+  font-size: 1.2rem;
+  .navbar-brand:hover {
+    color: white !important;
+  }
+  .nav-link:hover {
+    color: white !important;
+    text-decoration: underline;
+  }
+}
+.empty-space-40 {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 }

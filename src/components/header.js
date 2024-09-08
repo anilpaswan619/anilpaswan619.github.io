@@ -2,10 +2,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="container-fluid bg-dark">
-      <div className="container py-2">
+    <div className="container-fluid bg-dark rounded-bottom-4">
+      <div className="container">
         <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand fs-3 fw-bold" href="#">
             AP
           </a>
           <button
