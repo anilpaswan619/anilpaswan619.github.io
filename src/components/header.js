@@ -5,7 +5,7 @@ const Header = () => {
     <div className="container-fluid bg-dark rounded-bottom-4">
       <div className="container">
         <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand fs-3 fw-bold" href="#">
+          <a className="navbar-brand fs-3 fw-bold" href="">
             AP
           </a>
           <button
@@ -22,22 +22,22 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item px-5">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="">
                   About
                 </a>
               </li>
               <li className="nav-item px-5">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="">
                   Projects
                 </a>
               </li>
               <li className="nav-item px-5">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="">
                   Skills
                 </a>
               </li>
               <li className="nav-item px-5">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="">
                   Contact Me
                 </a>
               </li>
