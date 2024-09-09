@@ -7,6 +7,12 @@ body {
   background-color: $bg-color !important;
   font-family: "Roboto", sans-serif !important;
 }
+.hero-bg {
+  background-repeat: repeat-x;
+  background-image: url("./assets/hero-bg.png");
+  background-position: center bottom;
+  background-color: #000000;
+}
 .navbar {
   --bs-navbar-color: white !important;
   --bs-navbar-brand-color: white !important;
@@ -31,6 +37,5 @@ body {
 .description-text {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: $secondary-color;
   text-align: justify;
 }

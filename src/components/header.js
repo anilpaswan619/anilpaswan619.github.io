@@ -5,7 +5,7 @@ const Header = () => {
     <div className="container-fluid bg-dark rounded-bottom-4">
       <div className="container">
         <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand fs-3 fw-bold" href="">
+          <a className="navbar-brand fw-bold" href="">
             AP
           </a>
           <button

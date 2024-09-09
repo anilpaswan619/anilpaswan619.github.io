@@ -3,15 +3,8 @@ import profilePic from "../assets/photo.jpg";
 
 const About = () => {
   return (
-    <div className="container empty-space-40">
+    <div className="container empty-space-40 ">
       <div className="row align-items-center">
-        <div className="col-md-6 text-center mb-4 mb-md-0">
-          <img
-            src={profilePic}
-            alt="Profile"
-            className="img-fluid rounded-circle border border-black border-0 w-50"
-          />
-        </div>
         <div className="col-md-6 text-center">
           <p className="fw-bold">Hello, I'm</p>
           <h2 className="fw-bold">Anil Paswan</h2>
@@ -22,7 +15,7 @@ const About = () => {
               download
               className="btn btn-outline-dark rounded-5 border-2 px-5 py-2 mt-3"
             >
-              Download CV
+              Download CV <i class="bi bi-download ps-2"></i>
             </a>
             <a
               href="#contact"
@@ -40,6 +33,13 @@ const About = () => {
               </a>
             </div>
           </div>
+        </div>
+        <div className="col-md-6 text-center mb-4 mb-md-0">
+          <img
+            src={profilePic}
+            alt="Profile"
+            className="img-fluid rounded-circle border border-black border-0 w-50"
+          />
         </div>
       </div>
     </div>
