@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 
 const Description = () => {
   return (
-    <div className="container-fluid bg-dark pb-1 hero-bg">
+    <div className="container-fluid bg-dark pb-1 rounded-4 hero-bg">
       <div className="container empty-space-40">
         <h3 className="fw-bold about-me-heading text-white py-4">About Me</h3>
         <div className="row my-3 justify-content-center gap-5">
