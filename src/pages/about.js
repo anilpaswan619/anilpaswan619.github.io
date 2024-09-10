@@ -48,17 +48,6 @@ const About = () => {
         </span>
         <span>Scroll Down</span>
       </div>
-      <div className="shape">
-        <svg
-          width="400"
-          height="400"
-          viewBox="0 0 641 371"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="180.5" cy="180.5" r="190.5" fill="rgb(33,37,41)"></circle>
-        </svg>
-      </div>
     </div>
   );
 };

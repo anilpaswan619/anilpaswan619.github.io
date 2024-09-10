@@ -7,12 +7,6 @@ body {
   background-color: $bg-color !important;
   font-family: "Roboto", sans-serif !important;
 }
-.hero-bg {
-  background-repeat: repeat-x;
-  background-image: url("./assets/hero-bg.png");
-  background-position: center bottom;
-  background-color: #000000;
-}
 .navbar {
   --bs-navbar-color: white !important;
   --bs-navbar-brand-color: white !important;
@@ -28,6 +22,9 @@ body {
 .empty-space-40 {
   margin-top: 10rem;
   margin-bottom: 10rem;
+}
+.empty-space-top-20 {
+  margin-top: 6rem !important;
 }
 .empty-space-top-40 {
   margin-top: 8rem;
@@ -86,9 +83,4 @@ body {
     opacity: 1;
     transform: translateY(20px);
   }
-}
-.shape {
-  pointer-events: none;
-  position: absolute;
-  left: 45%;
 }
