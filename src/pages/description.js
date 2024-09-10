@@ -3,10 +3,10 @@ import { Card } from "react-bootstrap";
 
 const Description = () => {
   return (
-    <div className="container-fluid bg-dark pb-1 rounded-4 hero-bg">
+    <div className="container-fluid bg-dark py-5 rounded-4 hero-bg">
       <div className="container empty-space-40">
-        <h3 className="fw-bold about-me-heading text-white py-4">About Me</h3>
-        <div className="row my-3 justify-content-center gap-5">
+        <h3 className="fw-bold about-me-heading text-white py-5">About Me</h3>
+        <div className="row my-5 justify-content-center gap-5">
           <div className="col-md-5">
             <Card className="rounded-4 border-2 border-black position-relative">
               <Card.Body className="text-center p-5">
@@ -37,7 +37,7 @@ const Description = () => {
           </div>
         </div>
 
-        <p className="fw-bold text-white description-text py-4">
+        <p className="fw-bold text-white description-text py-5">
           I am a Senior Software Engineer with 6+ years of experience in
           Frontend & UI Development. I have a Master of Technology in Computer
           Science and a Bachelor of Technology in Information Technology. I am
