@@ -13,7 +13,9 @@ const About = ({ descriptionRef }) => {
       <div className="row align-items-center pb-5">
         <div className="col-md-6 text-center">
           <p className="fw-bold intro-text">Hello, I'm</p>
-          <h3 className="fw-bold my-4 name-text">Anil Paswan</h3>
+          <h3 className="fw-bold my-4 name-text text-body-secondary">
+            Anil Paswan
+          </h3>
           <h1 className="fw-bold my-4 gradient-text title-text">
             Frontend & UI Developer
           </h1>
@@ -55,7 +57,7 @@ const About = ({ descriptionRef }) => {
           />
         </div>
       </div>
-      <div className="container_mouse mx-auto empty-space-top-40 scroll-container">
+      <div className="container_mouse mx-auto empty-space-top-20 scroll-container">
         <span
           className="mouse-btn scroll-btn"
           onClick={handleScrollToDescription}
