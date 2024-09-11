@@ -2,10 +2,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="container-fluid bg-dark rounded-bottom-4">
+    <div className="container-fluid bg-dark rounded-bottom-4 header-container">
       <div className="container">
         <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand fw-bold" href="">
+          <a className="navbar-brand fw-bold logo" href="">
             AP
           </a>
           <button
@@ -21,22 +21,22 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item px-5">
+              <li className="nav-item px-4">
                 <a className="nav-link" href="">
                   About
                 </a>
               </li>
-              <li className="nav-item px-5">
+              <li className="nav-item px-4">
                 <a className="nav-link" href="">
                   Projects
                 </a>
               </li>
-              <li className="nav-item px-5">
+              <li className="nav-item px-4">
                 <a className="nav-link" href="">
                   Skills
                 </a>
               </li>
-              <li className="nav-item px-5">
+              <li className="nav-item px-4">
                 <a className="nav-link" href="">
                   Contact Me
                 </a>
