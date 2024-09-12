@@ -3,26 +3,91 @@ $secondary-color: #515151;
 $tertiary-color: #b1b1b1;
 $bg-color: #fffaff;
 $accent-color: #ff6b6b;
+$font-family: "Poppins", sans-serif;
 
 body {
   background-color: $bg-color !important;
-  font-family: "Roboto", sans-serif !important;
+  font-family: $font-family !important;
+  color: $primary-color;
+  line-height: 1.6;
 }
+
+.header-container {
+  padding: 0.8rem 0;
+  background-color: $primary-color;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .navbar {
   --bs-navbar-color: white !important;
   --bs-navbar-brand-color: white !important;
   font-size: 1.2rem;
+
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar-brand:hover {
+    color: $accent-color;
+    transform: scale(1.1);
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    color: white;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-nav .nav-item .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: $accent-color;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover {
+    color: $accent-color;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
 }
+
 .empty-space-40 {
   margin-top: 10rem;
   margin-bottom: 10rem;
 }
+
 .empty-space-top-20 {
   margin-top: 6rem !important;
 }
+
 .empty-space-top-40 {
   margin-top: 8rem !important;
 }
+
 .icon-container {
   top: -20px;
   transform: translateX(-50%);
@@ -31,6 +96,8 @@ body {
 .description-text {
   line-height: 1.6;
   text-align: justify;
+  color: $secondary-color;
+  margin-top: 1rem;
 }
 
 .gradient-text {
@@ -55,9 +122,13 @@ body {
   font-size: 2.5rem;
   color: $primary-color;
 }
+
 .download-btn,
 .contact-btn {
   transition: all 0.3s ease;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
 }
 
 .download-btn:hover,
@@ -130,56 +201,36 @@ body {
     transform: translateY(40px);
   }
 }
+
 .scroll-text {
   font-size: 1rem;
   color: $secondary-color;
   display: block;
 }
-.header-container {
-  padding: 0.5rem 0;
-}
 
 .logo {
-  font-size: 2rem !important;
-  transition: color 0.3s ease, transform 0.3s ease;
-  font-family: "Lobster", cursive;
+  font-size: 1.6rem !important;
   text-transform: uppercase;
+}
+
+.logo:hover {
   background: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.logo:hover {
-  color: $accent-color !important;
-  transform: scale(1.1);
+.download-btn {
+  .bold-icon::before {
+    font-weight: bold !important;
+  }
 }
 
-.navbar-nav .nav-item .nav-link {
-  color: white;
-  font-size: 1rem;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-item .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: $accent-color;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-  color: $accent-color;
-}
-
-.navbar-nav .nav-item .nav-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.card-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

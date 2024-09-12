@@ -25,7 +25,7 @@ const About = ({ descriptionRef }) => {
               download
               className="btn btn-outline-dark rounded-5 border-2 px-4 py-2 mt-3 fw-bold download-btn"
             >
-              Download CV <i className="bi bi-download ps-2"></i>
+              Download CV <i className="bi bi-download ps-2 bold-icon"></i>
             </a>
             <a
               href="#contact"
@@ -57,7 +57,7 @@ const About = ({ descriptionRef }) => {
           />
         </div>
       </div>
-      <div className="container_mouse mx-auto empty-space-top-20 scroll-container">
+      <div className="container_mouse mx-auto empty-space-top-40 scroll-container">
         <span
           className="mouse-btn scroll-btn"
           onClick={handleScrollToDescription}

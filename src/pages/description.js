@@ -5,10 +5,16 @@ const Description = () => {
   return (
     <div className="container empty-space-40">
       <h3 className="fw-bold about-me-heading">About Me</h3>
+      <p className="description-text">
+        I am a passionate Frontend & UI Developer with experience in creating
+        dynamic and responsive web applications. I specialize in modern
+        JavaScript frameworks and libraries, and I am dedicated to building
+        user-friendly and visually appealing interfaces.
+      </p>
       <div className="row empty-space-top-20 justify-content-center gap-5">
         <div className="col-md-5">
           <Card className="rounded-4 border-2 border-black position-relative">
-            <Card.Body className="text-center p-5">
+            <Card.Body className="text-center p-5 card-section">
               <div className="icon-container position-absolute top-0 start-50 translate-middle">
                 <i className="bi bi-award-fill fs-2 border border-3 rounded-5 border-black p-1 bg-white"></i>
               </div>
@@ -22,7 +28,7 @@ const Description = () => {
         </div>
         <div className="col-md-5">
           <Card className="rounded-4 border-2 border-black position-relative">
-            <Card.Body className="text-center p-5">
+            <Card.Body className="text-center p-5 card-section">
               <div className="icon-container position-absolute top-0 start-50 translate-middle">
                 <i className="bi bi-laptop-fill fs-2 border border-3 rounded-5 border-black p-1 bg-white"></i>
               </div>
