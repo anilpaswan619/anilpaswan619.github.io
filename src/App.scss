@@ -133,17 +133,40 @@ body {
   border: 2px solid $primary-color;
   background-color: transparent;
   color: $primary-color;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before,
+.contact-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $gradient-color;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.download-btn:hover::before,
+.contact-btn:hover::before {
+  opacity: 1;
 }
 
 .download-btn:hover {
-  background-color: $primary-color;
-  color: white;
-  border-color: $primary-color;
-}
-.contact-btn:hover {
-  background-color: $accent-color !important;
   color: white !important;
   border-color: $accent-color !important;
+  background: $gradient-color !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.contact-btn:hover {
+  color: white !important;
+  border-color: $accent-color !important;
+  background: $accent-color !important;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons {
@@ -177,9 +200,14 @@ body {
 }
 
 .scroll-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 107, 107, 0.1);
   transform: scale(1.1);
   cursor: pointer;
+  border-color: $accent-color;
+}
+
+.scroll-btn:hover .mouse-scroll {
+  background-color: $accent-color;
 }
 
 .scroll-btn .mouse-scroll {
