@@ -111,13 +111,6 @@ body {
   transform: translateX(-50%);
 }
 
-.description-text {
-  line-height: 1.6;
-  text-align: justify;
-  color: $secondary-color;
-  margin-top: 1rem;
-}
-
 .gradient-text {
   background: $gradient-color;
   -webkit-background-clip: text;
@@ -267,13 +260,17 @@ body {
 }
 
 .about-me-heading {
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   color: $primary-color;
   letter-spacing: 0.05rem;
   position: relative;
   display: inline-block;
   padding-bottom: 0.5rem;
   margin-left: 2rem;
+  text-transform: uppercase;
+  span {
+    color: $accent-color;
+  }
 }
 
 .about-me-heading::after {
@@ -286,9 +283,17 @@ body {
   background-color: $accent-color;
   transform: translateX(-50%);
 }
+.description-text {
+  line-height: 1.6;
+  text-align: justify;
+  color: $secondary-color;
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
 .card-section {
   padding: 5rem 0;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

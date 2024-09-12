@@ -4,7 +4,15 @@ import { Card } from "react-bootstrap";
 const Description = () => {
   return (
     <div className="container empty-space-40">
-      <h3 className="fw-bold about-me-heading mb-5">About Me</h3>
+      <h3 className="fw-bold about-me-heading mb-5">
+        About <span>Me</span>
+      </h3>
+      <p className="description-text">
+        I am a passionate Frontend & UI Developer with experience in creating
+        dynamic and responsive web applications. I specialize in modern
+        JavaScript frameworks and libraries, and I am dedicated to building
+        user-friendly and visually appealing interfaces.
+      </p>
       <div className="row empty-space-top-20 justify-content-center gap-5">
         <div className="col-md-5">
           <Card className="rounded-4 border-2 border-black position-relative shadow-lg">
@@ -35,12 +43,6 @@ const Description = () => {
           </Card>
         </div>
       </div>
-      <p className="description-text empty-space-top-20 text-center mx-auto">
-        I am a passionate Frontend & UI Developer with experience in creating
-        dynamic and responsive web applications. I specialize in modern
-        JavaScript frameworks and libraries, and I am dedicated to building
-        user-friendly and visually appealing interfaces.
-      </p>
     </div>
   );
 };
