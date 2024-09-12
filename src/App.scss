@@ -3,6 +3,7 @@ $secondary-color: #515151;
 $tertiary-color: #b1b1b1;
 $bg-color: #fffaff;
 $accent-color: #ff6b6b;
+$gradient-color: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8);
 $font-family: "Poppins", sans-serif;
 
 body {
@@ -101,7 +102,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8);
+  background: $gradient-color;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -129,13 +130,20 @@ body {
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
+  border: 2px solid $primary-color;
+  background-color: transparent;
+  color: $primary-color;
 }
 
-.download-btn:hover,
-.contact-btn:hover {
+.download-btn:hover {
   background-color: $primary-color;
   color: white;
   border-color: $primary-color;
+}
+.contact-btn:hover {
+  background-color: $accent-color !important;
+  color: white !important;
+  border-color: $accent-color !important;
 }
 
 .social-icons {
@@ -214,7 +222,7 @@ body {
 }
 
 .logo:hover {
-  background: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8);
+  background: $gradient-color;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
