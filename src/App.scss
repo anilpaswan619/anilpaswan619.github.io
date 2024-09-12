@@ -76,6 +76,11 @@ body {
   }
 }
 
+.about-section {
+  padding: 5rem 0;
+  background-color: $bg-color;
+}
+
 .empty-space-40 {
   margin-top: 10rem;
   margin-bottom: 10rem;
@@ -88,7 +93,19 @@ body {
 .empty-space-top-40 {
   margin-top: 8rem !important;
 }
+.logo {
+  font-size: 1.6rem !important;
+  text-transform: uppercase;
+}
 
+.logo:hover {
+  background: $gradient-color;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
 .icon-container {
   top: -20px;
   transform: translateX(-50%);
@@ -161,6 +178,11 @@ body {
   border-color: $accent-color !important;
   background: $gradient-color !important;
   transition: color 0.3s ease, transform 0.3s ease;
+}
+.download-btn {
+  .bold-icon::before {
+    font-weight: bold !important;
+  }
 }
 .contact-btn:hover {
   color: white !important;
@@ -244,26 +266,26 @@ body {
   display: block;
 }
 
-.logo {
-  font-size: 1.6rem !important;
-  text-transform: uppercase;
+.about-me-heading {
+  font-size: 2.5rem;
+  color: $primary-color;
+  letter-spacing: 0.05rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  margin-left: 2rem;
 }
 
-.logo:hover {
-  background: $gradient-color;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: color 0.3s ease, transform 0.3s ease;
+.about-me-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 50%;
+  height: 3px;
+  background-color: $accent-color;
+  transform: translateX(-50%);
 }
-
-.download-btn {
-  .bold-icon::before {
-    font-weight: bold !important;
-  }
-}
-
 .card-section {
   padding: 5rem 0;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
