@@ -53,7 +53,7 @@ const About = ({ descriptionRef }) => {
           <img
             src={profilePic}
             alt="Profile"
-            className="img-fluid rounded-circle border border-black border-0 w-50"
+            className="img-fluid rounded-circle w-50"
           />
         </div>
       </div>

@@ -193,7 +193,6 @@ body {
 .social-icon {
   transition: transform 0.3s ease;
 }
-
 .social-icon:hover {
   transform: scale(1.2);
 }
@@ -259,7 +258,7 @@ body {
   display: block;
 }
 
-.about-me-heading {
+.title-heading {
   font-size: 1.9rem;
   color: $primary-color;
   letter-spacing: 0.05rem;
@@ -269,11 +268,14 @@ body {
   margin-left: 2rem;
   text-transform: uppercase;
   span {
-    color: $accent-color;
+    background: $gradient-color;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
 
-.about-me-heading::after {
+.title-heading::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -284,16 +286,38 @@ body {
   transform: translateX(-50%);
 }
 .description-text {
-  line-height: 1.6;
+  line-height: 1.8;
   text-align: justify;
   color: $secondary-color;
   margin-top: 1rem;
-  margin-left: 2rem;
+  font-size: 1.1rem;
+  padding: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
+
 .card-section {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 3rem 2rem;
+  background-color: $bg-color;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: $primary-color;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: $secondary-color;
+}
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
