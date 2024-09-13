@@ -4,6 +4,7 @@ import Header from "./components/header";
 import About from "./pages/about";
 import Description from "./pages/description";
 import "./App.scss";
+import Project from "./pages/project";
 
 function App() {
   const descriptionRef = useRef(null);
@@ -15,6 +16,7 @@ function App() {
       <div ref={descriptionRef}>
         <Description />
       </div>
+      <Project />
       <main>
         <Routes></Routes>
       </main>
