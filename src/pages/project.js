@@ -20,19 +20,19 @@ const projects = [
     link: "#",
   },
   {
-    title: "Project One",
+    title: "Project Four",
     description: "Description for project one.",
     imageUrl: "https://via.placeholder.com/500",
     link: "#",
   },
   {
-    title: "Project Two",
+    title: "Project Five",
     description: "Description for project two.",
     imageUrl: "https://via.placeholder.com/500",
     link: "#",
   },
   {
-    title: "Project Three",
+    title: "Project Six",
     description: "Description for project three.",
     imageUrl: "https://via.placeholder.com/500",
     link: "#",
