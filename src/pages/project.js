@@ -4,37 +4,37 @@ const projects = [
   {
     title: "Project One",
     description: "Description for project one.",
-    imageUrl: "https://via.placeholder.com/500",
+    imageUrl: require("../assets/edusync.png"),
     link: "#",
   },
   {
     title: "Project Two",
     description: "Description for project two.",
-    imageUrl: "https://via.placeholder.com/500",
+    imageUrl: require("../assets/Cookpedia.JPG"),
     link: "#",
   },
   {
     title: "Project Three",
     description: "Description for project three.",
-    imageUrl: "https://via.placeholder.com/500",
+    imageUrl: require("../assets/ehealth.JPG"),
     link: "#",
   },
   {
     title: "Project Four",
     description: "Description for project one.",
-    imageUrl: "https://via.placeholder.com/500",
+    imageUrl: require("../assets/digital.JPG"),
     link: "#",
   },
   {
     title: "Project Five",
     description: "Description for project two.",
-    imageUrl: "https://via.placeholder.com/500",
+    imageUrl: require("../assets/actro.JPG"),
     link: "#",
   },
   {
     title: "Project Six",
     description: "Description for project three.",
-    imageUrl: "https://via.placeholder.com/500",
+    imageUrl: require("../assets/horse-riding.JPG"),
     link: "#",
   },
 ];
@@ -47,12 +47,7 @@ const Project = () => {
       </h3>
       <div className="row">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className={`col-md-4 ${
-              index >= projects.length - 3 ? "extra-space" : ""
-            }`}
-          >
+          <div key={index} className="col-md-4 mb-4">
             <div className="card border-0 rounded-4 shadow-lg project-card">
               <img
                 src={project.imageUrl}
@@ -62,9 +57,20 @@ const Project = () => {
               <div className="card-body">
                 <h5 className="fw-bold card-title">{project.title}</h5>
                 <p className="card-text">{project.description}</p>
-                <a href={project.link} className="btn btn-primary rounded-pill">
-                  View Project
-                </a>
+                <div className="d-flex justify-content-between">
+                  <a
+                    href={project.liveLink}
+                    className="btn btn-primary rounded-pill"
+                  >
+                    Live
+                  </a>
+                  <a
+                    href={project.githubLink}
+                    className="btn btn-secondary rounded-pill"
+                  >
+                    Github
+                  </a>
+                </div>
               </div>
             </div>
           </div>
