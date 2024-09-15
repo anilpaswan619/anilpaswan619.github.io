@@ -23,7 +23,7 @@ const projects = [
     link: "#",
   },
   {
-    title: "Digital Marketing Agency",
+    title: "Digital Agency",
     description:
       "Digital Marketing Agency is a full-service agency that helps businesses grow their online presence. It offers services such as search engine optimization, social media marketing, and content creation.",
     imageUrl: require("../assets/digital.JPG"),
@@ -73,15 +73,15 @@ const Project = () => {
                 <div className="d-flex justify-content-between mt-auto">
                   <a
                     href={project.liveLink}
-                    className="btn btn-primary rounded-pill"
+                    className="btn btn-primary  rounded-pill"
                   >
-                    Live
+                    Live <i class="bi bi-arrow-up-right"></i>
                   </a>
                   <a
                     href={project.githubLink}
                     className="btn btn-secondary rounded-pill"
                   >
-                    Github
+                    Github <i class="bi bi-github"></i>
                   </a>
                 </div>
               </div>
