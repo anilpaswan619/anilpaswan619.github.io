@@ -1,17 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.f1017d67.css",
-    "main.js": "/static/js/main.b231e74a.js",
+    "main.css": "/static/css/main.dcb6bf94.css",
+    "main.js": "/static/js/main.187c4108.js",
     "static/js/453.cc6449c8.chunk.js": "/static/js/453.cc6449c8.chunk.js",
+    "static/media/edusync.png": "/static/media/edusync.c3201f21634e71cb3843.png",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/horse-riding.JPG": "/static/media/horse-riding.bdcc0bef069d2dfcd586.JPG",
+    "static/media/Cookpedia.JPG": "/static/media/Cookpedia.ce08458915f776c14163.JPG",
+    "static/media/actro.JPG": "/static/media/actro.e8fc9bba5eb499fa3883.JPG",
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/ehealth.JPG": "/static/media/ehealth.c9b825a727fa1589f444.JPG",
+    "static/media/futurista.JPG": "/static/media/futurista.835fa6d518c89e252974.JPG",
+    "static/media/digital.JPG": "/static/media/digital.61c72bd4d46478ad0738.JPG",
     "index.html": "/index.html",
-    "main.f1017d67.css.map": "/static/css/main.f1017d67.css.map",
-    "main.b231e74a.js.map": "/static/js/main.b231e74a.js.map",
+    "main.dcb6bf94.css.map": "/static/css/main.dcb6bf94.css.map",
+    "main.187c4108.js.map": "/static/js/main.187c4108.js.map",
     "453.cc6449c8.chunk.js.map": "/static/js/453.cc6449c8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1017d67.css",
-    "static/js/main.b231e74a.js"
+    "static/css/main.dcb6bf94.css",
+    "static/js/main.187c4108.js"
   ]
 }
