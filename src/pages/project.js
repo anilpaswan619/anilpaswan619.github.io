@@ -6,49 +6,56 @@ const projects = [
     description:
       "Edusync is an online education platform that connects students and teachers. It provides a seamless learning experience with interactive lessons and real-time collaboration.",
     imageUrl: require("../assets/edusync.png"),
-    link: "#",
+    liveLink: "https://edusync-anil.vercel.app/",
+    githubLink: "https://github.com/anilpaswan619/EduSync",
   },
   {
     title: "Cookpedia",
     description:
       "Cookpedia is a recipe sharing platform where users can discover and share their favorite recipes. It offers a wide range of recipes from different cuisines and allows users to save and rate recipes.",
     imageUrl: require("../assets/Cookpedia.JPG"),
-    link: "#",
+    liveLink: "https://cookpedia-anil.vercel.app/",
+    githubLink: "https://github.com/anilpaswan619/Cookpedia",
   },
   {
     title: "E-Health",
     description:
       "E-Health is a healthcare management system that allows patients to book appointments, access medical records, and communicate with healthcare providers. It aims to streamline the healthcare process and improve patient care.",
     imageUrl: require("../assets/ehealth.JPG"),
-    link: "#",
+    liveLink: "https://github.com/anilpaswan619/EHealth-Dashboard",
+    githubLink: "https://e-health-dashboard-anil.vercel.app/",
   },
   {
     title: "Digital Agency",
     description:
       "Digital Marketing Agency is a full-service agency that helps businesses grow their online presence. It offers services such as search engine optimization, social media marketing, and content creation.",
     imageUrl: require("../assets/digital.JPG"),
-    link: "#",
+    liveLink: "https://digitalmarketinganil.netlify.app/",
+    githubLink: "https://github.com/anilpaswan619/digital-marketing-agency",
   },
   {
     title: "Actoro",
     description:
       "Actoro is a platform for actors and casting directors to connect and collaborate. It provides a space for actors to showcase their talent and for casting directors to discover new talent for their projects.",
     imageUrl: require("../assets/actro.JPG"),
-    link: "#",
+    liveLink: "https://actoro-paswan-anil.netlify.app/",
+    githubLink: "https://github.com/anilpaswan619/Actoro",
   },
   {
     title: "Horse Riding",
     description:
       "Horse Riding is a website for horse enthusiasts to find information about horse riding lessons, trails, and events. It also offers resources for horse care and training.",
     imageUrl: require("../assets/horse-riding.JPG"),
-    link: "#",
+    liveLink: "https://anilpaswan619.netlify.app/",
+    githubLink: "https://github.com/anilpaswan619/Horse-Riding",
   },
   {
     title: "Fururista",
     description:
       "Fururista is a futuristic fashion brand that offers unique and innovative clothing designs. It combines technology and fashion to create futuristic and stylish garments.",
     imageUrl: require("../assets/futurista.JPG"),
-    link: "#",
+    liveLink: "https://anilpaswangroupfuturista.netlify.app/",
+    githubLink: "https://github.com/anilpaswan619/Group-futurista",
   },
 ];
 
@@ -73,12 +80,14 @@ const Project = () => {
                 <div className="d-flex justify-content-between mt-auto">
                   <a
                     href={project.liveLink}
+                    target="_blank"
                     className="btn btn-primary  rounded-pill"
                   >
                     Live <i class="bi bi-arrow-up-right"></i>
                   </a>
                   <a
                     href={project.githubLink}
+                    target="_blank"
                     className="btn btn-secondary rounded-pill"
                   >
                     Github <i class="bi bi-github"></i>
