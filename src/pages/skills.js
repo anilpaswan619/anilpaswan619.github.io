@@ -2,24 +2,24 @@ import React from "react";
 
 const Skills = () => {
   const frontendTechnologies = [
-    "HTML/HMTL5",
-    "CSS/CSS3",
-    "SCSS",
-    "Bootstrap",
-    "Tailwind",
-    "JavaScript",
-    "Typescript",
-    "React",
-    "Angular",
+    { name: "HTML/HTML5", level: 90 },
+    { name: "CSS/CSS3", level: 85 },
+    { name: "SCSS", level: 80 },
+    { name: "Bootstrap", level: 85 },
+    { name: "Tailwind", level: 75 },
+    { name: "JavaScript", level: 90 },
+    { name: "Typescript", level: 70 },
+    { name: "React", level: 85 },
+    { name: "Angular", level: 70 },
   ];
   const uiTechnologies = [
-    "Adobe XD",
-    "Figma",
-    "Zeplin",
-    "UI/UX Designing",
-    "Mockup",
-    "Prototyping",
-    "Wireframing",
+    { name: "Adobe XD", level: 80 },
+    { name: "Figma", level: 85 },
+    { name: "Zeplin", level: 75 },
+    { name: "UI/UX Designing", level: 90 },
+    { name: "Mockup", level: 80 },
+    { name: "Prototyping", level: 85 },
+    { name: "Wireframing", level: 80 },
   ];
 
   return (
@@ -29,13 +29,27 @@ const Skills = () => {
       </h3>
       <div className="row my-5">
         <div className="col-md-6">
-          <div className="card shadow-sm skill-card h-100">
+          <div className="card border-0 rounded-4 shadow-lg project-card skill-card h-100">
             <div className="card-body">
-              <h4 className="fw-bold mb-3">Frontend Technologies</h4>
+              <h4 className="fw-bold mb-3 text-center">
+                Frontend Technologies
+              </h4>
               <ul className="list-group list-group-flush">
                 {frontendTechnologies.map((technology) => (
-                  <li key={technology} className="list-group-item">
-                    {technology}
+                  <li key={technology.name} className="list-group-item">
+                    <div className="d-flex align-items-center justify-content-between">
+                      <span className="fw-bold m-2">{technology.name}</span>
+                      <div className="progress-container">
+                        <div
+                          className="progress-bar"
+                          role="progressbar"
+                          style={{ width: `${technology.level}%` }}
+                          aria-valuenow={technology.level}
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -43,13 +57,25 @@ const Skills = () => {
           </div>
         </div>
         <div className="col-md-6">
-          <div className="card shadow-sm skill-card h-100">
+          <div className="card border-0 rounded-4 shadow-lg project-card skill-card h-100">
             <div className="card-body">
-              <h4 className="fw-bold mb-3">UI Technologies</h4>
+              <h4 className="fw-bold mb-3 text-center">UI Technologies</h4>
               <ul className="list-group list-group-flush">
                 {uiTechnologies.map((technology) => (
-                  <li key={technology} className="list-group-item">
-                    {technology}
+                  <li key={technology.name} className="list-group-item">
+                    <div className="d-flex align-items-center justify-content-between">
+                      <span className="fw-bold m-2">{technology.name}</span>
+                      <div className="progress-container">
+                        <div
+                          className="progress-bar"
+                          role="progressbar"
+                          style={{ width: `${technology.level}%` }}
+                          aria-valuenow={technology.level}
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
