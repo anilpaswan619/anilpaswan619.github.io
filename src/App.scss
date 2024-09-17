@@ -396,3 +396,54 @@ body {
     }
   }
 }
+
+.title-heading {
+  span {
+    background: $gradient-color;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 50%;
+    height: 3px;
+    background-color: $accent-color;
+    transform: translateX(-50%);
+  }
+}
+.skill-card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-body {
+    padding: 2rem;
+    border-radius: 15px;
+  }
+
+  .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    color: $secondary-color;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: lighten($bg-color, 10%);
+      transform: translateX(5px);
+    }
+  }
+}
