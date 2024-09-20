@@ -396,6 +396,7 @@ body {
     }
   }
 }
+
 .skill-card {
   border: none;
   border-radius: 15px;
@@ -428,16 +429,26 @@ body {
 
     .progress-container {
       flex: 1;
-      margin-right: 1rem;
-      background-color: $tertiary-color;
+      margin-left: 1rem;
+      background-color: $tertiary-color !important;
       border-radius: 5px;
       overflow: hidden;
       height: 12px;
+      position: relative;
 
       .progress-bar {
-        background: $gradient-color-secondary;
+        background: $gradient-color-secondary !important;
         height: 100%;
+        transition: width 0.6s ease;
       }
+    }
+
+    span {
+      flex-shrink: 0;
+      min-width: 100px;
+      text-align: left;
+      font-weight: 600;
+      color: $primary-color;
     }
   }
 }
