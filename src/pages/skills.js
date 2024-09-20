@@ -23,7 +23,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="container empty-space-top-20">
+    <div id="skills" className="container empty-space-top-20">
       <h3 className="fw-bold title-heading mb-5 text-center">
         Skill <span>Set</span>
       </h3>

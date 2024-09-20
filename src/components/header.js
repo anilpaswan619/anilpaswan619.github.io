@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 const Header = () => {
   return (
@@ -22,24 +23,44 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item px-4">
-                <a className="nav-link" href="#about">
+                <Link
+                  className="nav-link"
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                >
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item px-4">
-                <a className="nav-link" href="#projects">
+                <Link
+                  className="nav-link"
+                  to="projects"
+                  smooth={true}
+                  duration={500}
+                >
                   Projects
-                </a>
+                </Link>
               </li>
               <li className="nav-item px-4">
-                <a className="nav-link" href="#skills">
+                <Link
+                  className="nav-link"
+                  to="skills"
+                  smooth={true}
+                  duration={500}
+                >
                   Skills
-                </a>
+                </Link>
               </li>
               <li className="nav-item px-4">
-                <a className="nav-link" href="#contact">
+                <Link
+                  className="nav-link"
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                >
                   Contact Me
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

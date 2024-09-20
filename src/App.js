@@ -6,6 +6,8 @@ import Description from "./pages/description";
 import "./App.scss";
 import Project from "./pages/project";
 import Skills from "./pages/skills";
+import Contact from "./pages/contact";
+import Footer from "./components/footer";
 
 function App() {
   const descriptionRef = useRef(null);
@@ -19,9 +21,11 @@ function App() {
       </div>
       <Project />
       <Skills />
+      <Contact />
       <main>
         <Routes></Routes>
       </main>
+      <Footer />
     </div>
   );
 }

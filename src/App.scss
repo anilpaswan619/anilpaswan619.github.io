@@ -60,6 +60,7 @@ body {
 
   .navbar-nav .nav-item .nav-link:hover {
     color: $accent-color;
+    cursor: pointer;
   }
 
   .navbar-nav .nav-item .nav-link:hover::after {
@@ -101,6 +102,8 @@ body {
 
 .logo:hover {
   background: $gradient-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -452,6 +455,91 @@ body {
       text-align: left;
       font-weight: 600;
       color: $secondary-color;
+    }
+  }
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .form-label {
+    font-weight: 600;
+    color: $primary-color;
+  }
+
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid $tertiary-color;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $accent-color;
+      box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+    }
+  }
+
+  .btn-primary {
+    background: $gradient-color;
+    border: none;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: darken($accent-color, 10%);
+    }
+  }
+}
+
+.footer {
+  background-color: $bg-color;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid $tertiary-color;
+
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: $font-family;
+    color: $primary-color;
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      color: $secondary-color;
+    }
+
+    .social-links {
+      margin-top: 1rem;
+
+      a {
+        color: $primary-color;
+        margin: 0 0.5rem;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $accent-color;
+        }
+
+        i {
+          background: $gradient-color;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
     }
   }
 }

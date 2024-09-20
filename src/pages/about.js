@@ -9,7 +9,7 @@ const About = ({ descriptionRef }) => {
   };
 
   return (
-    <div className="container empty-space-40 ">
+    <div id="about" className="container empty-space-40 ">
       <div className="row align-items-center pb-5">
         <div className="col-md-6 text-center">
           <p className="fw-bold intro-text">Hello, I'm</p>

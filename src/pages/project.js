@@ -61,7 +61,7 @@ const projects = [
 
 const Project = () => {
   return (
-    <div className="container empty-space-40">
+    <div id="projects" className="container empty-space-40">
       <h3 className="fw-bold title-heading mb-5">
         Project <span>Highlights</span>
       </h3>
