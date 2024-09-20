@@ -1,4 +1,5 @@
 import React from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Skills = () => {
   const frontendTechnologies = [
@@ -22,15 +23,18 @@ const Skills = () => {
   ];
 
   return (
-    <div className="container my-5">
+    <div className="container empty-space-top-20">
       <h3 className="fw-bold title-heading mb-5 text-center">
         Skill <span>Set</span>
       </h3>
-      <div className="row">
+      <div className="row my-5">
         <div className="col-md-6 mb-4">
           <div className="card border-0 rounded-4 shadow-lg skill-card h-100">
-            <div className="card-body">
-              <h4 className="fw-bold mb-4 text-center">
+            <div className="card-body mb-5">
+              <div className="text-center mb-3">
+                <i className="bi bi-code-slash card-icon"></i>
+              </div>
+              <h4 className="fw-bold mb-5 text-center">
                 Frontend Technologies
               </h4>
               <ul className="list-group list-group-flush">
@@ -58,8 +62,11 @@ const Skills = () => {
         </div>
         <div className="col-md-6 mb-4">
           <div className="card border-0 rounded-4 shadow-lg skill-card h-100">
-            <div className="card-body">
-              <h4 className="fw-bold mb-4 text-center">UI Technologies</h4>
+            <div className="card-body mb-5">
+              <div className="text-center mb-3">
+                <i className="bi bi-palette card-icon"></i>
+              </div>
+              <h4 className="fw-bold mb-5 text-center">UI Technologies</h4>
               <ul className="list-group list-group-flush">
                 {uiTechnologies.map((technology) => (
                   <li key={technology.name} className="list-group-item">

@@ -413,11 +413,14 @@ body {
     padding: 2rem;
     border-radius: 15px;
   }
-
+  .card-icon {
+    font-size: 2rem;
+    color: $accent-color;
+  }
   .list-group-item {
     background-color: transparent;
     border: none;
-    padding: 0.75rem 1.25rem;
+    padding: 0.85rem 1.25rem;
     font-size: 1rem;
     color: $secondary-color;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -430,14 +433,14 @@ body {
     .progress-container {
       flex: 1;
       margin-left: 1rem;
-      background-color: $tertiary-color !important;
+      background-color: $tertiary-color;
       border-radius: 5px;
       overflow: hidden;
       height: 12px;
       position: relative;
 
       .progress-bar {
-        background: $gradient-color-secondary !important;
+        background: $gradient-color-secondary;
         height: 100%;
         transition: width 0.6s ease;
       }
@@ -448,7 +451,7 @@ body {
       min-width: 100px;
       text-align: left;
       font-weight: 600;
-      color: $primary-color;
+      color: $secondary-color;
     }
   }
 }
