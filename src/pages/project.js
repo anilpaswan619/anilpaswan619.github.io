@@ -22,8 +22,8 @@ const projects = [
     description:
       "E-Health is a healthcare management system that allows patients to book appointments, access medical records, and communicate with healthcare providers. It aims to streamline the healthcare process and improve patient care.",
     imageUrl: require("../assets/ehealth.JPG"),
-    liveLink: "https://github.com/anilpaswan619/EHealth-Dashboard",
-    githubLink: "https://e-health-dashboard-anil.vercel.app/",
+    liveLink: "https://e-health-dashboard-anil.vercel.app/",
+    githubLink: "https://github.com/anilpaswan619/EHealth-Dashboard",
   },
   {
     title: "Digital Agency",
