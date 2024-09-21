@@ -49,14 +49,6 @@ const projects = [
     liveLink: "https://anilpaswan619.netlify.app/",
     githubLink: "https://github.com/anilpaswan619/Horse-Riding",
   },
-  {
-    title: "Fururista",
-    description:
-      "Fururista is a futuristic fashion brand that offers unique and innovative clothing designs. It combines technology and fashion to create futuristic and stylish garments.",
-    imageUrl: require("../assets/futurista.JPG"),
-    liveLink: "https://anilpaswangroupfuturista.netlify.app/",
-    githubLink: "https://github.com/anilpaswan619/Group-futurista",
-  },
 ];
 
 const Project = () => {

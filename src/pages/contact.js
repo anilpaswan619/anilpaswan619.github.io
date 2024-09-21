@@ -26,53 +26,22 @@ const Contact = () => {
       <h3 className="fw-bold title-heading mb-5 text-center">
         Contact <span>Me</span>
       </h3>
-      <form onSubmit={handleSubmit} className="contact-form p-4 rounded shadow">
-        <div className="form-group mb-3">
-          <label htmlFor="name" className="form-label">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="form-control"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group mb-3">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="form-control"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group mb-3">
-          <label htmlFor="message" className="form-label">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            className="form-control"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit" className="btn btn-primary w-100">
-          Submit
-        </button>
-      </form>
+      <div className="contact-info text-center mb-5">
+        <p>
+          <i className="bi bi-envelope"></i> Email:{" "}
+          <a href="mailto:your-email@example.com">your-email@example.com</a>
+        </p>
+        <p>
+          <i className="bi bi-linkedin"></i> LinkedIn:{" "}
+          <a
+            href="https://www.linkedin.com/in/anilpaswan619/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Anil Paswan
+          </a>
+        </p>
+      </div>
     </div>
   );
 };
