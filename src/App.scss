@@ -484,31 +484,39 @@ body {
 }
 
 .footer {
-  background-color: $bg-color;
   padding: 2rem 0;
   text-align: center;
-  border-top: 1px solid $tertiary-color;
 
   .footer-content {
+    max-width: 850px;
     margin: 0 auto;
-    p {
+    color: white;
+
+    .footer-text {
       margin: 0;
       font-size: 1rem;
+      color: white;
     }
 
     .social-links {
       margin-top: 1rem;
 
       a {
-        color: $bg-color;
+        color: white;
         margin: 0 0.5rem;
         font-size: 1.5rem;
-        transition: color 0.3s ease;
+        transition: color 0.3s ease, transform 0.3s ease;
 
         &:hover {
+          color: $tertiary-color;
           transform: scale(1.2);
         }
       }
+    }
+
+    .footer-note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
     }
   }
 }
