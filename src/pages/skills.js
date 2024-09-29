@@ -28,7 +28,7 @@ const Skills = () => {
         Skill <span>Set</span>
       </h3>
       <div className="row my-5">
-        <div className="col-md-6 mb-4">
+        <div className="col-md-6 mb-5">
           <div className="card border-0 rounded-4 shadow-lg skill-card h-100">
             <div className="card-body mb-5">
               <div className="text-center mb-3">
@@ -60,7 +60,7 @@ const Skills = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-6 mb-4">
+        <div className="col-md-6 mb-5">
           <div className="card border-0 rounded-4 shadow-lg skill-card h-100">
             <div className="card-body mb-5">
               <div className="text-center mb-3">
