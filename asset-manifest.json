@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.97672ebb.css",
-    "main.js": "/static/js/main.c1af831c.js",
+    "main.css": "/static/css/main.d01f529f.css",
+    "main.js": "/static/js/main.836bb856.js",
     "static/js/453.cc6449c8.chunk.js": "/static/js/453.cc6449c8.chunk.js",
     "static/media/edusync.png": "/static/media/edusync.c3201f21634e71cb3843.png",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
@@ -12,12 +12,12 @@
     "static/media/ehealth.JPG": "/static/media/ehealth.c9b825a727fa1589f444.JPG",
     "static/media/digital.JPG": "/static/media/digital.61c72bd4d46478ad0738.JPG",
     "index.html": "/index.html",
-    "main.97672ebb.css.map": "/static/css/main.97672ebb.css.map",
-    "main.c1af831c.js.map": "/static/js/main.c1af831c.js.map",
+    "main.d01f529f.css.map": "/static/css/main.d01f529f.css.map",
+    "main.836bb856.js.map": "/static/js/main.836bb856.js.map",
     "453.cc6449c8.chunk.js.map": "/static/js/453.cc6449c8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.97672ebb.css",
-    "static/js/main.c1af831c.js"
+    "static/css/main.d01f529f.css",
+    "static/js/main.836bb856.js"
   ]
 }
