@@ -57,7 +57,7 @@ const About = ({ descriptionRef }) => {
           />
         </div>
       </div>
-      <div className="container_mouse mx-auto empty-space-top-20 scroll-container">
+      <div className="container_mouse mx-auto  scroll-container">
         <span
           className="mouse-btn scroll-btn"
           onClick={handleScrollToDescription}
