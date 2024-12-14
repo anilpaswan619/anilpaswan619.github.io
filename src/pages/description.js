@@ -8,7 +8,7 @@ const Description = () => {
         About <span>Me</span>
       </h3>
       <p className="description-text">
-        As a passionate Frontend & UI Developer with over 6 years of experience,
+        As a passionate Frontend & UI Developer with over 7 years of experience,
         I specialize in building dynamic and responsive web applications. My
         expertise in modern JavaScript frameworks and libraries enables me to
         craft user-friendly and visually appealing interfaces. Committed to
@@ -24,8 +24,8 @@ const Description = () => {
               </div>
               <Card.Title className="fw-bold my-4">Experience</Card.Title>
               <Card.Text className="text-muted fw-bold">
-                <p>6+ years of experience in Frontend &amp; UI </p>
-                <p>Senior Software Engineer</p>
+                <p>7+ years of experience in Frontend &amp; UI </p>
+                <p>Technical Lead</p>
               </Card.Text>
             </Card.Body>
           </Card>
