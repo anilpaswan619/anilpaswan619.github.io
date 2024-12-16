@@ -1,9 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.026d4f42.css",
-    "main.js": "/static/js/main.61ce7507.js",
+    "main.js": "/static/js/main.473d333f.js",
     "static/js/453.cc6449c8.chunk.js": "/static/js/453.cc6449c8.chunk.js",
-    "static/media/Anil Paswan-Resume.pdf": "/static/media/Anil Paswan-Resume.b3e159cb3c2be0ddf0cf.pdf",
     "static/media/edusync.png": "/static/media/edusync.c3201f21634e71cb3843.png",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/horse-riding.JPG": "/static/media/horse-riding.bdcc0bef069d2dfcd586.JPG",
@@ -14,11 +13,11 @@
     "static/media/digital.JPG": "/static/media/digital.61c72bd4d46478ad0738.JPG",
     "index.html": "/index.html",
     "main.026d4f42.css.map": "/static/css/main.026d4f42.css.map",
-    "main.61ce7507.js.map": "/static/js/main.61ce7507.js.map",
+    "main.473d333f.js.map": "/static/js/main.473d333f.js.map",
     "453.cc6449c8.chunk.js.map": "/static/js/453.cc6449c8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.026d4f42.css",
-    "static/js/main.61ce7507.js"
+    "static/js/main.473d333f.js"
   ]
 }
