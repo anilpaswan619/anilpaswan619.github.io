@@ -21,11 +21,7 @@ const Footer = () => {
             >
               <i className="bi bi-github"></i>
             </a>
-            <a
-              href="https://www.linkedin.com/in/anil-paswan-91466578/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href=" " target="_blank" rel="noopener noreferrer">
               <i className="bi bi-linkedin"></i>
             </a>
           </div>

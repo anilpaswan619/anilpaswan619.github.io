@@ -1,6 +1,5 @@
 import React from "react";
 import profilePic from "../assets/photo.jpg";
-import resumeDoc from "../assets/Anil Paswan-Resume.pdf";
 
 const About = ({ descriptionRef }) => {
   const handleScrollToDescription = () => {
@@ -22,9 +21,8 @@ const About = ({ descriptionRef }) => {
           </h1>
           <div className="my-4">
             <a
-              href={resumeDoc}
-              target="_blank"
-              rel="noreferrer"
+              href=" "
+              download
               className="btn btn-outline-dark rounded-5 border-2 px-4 py-2 mt-3 fw-bold download-btn"
             >
               Download CV <i className="bi bi-download ps-2 bold-icon"></i>
@@ -45,11 +43,7 @@ const About = ({ descriptionRef }) => {
               >
                 <i className="bi bi-github rounded-5 fs-2 text-black"></i>
               </a>
-              <a
-                href="https://www.linkedin.com/in/anil-paswan-91466578/"
-                title="LinkedIn"
-                className="social-icon"
-              >
+              <a href=" " title="LinkedIn" className="social-icon">
                 <i className="bi bi-linkedin rounded-5 fs-2 text-black ms-lg-4"></i>
               </a>
             </div>

@@ -17,7 +17,7 @@ const Contact = () => {
           <i className="bi bi-envelope"></i> Email: anilpaswan619@gmail.com
         </a>
         <a
-          href="https://www.linkedin.com/in/anil-paswan-91466578/"
+          href=" "
           target="_blank"
           rel="noopener noreferrer"
           className="btn contact-btns w-50 mx-auto my-4 rounded-5 border-secondary-subtle fw-bold text-body-secondary"
