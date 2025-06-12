@@ -15,22 +15,28 @@ const Footer = () => {
             opportunities.
           </p>
           <div className="social-links d-flex justify-content-center align-items-center mt-4 gap-3">
-            <a
-              href="https://github.com/anilpaswan619"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="GitHub"
-            >
-              <i className="bi bi-github fs-3"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/anilpaswan619/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="LinkedIn"
-            >
-              <i className="bi bi-linkedin fs-3"></i>
-            </a>
+            <div className="footer-icon-wrapper d-flex align-items-center justify-content-center">
+              <a
+                href="https://github.com/anilpaswan619"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+                className="footer-social-icon text-decoration-none"
+              >
+                <i className="bi bi-github"></i>
+              </a>
+            </div>
+            <div className="footer-icon-wrapper d-flex align-items-center justify-content-center">
+              <a
+                href="https://www.linkedin.com/in/anil-paswan-91466578/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+                className="footer-social-icon text-decoration-none"
+              >
+                <i className="bi bi-linkedin"></i>
+              </a>
+            </div>
           </div>
         </div>
       </footer>

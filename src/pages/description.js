@@ -23,9 +23,9 @@ const Description = () => {
                 <i className="bi bi-award-fill fs-2 border border-3 rounded-5 border-black p-2 bg-white"></i>
               </div>
               <Card.Title className="fw-bold my-4 fs-3">Experience</Card.Title>
-              <Card.Text className="text-muted fw-bold fs-5">
-                <div>7+ years of experience in Frontend &amp; UI</div>
-                <div>Technical Lead</div>
+              <Card.Text className="text-muted fw-bold">
+                <div>7+ years of experience in Frontend &amp; UI as</div>
+                <div className="mt-3">Technical Lead</div>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -37,9 +37,11 @@ const Description = () => {
                 <i className="bi bi-laptop-fill fs-2 border border-3 rounded-5 border-black p-2 bg-white"></i>
               </div>
               <Card.Title className="fw-bold my-4 fs-3">Education</Card.Title>
-              <Card.Text className="text-muted fw-bold fs-5">
+              <Card.Text className="text-muted fw-bold">
                 <div>Master of Technology - Computer Science</div>
-                <div>Bachelor of Technology - Information Technology</div>
+                <div className="mt-3">
+                  Bachelor of Technology - Information Technology
+                </div>
               </Card.Text>
             </Card.Body>
           </Card>

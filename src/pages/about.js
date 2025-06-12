@@ -38,25 +38,29 @@ const About = ({ descriptionRef }) => {
               Contact Info
             </Link>
           </div>
-          <div className="my-4 social-icons d-flex justify-content-center justify-content-md-start gap-4">
-            <a
-              href="https://github.com/anilpaswan619"
-              target="_blank"
-              rel="noreferrer"
-              title="Github"
-              className="social-icon"
-            >
-              <i className="bi bi-github rounded-5 fs-2 text-black"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/anil-paswan-91466578/"
-              target="_blank"
-              rel="noreferrer"
-              title="LinkedIn"
-              className="social-icon"
-            >
-              <i className="bi bi-linkedin rounded-5 fs-2 text-black"></i>
-            </a>
+          <div className="my-4 social-links  d-flex justify-content-center justify-content-md-start gap-4">
+            <div className="footer-icon-wrapper d-flex align-items-center justify-content-center">
+              <a
+                href="https://github.com/anilpaswan619"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+                className="footer-social-icon text-decoration-none"
+              >
+                <i className="bi bi-github"></i>
+              </a>
+            </div>
+            <div className="footer-icon-wrapper d-flex align-items-center justify-content-center">
+              <a
+                href="https://www.linkedin.com/in/anil-paswan-91466578/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+                className="footer-social-icon text-decoration-none"
+              >
+                <i className="bi bi-linkedin"></i>
+              </a>
+            </div>
           </div>
         </div>
         <div className="col-md-6 text-center mb-4 mb-md-0">

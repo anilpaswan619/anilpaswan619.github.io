@@ -10,9 +10,8 @@ const Header = () => {
           <nav className="navbar navbar-expand-lg">
             <button
               type="button"
-              className="navbar-brand text-white fw-bold logo"
+              className="navbar-brand bg-black text-white fw-bold logo"
               style={{
-                background: "none",
                 border: "none",
                 padding: 0,
                 cursor: "pointer",
