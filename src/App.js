@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes } from "react-router-dom";
 import Header from "./components/header";
 import About from "./pages/about";
 import Description from "./pages/description";

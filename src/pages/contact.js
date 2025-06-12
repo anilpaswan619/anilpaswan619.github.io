@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Contact = () => {
   return (
@@ -8,19 +8,19 @@ const Contact = () => {
       </h3>
       <div className="contact-info text-center my-5">
         <p className="fs-3 my-5 text-black">
-          Find me on the following platforms!{" "}
+          Find me on the following platforms!
         </p>
         <a
-          href="mailto:anilpaswan619@gmail.com"
-          className="btn contact-btns w-50 mx-auto my-4 rounded-5 border-secondary-subtle fw-bold text-body-secondary"
+          href="mailto:anilpaswan619@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Anil%2C%0A%0AI%20would%20like%20to%20connect%20with%20you%20regarding..."
+          className="btn contact-btns w-50 mx-auto my-4 rounded-5 border-secondary-subtle fw-bold text-body-secondary shadow-sm"
         >
           <i className="bi bi-envelope"></i> Email: anilpaswan619@gmail.com
         </a>
         <a
-          href=" "
+          href="https://www.linkedin.com/in/anil-paswan-91466578/"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn contact-btns w-50 mx-auto my-4 rounded-5 border-secondary-subtle fw-bold text-body-secondary"
+          className="btn contact-btns w-50 mx-auto my-4 rounded-5 border-secondary-subtle fw-bold text-body-secondary shadow-sm"
         >
           <i className="bi bi-linkedin"></i> LinkedIn: Anil Paswan
         </a>

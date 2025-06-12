@@ -28,8 +28,8 @@ const Skills = () => {
         Skill <span>Set</span>
       </h3>
       <div className="row my-5">
-        <div className="col-md-6 mb-5">
-          <div className="card border-0 rounded-4 shadow-lg skill-card h-100">
+        <div className="col-md-6 mb-5 d-flex">
+          <div className="card border-0 rounded-4 shadow-lg skill-card h-100 flex-fill bg-white">
             <div className="card-body mb-5">
               <div className="text-center mb-3">
                 <i className="bi bi-code-slash card-icon"></i>
@@ -46,7 +46,10 @@ const Skills = () => {
                         <div
                           className="progress-bar"
                           role="progressbar"
-                          style={{ width: `${technology.level}%` }}
+                          style={{
+                            width: `${technology.level}%`,
+                            transition: "width 1s cubic-bezier(0.4,0,0.2,1)",
+                          }}
                           aria-valuenow={technology.level}
                           aria-valuemin="0"
                           aria-valuemax="100"
@@ -60,8 +63,8 @@ const Skills = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-6 mb-5">
-          <div className="card border-0 rounded-4 shadow-lg skill-card h-100">
+        <div className="col-md-6 mb-5 d-flex">
+          <div className="card border-0 rounded-4 shadow-lg skill-card h-100 flex-fill bg-white">
             <div className="card-body mb-5">
               <div className="text-center mb-3">
                 <i className="bi bi-palette card-icon"></i>
@@ -76,7 +79,10 @@ const Skills = () => {
                         <div
                           className="progress-bar"
                           role="progressbar"
-                          style={{ width: `${technology.level}%` }}
+                          style={{
+                            width: `${technology.level}%`,
+                            transition: "width 1s cubic-bezier(0.4,0,0.2,1)",
+                          }}
                           aria-valuenow={technology.level}
                           aria-valuemin="0"
                           aria-valuemax="100"

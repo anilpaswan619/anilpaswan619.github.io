@@ -54,35 +54,38 @@ const projects = [
 const Project = () => {
   return (
     <div id="projects" className="container empty-space-40">
-      <h3 className="fw-bold title-heading mb-5">
+      <h3 className="fw-bold title-heading mb-5 text-center">
         Project <span>Highlights</span>
       </h3>
       <div className="row my-5">
         {projects.map((project, index) => (
-          <div key={index} className="col-md-4 mb-4">
-            <div className="card border-0 rounded-4 shadow-lg project-card d-flex flex-column h-100">
+          <div key={index} className="col-md-4 mb-4 d-flex">
+            <div className="card border-0 rounded-4 shadow-lg project-card d-flex flex-column h-100 bg-white">
               <img
                 src={project.imageUrl}
                 className="card-img-top rounded-top-4"
                 alt={project.title}
+                style={{ objectFit: "cover", height: "200px" }}
               />
               <div className="card-body d-flex flex-column">
-                <h5 className="fw-bold card-title">{project.title}</h5>
+                <h5 className="fw-bold card-title fs-4">{project.title}</h5>
                 <p className="card-text">{project.description}</p>
-                <div className="d-flex justify-content-between mt-auto">
+                <div className="d-flex justify-content-between mt-auto gap-2">
                   <a
                     href={project.liveLink}
                     target="_blank"
-                    className="btn btn-primary  rounded-pill"
+                    rel="noreferrer"
+                    className="btn btn-primary rounded-pill px-4"
                   >
-                    Live <i class="bi bi-arrow-up-right"></i>
+                    Live <i className="bi bi-arrow-up-right"></i>
                   </a>
                   <a
                     href={project.githubLink}
                     target="_blank"
-                    className="btn btn-secondary rounded-pill"
+                    rel="noreferrer"
+                    className="btn btn-secondary rounded-pill px-4"
                   >
-                    Github <i class="bi bi-github"></i>
+                    Github <i className="bi bi-github"></i>
                   </a>
                 </div>
               </div>
