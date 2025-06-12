@@ -1,5 +1,4 @@
 import React from "react";
-import profilePic from "../assets/photo.jpg";
 import { Link } from "react-scroll";
 
 const About = ({ descriptionRef }) => {
@@ -62,7 +61,7 @@ const About = ({ descriptionRef }) => {
         </div>
         <div className="col-md-6 text-center mb-4 mb-md-0">
           <img
-            src={profilePic}
+            src="/assets/photo.jpg"
             alt="Profile"
             className="img-fluid rounded-circle w-75 shadow-lg border border-4 border-white"
             style={{ maxWidth: "320px" }}
