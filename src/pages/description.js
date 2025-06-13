@@ -1,51 +1,140 @@
 import React from "react";
-import { Card } from "react-bootstrap";
 
 const Description = () => {
   return (
     <div className="container empty-space-40">
-      <h3 className="fw-bold title-heading mb-5">
-        About <span>Me</span>
-      </h3>
-      <p className="description-text fs-5">
-        As a passionate Frontend & UI Developer with over 7+ years of
-        experience, I specialize in building dynamic and responsive web
-        applications. My expertise in modern JavaScript frameworks and libraries
-        enables me to craft user-friendly and visually appealing interfaces.
-        Committed to continuous learning, I stay up-to-date with the latest
-        industry trends to consistently deliver high-quality solutions.
-      </p>
-      <div className="row empty-space-top-20 d-flex align-items-stretch justify-content-center gap-5">
-        <div className="col-md-5 d-flex">
-          <Card className="rounded-4 border-0 position-relative shadow-lg card-hover flex-fill bg-white">
-            <Card.Body className="text-center p-5 card-section">
-              <div className="icon-container position-absolute top-0 start-50 translate-middle">
-                <i className="bi bi-award-fill fs-2 border border-3 rounded-5 border-black p-2 bg-white"></i>
-              </div>
-              <Card.Title className="fw-bold my-4 fs-3">Experience</Card.Title>
-              <Card.Text className="text-muted fw-bold">
-                <div>7+ years of experience in Frontend &amp; UI as</div>
-                <div className="mt-3">Technical Lead</div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </div>
-        <div className="col-md-5 d-flex">
-          <Card className="rounded-4 border-0 position-relative shadow-lg card-hover flex-fill bg-white">
-            <Card.Body className="text-center p-5 card-section">
-              <div className="icon-container position-absolute top-0 start-50 translate-middle">
-                <i className="bi bi-laptop-fill fs-2 border border-3 rounded-5 border-black p-2 bg-white"></i>
-              </div>
-              <Card.Title className="fw-bold my-4 fs-3">Education</Card.Title>
-              <Card.Text className="text-muted fw-bold">
-                <div>Master of Technology - Computer Science</div>
-                <div className="mt-3">
-                  Bachelor of Technology - Information Technology
+      <div className="d-flex align-items-center mb-4">
+        <img
+          src="/assets/photo.jpg"
+          alt="About Icon"
+          style={{
+            width: 48,
+            height: 48,
+            borderRadius: "50%",
+            objectFit: "cover",
+            marginRight: 18,
+            border: "2.5px solid #e0e0e0",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+          }}
+        />
+        <h3
+          className="fw-bold title-heading mb-0"
+          style={{ fontSize: "2.1rem", letterSpacing: "0.01em" }}
+        >
+          About <span>Me</span>
+        </h3>
+      </div>
+      <div
+        className="fst-italic text-secondary mb-4"
+        style={{
+          fontSize: "1.13rem",
+          background: "#f8f9fa",
+          borderLeft: "4px solid #222",
+          padding: "0.7rem 1.2rem",
+          borderRadius: "0 12px 12px 0",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+          maxWidth: 580,
+        }}
+      >
+        <i className="bi bi-quote pe-2"></i>
+        Crafting pixel-perfect UIs with performance in mind.
+      </div>
+      <div className="row align-items-center">
+        <div className="col-lg-12 mb-4 mb-lg-0">
+          <div
+            className="description-text fs-5 p-4"
+            style={{
+              background: "#fff",
+              borderRadius: "18px",
+
+              border: "1.5px solid #f1f1f1",
+              lineHeight: 1.8,
+              fontSize: "1.13rem",
+              color: "#444",
+              minHeight: 180,
+            }}
+          >
+            As a passionate{" "}
+            <span className="fw-bold secondary-gradient">
+              Frontend & UI Developer
+            </span>{" "}
+            with over <span className="fw-bold">7+ years</span> of experience, I
+            specialize in building dynamic and responsive web applications. My
+            expertise in modern JavaScript frameworks and libraries enables me
+            to craft user-friendly and visually appealing interfaces.
+            <span className="text-secondary">
+              {" "}
+              I am committed to continuous learning and stay up-to-date with the
+              latest industry trends to consistently deliver high-quality
+              solutions.
+            </span>
+          </div>
+          {/* Cards below the about text */}
+          <div className="row g-4 mt-1">
+            <div className="col-md-6 d-flex">
+              <div
+                className="about-modern-card flex-fill text-center p-4 shadow bg-white rounded-4 mx-auto border-0"
+                style={{ minHeight: 170 }}
+              >
+                <div className="mb-3">
+                  <i
+                    className="bi bi-briefcase"
+                    style={{ fontSize: "2.5rem", color: "#222" }}
+                  ></i>
                 </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
+                <div
+                  className="fw-bold"
+                  style={{ fontSize: "1.35rem", letterSpacing: "0.01em" }}
+                >
+                  Experience
+                </div>
+                <div
+                  className="mt-2 fw-semibold"
+                  style={{
+                    fontSize: "1.08rem",
+                    letterSpacing: "0.01em",
+                    color: "#666",
+                  }}
+                >
+                  7+ years in Frontend & UI Development
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 d-flex">
+              <div
+                className="about-modern-card flex-fill text-center p-4 shadow bg-white rounded-4 pb-5 mx-auto border-0"
+                style={{ minHeight: 170 }}
+              >
+                <div className="mb-3">
+                  <i
+                    className="bi bi-mortarboard"
+                    style={{ fontSize: "2.5rem", color: "#222" }}
+                  ></i>
+                </div>
+                <div
+                  className="fw-bold"
+                  style={{ fontSize: "1.35rem", letterSpacing: "0.01em" }}
+                >
+                  Education
+                </div>
+                <div
+                  className="mt-2 fw-semibold"
+                  style={{
+                    fontSize: "1.08rem",
+                    letterSpacing: "0.01em",
+                    color: "#666",
+                  }}
+                >
+                  <p className="mb-2 ">
+                    Master of Technology in Computer Science
+                  </p>
+                  Bachelor of Technology in Information Technology
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        {/* ...existing right column if any... */}
       </div>
     </div>
   );
