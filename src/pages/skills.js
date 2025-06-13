@@ -119,8 +119,6 @@ const Skills = () => {
             className="card border-0 rounded-4 shadow-sm skill-card w-100 bg-white h-100"
             style={{
               minHeight: 540,
-              background: "linear-gradient(135deg, #f8f9fa 70%, #e9ecef 100%)",
-              border: "1.5px solid #f1f1f1",
             }}
           >
             <div className="card-body mb-5">
@@ -196,8 +194,6 @@ const Skills = () => {
             className="card border-0 rounded-4 shadow-sm skill-card w-100 bg-white h-100"
             style={{
               minHeight: 540,
-              background: "linear-gradient(135deg, #f8f9fa 70%, #f8e9f3 100%)",
-              border: "1.5px solid #f1f1f1",
             }}
           >
             <div className="card-body mb-5">
