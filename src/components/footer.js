@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="container-fluid bg-black rounded-top-4 empty-space-top-40">
       <footer className="container footer bg-black text-white">
-        <div className="footer-content my-4 py-5">
+        <div className="footer-content  py-5">
           <div className="mb-3">
             <nav className="footer-links d-flex justify-content-center gap-4 flex-wrap">
               <Link
@@ -57,7 +57,7 @@ const Footer = () => {
                 </span>
                 <span className="ms-2">| India</span>
               </p>
-              <div className="social-links d-flex justify-content-center align-items-center gap-3 mb-2 mb-md-0">
+              {/* <div className="social-links d-flex justify-content-center align-items-center gap-3 mb-2 mb-md-0">
                 <a
                   href="https://github.com/anilpaswan619"
                   target="_blank"
@@ -78,7 +78,7 @@ const Footer = () => {
                 >
                   <i className="bi bi-linkedin"></i>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
           <p

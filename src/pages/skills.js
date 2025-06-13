@@ -1,272 +1,152 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-// Skill icon mapping using Devicon class names
+// Data for the circular skill UI (matches attached design)
 const frontendTechnologies = [
-  { name: "HTML/HTML5", level: 95, icon: "devicon-html5-plain colored" },
-  { name: "CSS/CSS3", level: 90, icon: "devicon-css3-plain colored" },
-  { name: "SCSS", level: 85, icon: "devicon-sass-original colored" },
-  { name: "Bootstrap", level: 85, icon: "devicon-bootstrap-plain colored" },
-  { name: "Tailwind", level: 80, icon: "devicon-tailwindcss-plain colored" },
-  { name: "JavaScript", level: 90, icon: "devicon-javascript-plain colored" },
-  { name: "Typescript", level: 80, icon: "devicon-typescript-plain colored" },
-  { name: "React", level: 85, icon: "devicon-react-original colored" },
-  { name: "Angular", level: 80, icon: "devicon-angularjs-plain colored" },
+  { name: "HTML5", level: 95 },
+  { name: "CSS3", level: 90 },
+  { name: "JavaScript", level: 85 },
+  { name: "React.js", level: 80 },
+  { name: "Typescript", level: 75 },
+  { name: "Angular", level: 70 },
 ];
 
 const uiTechnologies = [
-  { name: "Adobe XD", level: 80, icon: "devicon-xd-plain colored" },
-  { name: "Figma", level: 85, icon: "devicon-figma-plain colored" },
-  { name: "Zeplin", level: 75, icon: "bi bi-palette2" },
-  { name: "Mockup", level: 80, icon: "bi bi-easel" },
-  { name: "Prototyping", level: 85, icon: "bi bi-vector-pen" },
-  { name: "Wireframing", level: 80, icon: "bi bi-diagram-3" },
+  { name: "SASS", level: 85 },
+  { name: "Bootstrap", level: 80 },
+  { name: "Tailwind", level: 80 },
+  { name: "Material UI", level: 75 },
+  { name: "Figma", level: 70 },
+  { name: "Adobe XD", level: 70 },
 ];
 
-// Enhanced Circular Progress with gradient and shadow, plus subtle glow
-const CircularProgress = ({
-  value,
-  size = 90,
-  stroke = 8,
-  color = "#6b6bff",
-  bg = "#eaeaea",
-  duration = 1200,
-  children,
-  gradientId = "grad1",
-}) => {
+// Circular progress component styled as per design
+const CircularSkill = ({ value, label }) => {
   const [progress, setProgress] = useState(0);
   useEffect(() => {
-    let start = 0;
-    const step = () => {
-      start += 1;
-      setProgress(Math.min(start, value));
-      if (start < value) setTimeout(step, duration / value);
-    };
-    step();
-    // eslint-disable-next-line
+    setTimeout(() => setProgress(value), 200);
   }, [value]);
+  const size = 90;
+  const stroke = 7;
   const radius = (size - stroke) / 2;
   const circ = 2 * Math.PI * radius;
   const offset = circ - (progress / 100) * circ;
   return (
-    <svg
-      width={size}
-      height={size}
-      className="circular-progress"
-      style={{
-        filter: "drop-shadow(0 2px 8px rgba(60,64,67,0.10))",
-        background:
-          "radial-gradient(circle at 60% 40%, #f8f9fa 60%, #fff 100%)",
-        borderRadius: "50%",
-      }}
-    >
-      <defs>
-        <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={color} />
-          <stop offset="100%" stopColor="#cc5de8" />
-        </linearGradient>
-      </defs>
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        stroke={bg}
-        strokeWidth={stroke}
-        fill="none"
-      />
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        stroke={`url(#${gradientId})`}
-        strokeWidth={stroke}
-        fill="none"
-        strokeDasharray={circ}
-        strokeDashoffset={offset}
-        strokeLinecap="round"
-        style={{ transition: "stroke-dashoffset 0.5s" }}
-      />
-      <text
-        x="50%"
-        y="54%"
-        textAnchor="middle"
-        fontSize="1.15rem"
-        fontWeight="bold"
-        fill={color}
-        dy=".3em"
+    <div className="d-flex flex-column align-items-center justify-content-center mb-3">
+      <svg
+        width={size}
+        height={size}
+        style={{ display: "block" }}
+        className="circular-skill"
+      >
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          stroke="#eee"
+          strokeWidth={stroke}
+          fill="none"
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          stroke="#f06595"
+          strokeWidth={stroke}
+          fill="none"
+          strokeDasharray={circ}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          style={{
+            transition: "stroke-dashoffset 1s cubic-bezier(.4,2,.6,1)",
+          }}
+        />
+        <text
+          x="50%"
+          y="54%"
+          textAnchor="middle"
+          fontSize="1.1rem"
+          fontWeight="bold"
+          fill="#f06595"
+          dy=".3em"
+          style={{
+            fontFamily: "Poppins, Arial, sans-serif",
+            userSelect: "none",
+          }}
+        >
+          {progress}%
+        </text>
+      </svg>
+      <div
+        className="mt-2"
         style={{
-          fontFamily: "Poppins, Arial, sans-serif",
-          filter: "drop-shadow(0 1px 2px #fff)",
+          fontWeight: 500,
+          fontSize: "1.05rem",
+          color: "#181818",
+          textAlign: "center",
         }}
       >
-        {progress}%
-      </text>
-      {children}
-    </svg>
-  );
-};
-
-const Skills = () => {
-  return (
-    <div id="skills" className="container empty-space-top-20">
-      <h3 className="fw-bold title-heading mb-5 text-center">
-        <i className="bi bi-lightning-charge me-2"></i>
-        <span className="secondary-gradient">Skill</span> Set
-      </h3>
-      <div className="row my-5 align-items-stretch">
-        <div className="col-md-6 mb-5 d-flex flex-column align-items-center">
-          <div
-            className="card border-0 rounded-4 shadow-sm skill-card w-100 bg-white h-100"
-            style={{
-              minHeight: 540,
-            }}
-          >
-            <div className="card-body mb-5">
-              <div className="text-center mb-3">
-                <i
-                  className="bi bi-code-slash card-icon"
-                  style={{ color: "#6b6bff" }}
-                ></i>
-              </div>
-              <h4
-                className="fw-bold mb-4 text-center"
-                style={{ letterSpacing: "0.01em" }}
-              >
-                Frontend Technologies
-              </h4>
-              <div className="row g-3 justify-content-center">
-                {frontendTechnologies.map((tech, idx) => (
-                  <div
-                    key={tech.name}
-                    className="col-4 d-flex flex-column align-items-center"
-                  >
-                    <div
-                      className="mb-2 d-flex align-items-center justify-content-center"
-                      style={{
-                        width: 48,
-                        height: 48,
-                        borderRadius: "50%",
-                        background: "#f8f9fa",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
-                        marginBottom: 8,
-                        border: "1.5px solid #eaeaea",
-                      }}
-                    >
-                      {tech.icon.startsWith("devicon-") ? (
-                        <i
-                          className={`${tech.icon}`}
-                          style={{ fontSize: "2.1rem" }}
-                        ></i>
-                      ) : (
-                        <i
-                          className={`${tech.icon} text-primary`}
-                          style={{ fontSize: "2.1rem" }}
-                        ></i>
-                      )}
-                    </div>
-                    <CircularProgress
-                      value={tech.level}
-                      color="#6b6bff"
-                      bg="#eaeaea"
-                      size={90}
-                      gradientId={`grad-frontend-${idx}`}
-                    />
-                    <div
-                      className="fw-bold mt-1 text-center"
-                      style={{
-                        fontSize: "1.01rem",
-                        letterSpacing: "0.01em",
-                        marginTop: "0.4rem",
-                        color: "#222",
-                        minHeight: 28,
-                      }}
-                    >
-                      {tech.name}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6 mb-5 d-flex flex-column align-items-center">
-          <div
-            className="card border-0 rounded-4 shadow-sm skill-card w-100 bg-white h-100"
-            style={{
-              minHeight: 540,
-            }}
-          >
-            <div className="card-body mb-5">
-              <div className="text-center mb-3">
-                <i
-                  className="bi bi-palette card-icon"
-                  style={{ color: "#f06595" }}
-                ></i>
-              </div>
-              <h4
-                className="fw-bold mb-4 text-center"
-                style={{ letterSpacing: "0.01em" }}
-              >
-                UI Technologies
-              </h4>
-              <div className="row g-3 justify-content-center">
-                {uiTechnologies.map((tech, idx) => (
-                  <div
-                    key={tech.name}
-                    className="col-4 d-flex flex-column align-items-center"
-                  >
-                    <div
-                      className="mb-2 d-flex align-items-center justify-content-center"
-                      style={{
-                        width: 48,
-                        height: 48,
-                        borderRadius: "50%",
-                        background: "#f8f9fa",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
-                        marginBottom: 8,
-                        border: "1.5px solid #eaeaea",
-                      }}
-                    >
-                      {tech.icon.startsWith("devicon-") ? (
-                        <i
-                          className={`${tech.icon}`}
-                          style={{ fontSize: "2.1rem" }}
-                        ></i>
-                      ) : (
-                        <i
-                          className={`${tech.icon} text-primary`}
-                          style={{ fontSize: "2.1rem" }}
-                        ></i>
-                      )}
-                    </div>
-                    <CircularProgress
-                      value={tech.level}
-                      color="#f06595"
-                      bg="#eaeaea"
-                      size={90}
-                      gradientId={`grad-ui-${idx}`}
-                    />
-                    <div
-                      className="fw-bold mt-1 text-center"
-                      style={{
-                        fontSize: "1.01rem",
-                        letterSpacing: "0.01em",
-                        marginTop: "0.4rem",
-                        color: "#222",
-                        minHeight: 28,
-                      }}
-                    >
-                      {tech.name}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        {label}
       </div>
     </div>
   );
 };
+
+const Skills = () => (
+  <div id="skills" className="container empty-space-top-20">
+    <h3 className="fw-bold title-heading mb-5 text-center">
+      <i className="bi bi-lightning-charge me-2"></i>
+      <span className="secondary-gradient">Skill</span> Set
+    </h3>
+    <div className="d-flex flex-wrap gap-4 mt-3">
+      <div
+        className="card rounded-4 shadow-sm border-0 px-4 py-3"
+        style={{ flex: "1 1 48%" }}
+      >
+        <div className="d-flex align-items-center mb-4">
+          <i
+            className="bi bi-code-slash fs-4 me-2"
+            style={{ color: "#000" }}
+          ></i>
+          <span className="fw-bold" style={{ fontSize: "1.25rem" }}>
+            Frontend Technologies
+          </span>
+        </div>
+        <div className="row">
+          {frontendTechnologies.map((tech, idx) => (
+            <div
+              key={tech.name}
+              className="col-4 d-flex flex-column align-items-center mb-4"
+            >
+              <CircularSkill value={tech.level} label={tech.name} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
+        className="card rounded-4 shadow-sm border-0 px-4 py-3"
+        style={{ flex: "1 1 48%" }}
+      >
+        <div className="d-flex align-items-center mb-4">
+          <i className="bi bi-palette fs-4 me-2" style={{ color: "#000" }}></i>
+          <span className="fw-bold" style={{ fontSize: "1.25rem" }}>
+            UI Technologies
+          </span>
+        </div>
+        <div className="row">
+          {uiTechnologies.map((tech, idx) => (
+            <div
+              key={tech.name}
+              className="col-4 d-flex flex-column align-items-center mb-4"
+            >
+              <CircularSkill value={tech.level} label={tech.name} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export default Skills;

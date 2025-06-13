@@ -30,7 +30,7 @@ const Contact = () => {
 
   return (
     <div id="contact" className="container contact-container my-5">
-      <h3 className="fw-bold title-heading mb-5 text-center">
+      <h3 className="fw-bold title-heading my-5  text-center">
         <i className="bi bi-envelope-at me-2"></i>
         Contact <span>Me</span>
       </h3>
@@ -61,6 +61,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     autoComplete="off"
+                    placeholder="Enter your name"
                   />
                 </div>
                 <div className="mb-3">
@@ -76,6 +77,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     autoComplete="off"
+                    placeholder="Enter your email"
                   />
                 </div>
                 <div className="mb-3">
@@ -90,12 +92,27 @@ const Contact = () => {
                     value={form.message}
                     onChange={handleChange}
                     required
+                    placeholder="Type your message"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="btn btn-dark rounded-5 px-4 py-2 fw-bold shadow-sm"
+                  className="btn  shadow-sm rounded-3"
+                  style={{
+                    background:
+                      "linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8)",
+                    color: "#fff",
+                    border: "none",
+
+                    padding: "0.7rem 2.1rem",
+                    fontWeight: 700,
+
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.7rem",
+                  }}
                 >
+                  <i className="bi bi-send"></i>
                   Send Message
                 </button>
               </form>
@@ -110,20 +127,6 @@ const Contact = () => {
           >
             <h5 className="fw-bold mb-4">Contact Info</h5>
             <div className="d-flex flex-column gap-3 mb-4">
-              <div className="d-flex align-items-center gap-3">
-                <i className="bi bi-envelope fs-4 text-black"></i>
-                <a
-                  href="mailto:anilpaswan619@gmail.com"
-                  className="text-decoration-none text-dark fw-semibold"
-                >
-                  anilpaswan619@gmail.com
-                </a>
-              </div>
-
-              <div className="d-flex align-items-center gap-3">
-                <i className="bi bi-geo-alt fs-4 text-black"></i>
-                <span className="fw-semibold text-dark">Lucknow, India</span>
-              </div>
               <div className="d-flex align-items-center gap-3">
                 <i className="bi bi-linkedin fs-4 text-black"></i>
                 <a
@@ -145,6 +148,20 @@ const Contact = () => {
                 >
                   github.com/anilpaswan619
                 </a>
+              </div>
+              <div className="d-flex align-items-center gap-3">
+                <i className="bi bi-envelope fs-4 text-black"></i>
+                <a
+                  href="mailto:anilpaswan619@gmail.com"
+                  className="text-decoration-none text-dark fw-semibold"
+                >
+                  anilpaswan619@gmail.com
+                </a>
+              </div>
+
+              <div className="d-flex align-items-center gap-3">
+                <i className="bi bi-geo-alt fs-4 text-black"></i>
+                <span className="fw-semibold text-dark">Lucknow, India</span>
               </div>
             </div>
             {/* Map Embed */}

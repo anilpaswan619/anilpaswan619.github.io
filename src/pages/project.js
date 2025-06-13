@@ -82,7 +82,7 @@ const Project = () => {
         Project <span>Highlights</span>
       </h3>
       {/* Tag Filters */}
-      <div className="mb-4 d-flex flex-wrap gap-2 justify-content-center">
+      <div className="my-4 pb-5 d-flex flex-wrap gap-3 justify-content-center">
         <button
           className={`project-filter-btn ${
             selectedTag === "All" ? "active" : ""
@@ -118,6 +118,8 @@ const Project = () => {
                 boxShadow:
                   "0 2px 8px rgba(60,64,67,0.07), 0 1.5px 8px rgba(204,93,232,0.04)",
                 transition: "box-shadow 0.3s, transform 0.3s",
+                display: "flex",
+                flexDirection: "column",
               }}
             >
               <div
@@ -142,9 +144,28 @@ const Project = () => {
                 className="card-body d-flex flex-column"
                 style={{
                   padding: "1.7rem 1.1rem 1.1rem 1.1rem",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
-                <div className="d-flex gap-2 mb-2 flex-wrap">
+                <div className="d-flex gap-2 mb-4 flex-wrap"></div>
+                <h5
+                  className="fw-bold card-title"
+                  style={{ fontSize: "1.13rem" }}
+                >
+                  <i
+                    className="bi bi-star-fill me-1"
+                    style={{ color: "#000" }}
+                  ></i>
+                  {project.title}
+                </h5>
+                <p className="card-text" style={{ minHeight: 70 }}>
+                  {project.description}
+                </p>
+                {/* Place tags at the bottom, always aligned */}
+                <div style={{ flex: 1 }}></div>
+                <div className="d-flex gap-2 mb-4 flex-wrap mt-auto">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -160,25 +181,12 @@ const Project = () => {
                     </span>
                   ))}
                 </div>
-                <h5
-                  className="fw-bold card-title"
-                  style={{ fontSize: "1.13rem" }}
-                >
-                  <i
-                    className="bi bi-star-fill me-1"
-                    style={{ color: "#cc5de8" }}
-                  ></i>
-                  {project.title}
-                </h5>
-                <p className="card-text" style={{ minHeight: 70 }}>
-                  {project.description}
-                </p>
                 <div className="d-flex justify-content-between mt-auto gap-2">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="btn btn-primary rounded-pill px-3"
+                    className="btn btn-primary px-3 rounded-3"
                     style={{
                       fontWeight: 600,
                       fontSize: "1rem",
@@ -193,7 +201,7 @@ const Project = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="btn btn-secondary rounded-pill px-3"
+                    className="btn btn-secondary px-3 rounded-3"
                     style={{
                       fontWeight: 600,
                       fontSize: "1rem",

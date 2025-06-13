@@ -10,8 +10,8 @@ const techStack = [
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="22"
-        height="22"
+        width="32"
+        height="32"
         viewBox="0 0 24 24"
         fill="none"
         stroke="#000"
@@ -51,8 +51,8 @@ const techStack = [
     label: "Tailwind CSS",
     svg: (
       <svg
-        width="22"
-        height="22"
+        width="32"
+        height="32"
         viewBox="0 0 48 48"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const About = ({ descriptionRef }) => {
                 className="tech-stack-icon d-flex align-items-center justify-content-center"
                 title={tech.label}
               >
-                {tech.svg ? tech.svg : <i className={`${tech.icon} fs-3`}></i>}
+                {tech.svg ? tech.svg : <i className={`${tech.icon} fs-2`}></i>}
               </span>
             ))}
           </div>
@@ -119,30 +119,49 @@ const About = ({ descriptionRef }) => {
               href="/assets/doc/Anil_Paswan_Frontend_Developer_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn hero-btn btn-outline-dark shadow-sm"
+              className="btn hero-btn"
               style={{
-                borderWidth: "2px",
+                background: "linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8)",
+                color: "#fff",
+                border: "none",
+                borderRadius: "12px",
                 fontWeight: 600,
-                background: "transparent",
-                color: "#23232a",
+                minWidth: "150px",
+                padding: "0.8rem 2.2rem",
+                fontSize: "1.08rem",
+                boxShadow: "0 2px 8px rgba(255,107,107,0.07)",
+                transition: "background 0.2s, color 0.2s, box-shadow 0.2s",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.7rem",
               }}
             >
-              Download CV <i className="bi bi-download ps-2 bold-icon"></i>
+              <i className="bi bi-download"></i>
+              View Resume
             </a>
             <Link
               to="contact"
               smooth={true}
               duration={500}
-              className="btn hero-btn btn-dark shadow-sm"
+              className="btn hero-btn"
               style={{
+                background: "#fff",
+                color: "#23232a",
+                border: "1.5px solid #e0e0e0",
+                borderRadius: "12px",
                 fontWeight: 600,
-                background: "#23232a",
-                color: "#fff",
-                borderWidth: "2px",
-                borderColor: "#23232a",
+                minWidth: "150px",
+                padding: "0.8rem 2.2rem",
+                fontSize: "1.08rem",
+                boxShadow: "0 2px 8px rgba(60,64,67,0.07)",
+                transition: "background 0.2s, color 0.2s, box-shadow 0.2s",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.7rem",
               }}
             >
-              Contact Info
+              <i className="bi bi-envelope-at"></i>
+              Contact Me
             </Link>
           </div>
           <div className="my-4 social-links d-flex justify-content-center justify-content-md-start gap-4">
