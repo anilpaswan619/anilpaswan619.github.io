@@ -9,18 +9,8 @@ const projects = [
     imageUrl: "/assets/edusync.png",
     liveLink: "https://edusync-anil.vercel.app/",
     githubLink: "https://github.com/anilpaswan619/EduSync",
-    category: "React",
-    tags: ["#React", "#Fullstack"],
-  },
-  {
-    title: "E-Health",
-    description:
-      "E-Health is a healthcare management system that allows patients to book appointments, access medical records, and communicate with healthcare providers. It aims to streamline the healthcare process and improve patient care.",
-    imageUrl: "/assets/ehealth.JPG",
-    liveLink: "https://e-health-dashboard-anil.vercel.app/",
-    githubLink: "https://github.com/anilpaswan619/EHealth-Dashboard",
-    category: "React",
-    tags: ["#React", "#Dashboard"],
+    category: "Angular",
+    tags: ["#Angular", "#Dashboard"],
   },
   {
     title: "Cookpedia",
@@ -29,8 +19,18 @@ const projects = [
     imageUrl: "/assets/Cookpedia.JPG",
     liveLink: "https://cookpedia-anil.vercel.app/",
     githubLink: "https://github.com/anilpaswan619/Cookpedia",
-    category: "React",
-    tags: ["#React"],
+    category: "Angular",
+    tags: ["#Angular"],
+  },
+  {
+    title: "E-Health",
+    description:
+      "E-Health is a healthcare management system that allows patients to book appointments, access medical records, and communicate with healthcare providers. It aims to streamline the healthcare process and improve patient care.",
+    imageUrl: "/assets/ehealth.JPG",
+    liveLink: "https://e-health-dashboard-anil.vercel.app/",
+    githubLink: "https://github.com/anilpaswan619/EHealth-Dashboard",
+    category: "JavaScript",
+    tags: ["#JavaScript", "#Dashboard"],
   },
   {
     title: "Digital Agency",
@@ -39,8 +39,8 @@ const projects = [
     imageUrl: "/assets/digital.JPG",
     liveLink: "https://digitalmarketinganil.netlify.app/",
     githubLink: "https://github.com/anilpaswan619/digital-marketing-agency",
-    category: "Angular",
-    tags: ["#Angular"],
+    category: "JavaScript",
+    tags: ["#JavaScript"],
   },
   {
     title: "Actoro",
@@ -49,8 +49,8 @@ const projects = [
     imageUrl: "/assets/actro.JPG",
     liveLink: "https://actoro-paswan-anil.netlify.app/",
     githubLink: "https://github.com/anilpaswan619/Actoro",
-    category: "React",
-    tags: ["#React"],
+    category: "HTML/CSS",
+    tags: ["#HTML", "#CSS"],
   },
   {
     title: "Horse Riding",
@@ -164,7 +164,10 @@ const Project = () => {
                   className="fw-bold card-title"
                   style={{ fontSize: "1.13rem" }}
                 >
-                  <i className="bi bi-star-fill text-warning me-1"></i>
+                  <i
+                    className="bi bi-star-fill me-1"
+                    style={{ color: "#cc5de8" }}
+                  ></i>
                   {project.title}
                 </h5>
                 <p className="card-text" style={{ minHeight: 70 }}>

@@ -38,7 +38,7 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="col-lg-6 mb-4 mb-lg-0">
           <div
-            className="card border-0 rounded-4 shadow-lg p-4 h-100"
+            className="card border-0 rounded-4 shadow-sm p-4 h-100"
             ref={leftCardRef}
           >
             <h5 className="fw-bold mb-4">Send a Message</h5>
@@ -105,7 +105,7 @@ const Contact = () => {
         {/* Contact Info & Map */}
         <div className="col-lg-6">
           <div
-            className="card border-0 rounded-4 shadow-lg p-4 h-100"
+            className="card border-0 rounded-4 shadow-sm p-4 h-100"
             ref={rightCardRef}
           >
             <h5 className="fw-bold mb-4">Contact Info</h5>

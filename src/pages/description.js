@@ -61,19 +61,15 @@ const Description = () => {
             with over <span className="fw-bold">7+ years</span> of experience, I
             specialize in building dynamic and responsive web applications. My
             expertise in modern JavaScript frameworks and libraries enables me
-            to craft user-friendly and visually appealing interfaces.
-            <span className="text-secondary">
-              {" "}
-              I am committed to continuous learning and stay up-to-date with the
-              latest industry trends to consistently deliver high-quality
-              solutions.
-            </span>
+            to craft user-friendly and visually appealing interfaces. I am
+            committed to continuous learning and stay up-to-date with the latest
+            industry trends to consistently deliver high-quality solutions.
           </div>
           {/* Cards below the about text */}
           <div className="row g-4 mt-1">
             <div className="col-md-6 d-flex">
               <div
-                className="about-modern-card flex-fill text-center p-4 shadow bg-white rounded-4 mx-auto border-0"
+                className="about-modern-card flex-fill text-center p-4 shadow-sm bg-white rounded-4 mx-auto border-0"
                 style={{ minHeight: 170 }}
               >
                 <div className="mb-3">
@@ -102,7 +98,7 @@ const Description = () => {
             </div>
             <div className="col-md-6 d-flex">
               <div
-                className="about-modern-card flex-fill text-center p-4 shadow bg-white rounded-4 pb-5 mx-auto border-0"
+                className="about-modern-card flex-fill text-center p-4 shadow-sm bg-white rounded-4 pb-5 mx-auto border-0"
                 style={{ minHeight: 170 }}
               >
                 <div className="mb-3">

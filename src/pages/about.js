@@ -94,7 +94,7 @@ const About = ({ descriptionRef }) => {
       <div className="row align-items-center">
         <div className="about-me-left-container col-md-6 text-center text-md-start px-4 py-4 d-flex flex-column justify-content-center">
           <p className="fw-bold intro-text mb-2 mt-2">Hello, I'm</p>
-          <h3 className="fw-bold my-2 name-text text-body-secondary">
+          <h3 className="fw-bold my-3 name-text text-body-secondary">
             Anil Paswan
           </h3>
           {/* Tech stack icon row */}
@@ -110,7 +110,7 @@ const About = ({ descriptionRef }) => {
             ))}
           </div>
           {/* Animated title */}
-          <h1 className="fw-bold my-2 gradient-text title-text">
+          <h1 className="fw-bold my-3 gradient-text title-text">
             <span className="typed-title">{displayedTitle}</span>
             <span className="typed-cursor">|</span>
           </h1>
@@ -119,7 +119,13 @@ const About = ({ descriptionRef }) => {
               href="/assets/doc/Anil_Paswan_Frontend_Developer_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn hero-btn shadow-sm"
+              className="btn hero-btn btn-outline-dark shadow-sm"
+              style={{
+                borderWidth: "2px",
+                fontWeight: 600,
+                background: "transparent",
+                color: "#23232a",
+              }}
             >
               Download CV <i className="bi bi-download ps-2 bold-icon"></i>
             </a>
@@ -127,8 +133,14 @@ const About = ({ descriptionRef }) => {
               to="contact"
               smooth={true}
               duration={500}
-              className="btn hero-btn shadow-sm"
-              style={{ cursor: "pointer" }}
+              className="btn hero-btn btn-dark shadow-sm"
+              style={{
+                fontWeight: 600,
+                background: "#23232a",
+                color: "#fff",
+                borderWidth: "2px",
+                borderColor: "#23232a",
+              }}
             >
               Contact Info
             </Link>

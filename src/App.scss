@@ -41,57 +41,71 @@ body {
   font-size: 1.2rem;
 
   .navbar-brand {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 800;
     color: white;
-    transition: color 0.3s ease, transform 0.3s ease;
+    letter-spacing: 0.08em;
+    font-family: "Montserrat", $font-family;
+    transition: color 0.3s, transform 0.3s;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
   }
 
   .navbar-brand:hover {
     color: $accent-color !important;
-    transform: scale(1.1);
+    transform: scale(1.07);
+    text-shadow: 0 2px 8px rgba(255, 107, 107, 0.13);
   }
 
   .navbar-nav .nav-item .nav-link {
-    color: white;
-    font-size: 1rem;
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 0.5rem 1.1rem;
+    border-radius: 30px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     position: relative;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1.25rem;
-    letter-spacing: 0.02em;
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .navbar-nav .nav-item .nav-link.active,
+  .navbar-nav .nav-item .nav-link:hover {
+    color: $accent-color !important;
+    background: rgba(255, 107, 107, 0.08);
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.08);
+    text-decoration: none;
   }
 
   .navbar-nav .nav-item .nav-link::after {
     content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: $gradient-color;
+    transition: width 0.3s;
     position: absolute;
     left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 2px;
-    background-color: $accent-color;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
+    bottom: 0;
   }
 
-  .navbar-nav .nav-item .nav-link:hover {
-    color: $accent-color;
-    cursor: pointer;
-  }
-
+  .navbar-nav .nav-item .nav-link.active::after,
   .navbar-nav .nav-item .nav-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+    width: 100%;
   }
 
   .navbar-toggler {
     border: none;
     outline: none;
+    background: none !important;
   }
 
   .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 }
 
@@ -840,11 +854,11 @@ body {
   align-items: center;
   transition: box-shadow 0.2s, transform 0.2s;
   padding: 2.2rem 1.5rem;
-}
 
-.about-modern-card:hover {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
-  transform: translateY(-4px) scale(1.02);
+  &:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+    transform: translateY(-4px) scale(1.02);
+  }
 }
 
 @media (max-width: 991px) {
@@ -886,4 +900,44 @@ body {
   .skill-card .col-4 {
     margin-bottom: 1rem;
   }
+}
+
+.logo .d-none.d-md-inline {
+  color: #b1b1b1 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  text-shadow: none !important;
+  transition: color 0.2s;
+}
+
+.navbar-brand:hover .d-none.d-md-inline {
+  color: #b1b1b1 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  text-shadow: none !important;
+}
+
+.hero-btn.btn-outline-dark {
+  background: transparent !important;
+  color: #23232a !important;
+  border: 2px solid #23232a !important;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.hero-btn.btn-outline-dark:hover,
+.hero-btn.btn-outline-dark:focus {
+  background: #23232a !important;
+  color: #fff !important;
+}
+
+.hero-btn.btn-dark {
+  background: #23232a !important;
+  color: #fff !important;
+  border: 2px solid #23232a !important;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }

@@ -116,7 +116,7 @@ const Skills = () => {
       <div className="row my-5 align-items-stretch">
         <div className="col-md-6 mb-5 d-flex flex-column align-items-center">
           <div
-            className="card border-0 rounded-4 shadow-lg skill-card w-100 bg-white h-100"
+            className="card border-0 rounded-4 shadow-sm skill-card w-100 bg-white h-100"
             style={{
               minHeight: 540,
               background: "linear-gradient(135deg, #f8f9fa 70%, #e9ecef 100%)",
@@ -193,7 +193,7 @@ const Skills = () => {
         </div>
         <div className="col-md-6 mb-5 d-flex flex-column align-items-center">
           <div
-            className="card border-0 rounded-4 shadow-lg skill-card w-100 bg-white h-100"
+            className="card border-0 rounded-4 shadow-sm skill-card w-100 bg-white h-100"
             style={{
               minHeight: 540,
               background: "linear-gradient(135deg, #f8f9fa 70%, #f8e9f3 100%)",
