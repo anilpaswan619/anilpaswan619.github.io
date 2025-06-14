@@ -1,49 +1,55 @@
 import React from "react";
-import { Link } from "react-scroll";
 
 const Footer = () => {
+  // Custom scroll with offset for sticky header
+  const handleFooterLinkClick = (to, e) => {
+    e.preventDefault();
+    const el = document.getElementById(to);
+    if (el) {
+      const yOffset = -110;
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="container-fluid bg-black rounded-top-4 ">
       <footer className="container footer bg-black text-white">
         <div className="footer-content  py-5">
           <div className="mb-3">
             <nav className="footer-links d-flex justify-content-center gap-4 flex-wrap">
-              <Link
-                to="about"
-                smooth={true}
-                duration={500}
+              <a
+                href="#description"
                 className="footer-link text-secondary small"
                 style={{ cursor: "pointer", textDecoration: "none" }}
+                onClick={(e) => handleFooterLinkClick("description", e)}
               >
                 <i className="bi bi-person-circle me-1"></i>About
-              </Link>
-              <Link
-                to="projects"
-                smooth={true}
-                duration={500}
+              </a>
+              <a
+                href="#projects"
                 className="footer-link text-secondary small"
                 style={{ cursor: "pointer", textDecoration: "none" }}
+                onClick={(e) => handleFooterLinkClick("projects", e)}
               >
                 <i className="bi bi-kanban me-1"></i>Projects
-              </Link>
-              <Link
-                to="skills"
-                smooth={true}
-                duration={500}
+              </a>
+              <a
+                href="#skills"
                 className="footer-link text-secondary small"
                 style={{ cursor: "pointer", textDecoration: "none" }}
+                onClick={(e) => handleFooterLinkClick("skills", e)}
               >
                 <i className="bi bi-lightning-charge me-1"></i>Skills
-              </Link>
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
+              </a>
+              <a
+                href="#contact"
                 className="footer-link text-secondary small"
                 style={{ cursor: "pointer", textDecoration: "none" }}
+                onClick={(e) => handleFooterLinkClick("contact", e)}
               >
                 <i className="bi bi-envelope-at me-1"></i>Contact
-              </Link>
+              </a>
             </nav>
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">

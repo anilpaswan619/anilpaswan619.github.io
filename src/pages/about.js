@@ -85,7 +85,12 @@ const About = ({ descriptionRef }) => {
 
   const handleScrollToDescription = () => {
     if (descriptionRef?.current) {
-      descriptionRef.current.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -100; // Adjust this value to match your header height or desired margin
+      const y =
+        descriptionRef.current.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 

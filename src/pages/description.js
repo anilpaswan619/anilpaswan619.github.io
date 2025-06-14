@@ -2,7 +2,7 @@ import React from "react";
 
 const Description = () => {
   return (
-    <div className="container empty-space-40">
+    <div id="description" className="container empty-space-40">
       <div className="d-flex align-items-center mb-4">
         <img
           src="/assets/photo.jpg"

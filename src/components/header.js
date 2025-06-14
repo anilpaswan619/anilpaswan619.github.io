@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 
 const navLinks = [
-  { to: "about", label: "About", icon: "bi bi-person-circle" },
+  { to: "description", label: "About", icon: "bi bi-person-circle" },
   { to: "projects", label: "Projects", icon: "bi bi-kanban" },
   { to: "skills", label: "Skills", icon: "bi bi-lightning-charge" },
   { to: "contact", label: "Contact Me", icon: "bi bi-envelope-at" },
@@ -12,7 +12,16 @@ const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavToggle = () => setNavOpen((open) => !open);
-  const handleNavLinkClick = () => setNavOpen(false);
+  const handleNavLinkClick = (to) => {
+    setNavOpen(false);
+    // Custom scroll with offset for sticky header
+    const el = document.getElementById(to);
+    if (el) {
+      const yOffset = -110;
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -79,11 +88,8 @@ const Header = () => {
               <ul className="navbar-nav ms-auto gap-lg-2 gap-1 align-items-lg-center">
                 {navLinks.map((link) => (
                   <li className="nav-item px-2 px-lg-3" key={link.to}>
-                    <Link
+                    <span
                       className="nav-link d-flex align-items-center gap-2 fw-semibold"
-                      to={link.to}
-                      smooth={true}
-                      duration={500}
                       style={{
                         fontSize: "1.08rem",
                         letterSpacing: "0.01em",
@@ -92,17 +98,14 @@ const Header = () => {
                         position: "relative",
                         cursor: "pointer",
                       }}
-                      activeClass="active"
-                      spy={true}
-                      offset={-70}
-                      onClick={handleNavLinkClick}
+                      onClick={() => handleNavLinkClick(link.to)}
                     >
                       <i
                         className={link.icon}
                         style={{ fontSize: "1.15em" }}
                       ></i>
                       <span className="text-nowrap">{link.label}</span>
-                    </Link>
+                    </span>
                   </li>
                 ))}
               </ul>
