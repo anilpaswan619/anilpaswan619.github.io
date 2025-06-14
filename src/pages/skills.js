@@ -32,7 +32,7 @@ const CircularSkill = ({ value, label, icon }) => {
   const circ = 2 * Math.PI * radius;
   const offset = circ - (progress / 100) * circ;
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center mb-3">
+    <div className="d-flex flex-column align-items-center justify-content-center mb-3 w-100">
       <svg
         width={size}
         height={size}
@@ -78,19 +78,56 @@ const CircularSkill = ({ value, label, icon }) => {
         </text>
       </svg>
       <div
-        className="mt-2 d-flex align-items-center justify-content-center"
+        className="mt-2 d-flex align-items-center justify-content-center flex-wrap"
         style={{
           fontWeight: 500,
           fontSize: "1.05rem",
           color: "#181818",
           textAlign: "center",
           gap: 6,
+          width: "100%",
+          minHeight: 28,
         }}
       >
+        {/* Show icon only on desktop */}
         {icon && (
-          <i className={icon} style={{ fontSize: 18, color: "#f06595" }}></i>
+          <>
+            <i
+              className={`${icon} d-none d-md-inline`}
+              style={{
+                fontSize: 18,
+                color: "#f06595",
+                minWidth: 18,
+                marginRight: 4,
+                marginBottom: 2,
+              }}
+            ></i>
+          </>
         )}
-        <span>{label}</span>
+        <span
+          className="d-none d-md-inline text-nowrap"
+          style={{
+            wordBreak: "break-word",
+            fontSize: "1.01rem",
+            lineHeight: 1.2,
+            maxWidth: 70,
+            display: "inline-block",
+          }}
+        >
+          {label}
+        </span>
+        <span
+          className="d-inline d-md-none"
+          style={{
+            wordBreak: "break-word",
+            fontSize: "1.01rem",
+            lineHeight: 1.2,
+            maxWidth: 70,
+            display: "inline-block",
+          }}
+        >
+          {label}
+        </span>
       </div>
     </div>
   );
