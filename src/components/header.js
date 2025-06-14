@@ -31,7 +31,7 @@ const Header = () => {
       for (const link of navLinks) {
         const section = document.getElementById(link.to);
         if (section) {
-          const offsetTop = section.offsetTop - 120; // header + margin
+          const offsetTop = section.offsetTop - 180; // header + margin
           if (scrollPos >= offsetTop) {
             current = link.to;
           }

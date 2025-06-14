@@ -4,6 +4,7 @@ const Contact = () => {
   // Simple form state (no backend, just demo)
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // For equal card heights
   const leftCardRef = useRef(null);
@@ -22,10 +23,32 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Here you would send the form data to your backend or email service
+    setLoading(true);
+    try {
+      const response = await fetch("https://formspree.io/f/mwpbbend", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+      setLoading(false);
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert("There was an error sending your message. Please try again.");
+      }
+    } catch (err) {
+      setLoading(false);
+      alert("There was an error sending your message. Please try again.");
+    }
   };
 
   return (
@@ -97,23 +120,39 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="btn  shadow-sm rounded-3 my-4"
+                  className="btn shadow-sm rounded-3 my-4 send-btn"
                   style={{
                     background:
                       "linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8)",
                     color: "#fff",
                     border: "none",
-
                     padding: "0.7rem 2.1rem",
                     fontWeight: 700,
-
                     display: "flex",
                     alignItems: "center",
                     gap: "0.7rem",
+                    opacity: loading ? 0.7 : 1,
+                    pointerEvents: loading ? "none" : "auto",
+                    transition: "background 0.2s, filter 0.2s",
                   }}
+                  disabled={loading}
                 >
-                  <i className="bi bi-send"></i>
-                  Send Message
+                  {loading ? (
+                    <>
+                      <span
+                        className="spinner-border spinner-border-sm me-2"
+                        role="status"
+                        aria-hidden="true"
+                        style={{ color: "#fff" }}
+                      ></span>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <i className="bi bi-send"></i>
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             )}

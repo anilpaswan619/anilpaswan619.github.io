@@ -1119,3 +1119,18 @@ body {
     justify-content: center !important;
   }
 }
+
+.send-btn {
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8);
+  color: #fff;
+  border: none;
+  transition: background 0.2s, filter 0.2s, box-shadow 0.2s;
+  font-weight: 700;
+  &:hover,
+  &:focus {
+    filter: brightness(1.08);
+    box-shadow: 0 4px 16px rgba(255, 107, 107, 0.13);
+    background: linear-gradient(45deg, #f06595, #cc5de8, #ff6b6b);
+    color: #fff;
+  }
+}
