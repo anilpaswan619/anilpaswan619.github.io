@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { animateScroll as scroll } from "react-scroll";
 
 const navLinks = [
@@ -10,11 +10,11 @@ const navLinks = [
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
 
   const handleNavToggle = () => setNavOpen((open) => !open);
   const handleNavLinkClick = (to) => {
     setNavOpen(false);
-    // Custom scroll with offset for sticky header
     const el = document.getElementById(to);
     if (el) {
       const yOffset = -110;
@@ -22,6 +22,27 @@ const Header = () => {
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
+
+  // Highlight nav link on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY;
+      let current = null;
+      for (const link of navLinks) {
+        const section = document.getElementById(link.to);
+        if (section) {
+          const offsetTop = section.offsetTop - 120; // header + margin
+          if (scrollPos >= offsetTop) {
+            current = link.to;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -89,7 +110,10 @@ const Header = () => {
                 {navLinks.map((link) => (
                   <li className="nav-item px-2 px-lg-3" key={link.to}>
                     <span
-                      className="nav-link d-flex align-items-center gap-2 fw-semibold"
+                      className={
+                        "nav-link d-flex align-items-center gap-2 fw-semibold" +
+                        (activeSection === link.to ? " active" : "")
+                      }
                       style={{
                         fontSize: "1.08rem",
                         letterSpacing: "0.01em",
