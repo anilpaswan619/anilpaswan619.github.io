@@ -64,7 +64,10 @@ const Contact = () => {
             className="card border-0 rounded-4 shadow-sm p-4 h-100"
             ref={leftCardRef}
           >
-            <h5 className="fw-bold mb-4">Send a Message</h5>
+            <h5 className="fw-bold mb-4">
+              <i className="bi bi-chat-dots me-2" style={{ color: "#000" }}></i>
+              Send a Message
+            </h5>
             {submitted ? (
               <div className="alert alert-success text-center">
                 Thank you for reaching out! I'll get back to you soon.
@@ -164,7 +167,13 @@ const Contact = () => {
             className="card border-0 rounded-4 shadow-sm p-4 h-100"
             ref={rightCardRef}
           >
-            <h5 className="fw-bold mb-4">Contact Info</h5>
+            <h5 className="fw-bold mb-4">
+              <i
+                className="bi bi-person-lines-fill me-2"
+                style={{ color: "#000" }}
+              ></i>
+              Contact Info
+            </h5>
             <div className="d-flex flex-column gap-3 mb-4">
               <div className="d-flex align-items-center">
                 <i className="bi bi-linkedin fs-4 text-black"></i>

@@ -117,7 +117,9 @@ const About = ({ descriptionRef }) => {
           {/* Animated title */}
           <h1 className="fw-bold my-3 gradient-text title-text">
             <span className="typed-title">{displayedTitle}</span>
-            <span className="typed-cursor">|</span>
+            <span className="typed-cursor" style={{ color: "#ff6b6b" }}>
+              |
+            </span>
           </h1>
           <div className="my-4 d-flex flex-column flex-md-row flex-wrap align-items-center gap-3">
             <a
@@ -196,13 +198,80 @@ const About = ({ descriptionRef }) => {
             </div>
           </div>
         </div>
-        <div className="col-md-6 text-center mb-4 mb-md-0">
-          <img
-            src="/assets/photo.jpg" // Replace with higher-res or illustration if available
-            alt="Profile"
-            className="img-fluid rounded-4 w-75 shadow-lg border border-4 border-white hero-headshot"
-            style={{ maxWidth: "320px", objectFit: "cover" }}
-          />
+        {/* Right: Illustration or Profile */}
+        <div className="col-md-6 text-center mb-4 mb-md-0 d-flex align-items-center justify-content-center">
+          <div
+            style={{
+              background: "linear-gradient(135deg, #232329 60%, #18181b 100%)",
+              borderRadius: "26px",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.18)",
+              border: "1.5px solid #23232a",
+              padding: "2.5rem 1.5rem",
+              width: "100%",
+              maxWidth: 370,
+              margin: "0 auto",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              position: "relative",
+              zIndex: 1,
+              overflow: "hidden",
+            }}
+          >
+            {/* Decorative gradient circle */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: -60,
+                left: -60,
+                width: 180,
+                height: 180,
+                borderRadius: "50%",
+                background:
+                  "radial-gradient(circle at 60% 40%, #ff6b6b 0%, #232329 80%)",
+                opacity: 0.13,
+                zIndex: 0,
+              }}
+            ></div>
+            <img
+              src="/assets/photo.jpg"
+              alt="Profile"
+              className="img-fluid rounded-4 shadow-lg border border-4 border-white hero-headshot"
+              style={{
+                maxWidth: "220px",
+                objectFit: "cover",
+                marginBottom: "1.2rem",
+                border: "4px solid #fff",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.13)",
+                zIndex: 1,
+              }}
+            />
+            <div
+              style={{
+                color: "#b1b1b1",
+                fontSize: "1.08rem",
+                fontWeight: 400,
+                lineHeight: 1.7,
+                marginTop: "0.5rem",
+                textAlign: "center",
+                zIndex: 1,
+              }}
+            >
+              <span
+                style={{
+                  fontWeight: 600,
+                  background:
+                    "linear-gradient(90deg, #ff6b6b, #f06595, #cc5de8)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  display: "inline-block",
+                }}
+              >
+                "Passionate about UI, code, and user experience."
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div className="container_mouse mx-auto scroll-container">

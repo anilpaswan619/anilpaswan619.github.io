@@ -33,7 +33,7 @@ const Description = () => {
           padding: "0.7rem 1.2rem",
           borderRadius: "0 12px 12px 0",
           boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-          maxWidth: 580,
+          maxWidth: 600,
         }}
       >
         <i className="bi bi-quote pe-2"></i>
@@ -42,7 +42,7 @@ const Description = () => {
       <div className="row align-items-center">
         <div className="col-lg-12 mb-4 mb-lg-0">
           <div
-            className="description-text fs-6 p-4"
+            className="description-text fs-6 p-4 pb-0"
             style={{
               background: "#fff",
               borderRadius: "18px",
@@ -63,7 +63,7 @@ const Description = () => {
             industry trends to consistently deliver high-quality solutions.
           </div>
           {/* Cards below the about text */}
-          <div className="row g-4 mt-1">
+          <div className="row g-4 ">
             <div className="col-md-6 d-flex">
               <div
                 className="about-modern-card flex-fill text-center p-4 shadow-sm bg-white rounded-4 mx-auto border-0"

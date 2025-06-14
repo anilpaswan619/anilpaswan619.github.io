@@ -3,25 +3,25 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 // Data for the circular skill UI (matches attached design)
 const frontendTechnologies = [
-  { name: "HTML5", level: 95 },
-  { name: "CSS3", level: 90 },
-  { name: "JavaScript", level: 85 },
-  { name: "React.js", level: 80 },
-  { name: "Typescript", level: 75 },
-  { name: "Angular", level: 70 },
+  { name: "HTML5", level: 95, icon: "bi bi-filetype-html" },
+  { name: "CSS3", level: 90, icon: "bi bi-filetype-css" },
+  { name: "JavaScript", level: 85, icon: "bi bi-filetype-js" },
+  { name: "React.js", level: 80, icon: "bi bi-filetype-tsx" },
+  { name: "Typescript", level: 75, icon: "bi bi-filetype-tsx" },
+  { name: "Angular", level: 70, icon: "bi bi-filetype-tsx" },
 ];
 
 const uiTechnologies = [
-  { name: "SASS", level: 85 },
-  { name: "Bootstrap", level: 80 },
-  { name: "Tailwind", level: 80 },
-  { name: "Material UI", level: 75 },
-  { name: "Figma", level: 70 },
-  { name: "Adobe XD", level: 70 },
+  { name: "SASS", level: 85, icon: "bi bi-filetype-scss" },
+  { name: "Bootstrap", level: 80, icon: "bi bi-bootstrap" },
+  { name: "Tailwind", level: 80, icon: "bi bi-wind" },
+  { name: "Material UI", level: 75, icon: "bi bi-palette" },
+  { name: "Figma", level: 70, icon: "bi bi-easel" },
+  { name: "Adobe XD", level: 70, icon: "bi bi-easel2" },
 ];
 
 // Circular progress component styled as per design
-const CircularSkill = ({ value, label }) => {
+const CircularSkill = ({ value, label, icon }) => {
   const [progress, setProgress] = useState(0);
   useEffect(() => {
     setTimeout(() => setProgress(value), 200);
@@ -78,15 +78,19 @@ const CircularSkill = ({ value, label }) => {
         </text>
       </svg>
       <div
-        className="mt-2"
+        className="mt-2 d-flex align-items-center justify-content-center"
         style={{
           fontWeight: 500,
           fontSize: "1.05rem",
           color: "#181818",
           textAlign: "center",
+          gap: 6,
         }}
       >
-        {label}
+        {icon && (
+          <i className={icon} style={{ fontSize: 18, color: "#f06595" }}></i>
+        )}
+        <span>{label}</span>
       </div>
     </div>
   );
@@ -118,7 +122,11 @@ const Skills = () => (
               key={tech.name}
               className="col-4 d-flex flex-column align-items-center mb-4"
             >
-              <CircularSkill value={tech.level} label={tech.name} />
+              <CircularSkill
+                value={tech.level}
+                label={tech.name}
+                icon={tech.icon}
+              />
             </div>
           ))}
         </div>
@@ -140,7 +148,11 @@ const Skills = () => (
               key={tech.name}
               className="col-4 d-flex flex-column align-items-center mb-4"
             >
-              <CircularSkill value={tech.level} label={tech.name} />
+              <CircularSkill
+                value={tech.level}
+                label={tech.name}
+                icon={tech.icon}
+              />
             </div>
           ))}
         </div>

@@ -5,13 +5,14 @@ $bg-color: #fffaff;
 $accent-color: #ff6b6b;
 $gradient-color: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8);
 $gradient-color-secondary: linear-gradient(45deg, #6b6bff, #6595f0, #5de8cc);
-$font-family: "Poppins", sans-serif;
+$font-family: "Anybody", sans-serif;
 
 body {
   background-color: $bg-color !important;
   font-family: $font-family !important;
   color: $primary-color;
   line-height: 1.6;
+  letter-spacing: 1px;
 }
 
 .header-container {
