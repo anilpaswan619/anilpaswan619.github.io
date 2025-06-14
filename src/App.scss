@@ -724,6 +724,125 @@ body {
   vertical-align: middle;
 }
 
+// Consistent section spacing and padding
+.section-container,
+.container-section,
+.empty-space-section {
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+  margin-bottom: 2.5rem !important;
+  margin-top: 0 !important;
+}
+
+.empty-space-40,
+.empty-space-top-20,
+.empty-space-top-40 {
+  margin-top: 3.5rem !important;
+  margin-bottom: 3.5rem !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 991px) {
+  .section-container,
+  .container-section,
+  .empty-space-section,
+  .empty-space-40,
+  .empty-space-top-20,
+  .empty-space-top-40 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+// Consistent card padding and margin
+.card,
+.skillset-card,
+.skill-card,
+.project-card,
+.about-modern-card {
+  padding: 2rem 1.5rem 1.5rem 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  border-radius: 18px !important;
+}
+
+@media (max-width: 991px) {
+  .card,
+  .skillset-card,
+  .skill-card,
+  .project-card,
+  .about-modern-card {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+// Consistent row and column spacing
+.row,
+.row.g-4,
+.row.gx-2,
+.row.gy-3 {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  .row,
+  .row.g-4,
+  .row.gx-2,
+  .row.gy-3 {
+    --bs-gutter-x: 0.7rem;
+    --bs-gutter-y: 1rem;
+  }
+}
+
+// Consistent section heading margin
+.title-heading {
+  margin-bottom: 2.5rem !important;
+  padding-bottom: 0.7rem !important;
+}
+
+// Consistent spacing for section subheadings and icon rows
+.section-subheading,
+.section-icon-row,
+.d-flex.align-items-center.mb-4 {
+  margin-bottom: 1.5rem !important;
+  margin-top: 0.5rem !important;
+}
+
+// Consistent spacing for social links and buttons
+.social-links,
+.my-4,
+.gap-3 {
+  margin-top: 1.2rem !important;
+  margin-bottom: 1.2rem !important;
+  gap: 1.2rem !important;
+}
+
+@media (max-width: 991px) {
+  .social-links,
+  .my-4,
+  .gap-3 {
+    margin-top: 0.7rem !important;
+    margin-bottom: 0.7rem !important;
+    gap: 0.7rem !important;
+  }
+}
+
+// Consistent spacing for form groups
+.form-group,
+.mb-3 {
+  margin-bottom: 1.2rem !important;
+}
+
+// Consistent spacing for project tags and badges
+.badge,
+.d-flex.gap-2 {
+  margin-bottom: 0.5rem !important;
+  gap: 0.5rem !important;
+}
+
 @media (max-width: 768px) {
   .empty-space-40 {
     margin-top: 3rem !important;
@@ -768,6 +887,9 @@ body {
 
 .tech-stack-row {
   margin-bottom: 1.2rem;
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
   .tech-stack-icon {
     width: 50px;
     height: 50px;
@@ -785,6 +907,19 @@ body {
   .tech-stack-icon:hover {
     background: $gradient-color;
     color: #fff;
+  }
+}
+
+@media (max-width: 767px) {
+  .tech-stack-row {
+    gap: 0.6rem;
+    justify-content: center !important;
+    flex-wrap: wrap;
+    .tech-stack-icon {
+      width: 38px;
+      height: 38px;
+      font-size: 1.3rem;
+    }
   }
 }
 
@@ -954,5 +1089,33 @@ body {
   .circular-skill {
     width: 70px !important;
     height: 70px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-me-left-container .my-4.d-flex {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 0.7rem !important;
+    justify-content: center !important;
+  }
+  .about-me-left-container .hero-btn {
+    min-width: 140px !important;
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .about-me-left-container .my-4.d-flex {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.7rem !important;
+  }
+  .about-me-left-container .hero-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
   }
 }

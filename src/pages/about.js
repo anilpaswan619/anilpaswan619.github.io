@@ -92,7 +92,7 @@ const About = ({ descriptionRef }) => {
   return (
     <div id="about" className="container empty-space-top-20 pb-5">
       <div className="row align-items-center">
-        <div className="about-me-left-container col-md-6 text-center text-md-start px-4 py-4 d-flex flex-column justify-content-center">
+        <div className="about-me-left-container col-md-6 text-center text-md-start px-4 py-4 d-flex flex-column justify-content-center mt-lg-5">
           <p className="fw-bold intro-text mb-2 mt-2">Hello, I'm</p>
           <h3 className="fw-bold my-3 name-text text-body-secondary">
             Anil Paswan
@@ -114,7 +114,7 @@ const About = ({ descriptionRef }) => {
             <span className="typed-title">{displayedTitle}</span>
             <span className="typed-cursor">|</span>
           </h1>
-          <div className="my-4 d-flex flex-column flex-md-row align-items-center gap-3">
+          <div className="my-4 d-flex flex-column flex-md-row flex-wrap align-items-center gap-3">
             <a
               href="/assets/doc/Anil_Paswan_Frontend_Developer_Resume.pdf"
               target="_blank"
@@ -134,6 +134,7 @@ const About = ({ descriptionRef }) => {
                 display: "flex",
                 alignItems: "center",
                 gap: "0.7rem",
+                whiteSpace: "nowrap",
               }}
             >
               <i className="bi bi-download"></i>
@@ -158,13 +159,14 @@ const About = ({ descriptionRef }) => {
                 display: "flex",
                 alignItems: "center",
                 gap: "0.7rem",
+                whiteSpace: "nowrap",
               }}
             >
               <i className="bi bi-envelope-at"></i>
               Contact Me
             </Link>
           </div>
-          <div className="my-4 social-links d-flex justify-content-center justify-content-md-start gap-4">
+          <div className=" social-links d-flex justify-content-center justify-content-md-start gap-4">
             <div className="footer-icon-wrapper d-flex align-items-center justify-content-center">
               <a
                 href="https://github.com/anilpaswan619"

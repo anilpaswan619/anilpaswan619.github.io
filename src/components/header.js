@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const navLinks = [
@@ -9,6 +9,11 @@ const navLinks = [
 ];
 
 const Header = () => {
+  const [navOpen, setNavOpen] = useState(false);
+
+  const handleNavToggle = () => setNavOpen((open) => !open);
+  const handleNavLinkClick = () => setNavOpen(false);
+
   return (
     <>
       <div className="header-placeholder" />
@@ -60,15 +65,17 @@ const Header = () => {
             <button
               className="navbar-toggler"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
               aria-controls="navbarNav"
-              aria-expanded="false"
+              aria-expanded={navOpen}
               aria-label="Toggle navigation"
+              onClick={handleNavToggle}
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
+            <div
+              className={`collapse navbar-collapse${navOpen ? " show" : ""}`}
+              id="navbarNav"
+            >
               <ul className="navbar-nav ms-auto gap-lg-2 gap-1 align-items-lg-center">
                 {navLinks.map((link) => (
                   <li className="nav-item px-2 px-lg-3" key={link.to}>
@@ -83,17 +90,18 @@ const Header = () => {
                         color: "#fff",
                         transition: "color 0.2s",
                         position: "relative",
-                        cursor: "pointer", // Add this line for hand cursor
+                        cursor: "pointer",
                       }}
                       activeClass="active"
                       spy={true}
                       offset={-70}
+                      onClick={handleNavLinkClick}
                     >
                       <i
                         className={link.icon}
                         style={{ fontSize: "1.15em" }}
                       ></i>
-                      <span>{link.label}</span>
+                      <span className="text-nowrap">{link.label}</span>
                     </Link>
                   </li>
                 ))}

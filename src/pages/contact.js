@@ -97,7 +97,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="btn  shadow-sm rounded-3"
+                  className="btn  shadow-sm rounded-3 my-4"
                   style={{
                     background:
                       "linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8)",
@@ -127,41 +127,43 @@ const Contact = () => {
           >
             <h5 className="fw-bold mb-4">Contact Info</h5>
             <div className="d-flex flex-column gap-3 mb-4">
-              <div className="d-flex align-items-center gap-3">
+              <div className="d-flex align-items-center">
                 <i className="bi bi-linkedin fs-4 text-black"></i>
                 <a
                   href="https://www.linkedin.com/in/anil-paswan-91466578/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none text-dark fw-semibold"
+                  className="text-decoration-none text-dark fw-semibold ms-3"
                 >
                   LinkedIn: Anil Paswan
                 </a>
               </div>
-              <div className="d-flex align-items-center gap-3">
+              <div className="d-flex align-items-center">
                 <i className="bi bi-github fs-4 text-black"></i>
                 <a
                   href="https://github.com/anilpaswan619"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none text-dark fw-semibold"
+                  className="text-decoration-none text-dark fw-semibold ms-3"
                 >
                   github.com/anilpaswan619
                 </a>
               </div>
-              <div className="d-flex align-items-center gap-3">
+              <div className="d-flex align-items-center">
                 <i className="bi bi-envelope fs-4 text-black"></i>
                 <a
                   href="mailto:anilpaswan619@gmail.com"
-                  className="text-decoration-none text-dark fw-semibold"
+                  className="text-decoration-none text-dark fw-semibold ms-3"
                 >
                   anilpaswan619@gmail.com
                 </a>
               </div>
 
-              <div className="d-flex align-items-center gap-3">
+              <div className="d-flex align-items-center">
                 <i className="bi bi-geo-alt fs-4 text-black"></i>
-                <span className="fw-semibold text-dark">Lucknow, India</span>
+                <span className="fw-semibold text-dark ms-3">
+                  Lucknow, India
+                </span>
               </div>
             </div>
             {/* Map Embed */}

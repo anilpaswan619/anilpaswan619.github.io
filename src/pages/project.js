@@ -25,7 +25,7 @@ const projects = [
   {
     title: "E-Health",
     description:
-      "E-Health is a healthcare management system that allows patients to book appointments, access medical records, and communicate with healthcare providers. It aims to streamline the healthcare process and improve patient care.",
+      "E-Health is a healthcare management system that allows patients to book appointments, access medical records, and communicate with healthcare providers.",
     imageUrl: "/assets/ehealth.JPG",
     liveLink: "https://e-health-dashboard-anil.vercel.app/",
     githubLink: "https://github.com/anilpaswan619/EHealth-Dashboard",
@@ -45,7 +45,7 @@ const projects = [
   {
     title: "Actoro",
     description:
-      "Actoro is a platform for actors and casting directors to connect and collaborate. It provides a space for actors to showcase their talent and for casting directors to discover new talent for their projects.",
+      "Actoro is a platform for actors and casting directors to connect and collaborate. It provides a space for actors to showcase their talent and for casting directors to discover new talent projects.",
     imageUrl: "/assets/actro.JPG",
     liveLink: "https://actoro-paswan-anil.netlify.app/",
     githubLink: "https://github.com/anilpaswan619/Actoro",
@@ -141,7 +141,7 @@ const Project = () => {
                 />
               </div>
               <div
-                className="card-body d-flex flex-column"
+                className="card-body d-flex flex-column pb-0"
                 style={{
                   padding: "1.7rem 1.1rem 1.1rem 1.1rem",
                   flex: 1,
@@ -163,8 +163,6 @@ const Project = () => {
                 <p className="card-text" style={{ minHeight: 70 }}>
                   {project.description}
                 </p>
-                {/* Place tags at the bottom, always aligned */}
-                <div style={{ flex: 1 }}></div>
                 <div className="d-flex gap-2 mb-4 flex-wrap mt-auto">
                   {project.tags.map((tag) => (
                     <span
