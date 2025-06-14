@@ -72,7 +72,7 @@ const Contact = () => {
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label htmlFor="name" className="form-label fw-semibold">
+                  <label htmlFor="name" className="form-label ">
                     Name
                   </label>
                   <input
@@ -88,7 +88,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label fw-semibold">
+                  <label htmlFor="email" className="form-label ">
                     Email
                   </label>
                   <input
@@ -104,7 +104,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="message" className="form-label fw-semibold">
+                  <label htmlFor="message" className="form-label ">
                     Message
                   </label>
                   <textarea
@@ -172,7 +172,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/anil-paswan-91466578/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none text-dark fw-semibold ms-3"
+                  className="text-decoration-none text-dark  ms-3"
                 >
                   LinkedIn: Anil Paswan
                 </a>
@@ -183,7 +183,7 @@ const Contact = () => {
                   href="https://github.com/anilpaswan619"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none text-dark fw-semibold ms-3"
+                  className="text-decoration-none text-dark  ms-3"
                 >
                   github.com/anilpaswan619
                 </a>
@@ -192,7 +192,7 @@ const Contact = () => {
                 <i className="bi bi-envelope fs-4 text-black"></i>
                 <a
                   href="mailto:anilpaswan619@gmail.com"
-                  className="text-decoration-none text-dark fw-semibold ms-3"
+                  className="text-decoration-none text-dark  ms-3"
                 >
                   anilpaswan619@gmail.com
                 </a>
@@ -200,9 +200,7 @@ const Contact = () => {
 
               <div className="d-flex align-items-center">
                 <i className="bi bi-geo-alt fs-4 text-black"></i>
-                <span className="fw-semibold text-dark ms-3">
-                  Lucknow, India
-                </span>
+                <span className="text-dark ms-3">Lucknow, India</span>
               </div>
             </div>
             {/* Map Embed */}
