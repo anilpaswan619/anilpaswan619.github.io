@@ -34,6 +34,8 @@ const Description = () => {
           borderRadius: "0 12px 12px 0",
           boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
           maxWidth: 600,
+          transition:
+            "box-shadow 0.4s cubic-bezier(.4,2,.6,1), background 0.4s",
         }}
       >
         <i className="bi bi-quote pe-2"></i>
@@ -46,12 +48,19 @@ const Description = () => {
             style={{
               background: "#fff",
               borderRadius: "18px",
-
               lineHeight: 1.8,
               fontSize: "1.13rem",
               color: "#444",
               minHeight: 180,
+              boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+              transition:
+                "box-shadow 0.4s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1)",
             }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.transform =
+                "translateY(-3px) scale(1.012)")
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "none")}
           >
             As a passionate{" "}
             <span className="fw-semibold">Frontend & UI Developer</span> with
@@ -63,11 +72,20 @@ const Description = () => {
             industry trends to consistently deliver high-quality solutions.
           </div>
           {/* Cards below the about text */}
-          <div className="row g-4 ">
+          <div className="row g-4 mt-2">
             <div className="col-md-6 d-flex">
               <div
                 className="about-modern-card flex-fill text-center p-4 shadow-sm bg-white rounded-4 mx-auto border-0"
-                style={{ minHeight: 170 }}
+                style={{
+                  minHeight: 170,
+                  transition:
+                    "box-shadow 0.4s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.transform =
+                    "translateY(-4px) scale(1.015)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "none")}
               >
                 <div className="mb-3">
                   <i
@@ -95,7 +113,16 @@ const Description = () => {
             <div className="col-md-6 d-flex">
               <div
                 className="about-modern-card flex-fill text-center p-4 shadow-sm bg-white rounded-4 pb-5 mx-auto border-0"
-                style={{ minHeight: 170 }}
+                style={{
+                  minHeight: 170,
+                  transition:
+                    "box-shadow 0.4s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.transform =
+                    "translateY(-4px) scale(1.015)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "none")}
               >
                 <div className="mb-3">
                   <i

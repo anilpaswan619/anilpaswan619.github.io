@@ -137,11 +137,29 @@ const About = ({ descriptionRef }) => {
                 padding: "0.8rem 2.2rem",
                 fontSize: "1.08rem",
                 boxShadow: "0 2px 8px rgba(255,107,107,0.07)",
-                transition: "background 0.2s, color 0.2s, box-shadow 0.2s",
+                transition:
+                  "background 0.22s, color 0.22s, transform 0.22s, box-shadow 0.22s cubic-bezier(.4,2,.6,1)",
                 display: "flex",
                 alignItems: "center",
                 gap: "0.7rem",
                 whiteSpace: "nowrap",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background =
+                  "linear-gradient(45deg, #6b6bff, #6595f0, #5de8cc)";
+                e.currentTarget.style.color = "#fff";
+                e.currentTarget.style.transform =
+                  "translateY(-2px) scale(1.04)";
+                e.currentTarget.style.boxShadow =
+                  "0 4px 16px rgba(102,16,242,0.13)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background =
+                  "linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8)";
+                e.currentTarget.style.color = "#fff";
+                e.currentTarget.style.transform = "";
+                e.currentTarget.style.boxShadow =
+                  "0 2px 8px rgba(255,107,107,0.07)";
               }}
             >
               <i className="bi bi-download"></i>
@@ -162,11 +180,26 @@ const About = ({ descriptionRef }) => {
                 padding: "0.8rem 2.2rem",
                 fontSize: "1.08rem",
                 boxShadow: "0 2px 8px rgba(60,64,67,0.07)",
-                transition: "background 0.2s, color 0.2s, box-shadow 0.2s",
+                transition:
+                  "background 0.22s, color 0.22s, transform 0.22s, box-shadow 0.22s cubic-bezier(.4,2,.6,1)",
                 display: "flex",
                 alignItems: "center",
                 gap: "0.7rem",
                 whiteSpace: "nowrap",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#23232a";
+                e.currentTarget.style.color = "#fff";
+                e.currentTarget.style.transform =
+                  "translateY(-2px) scale(1.04)";
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.13)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#fff";
+                e.currentTarget.style.color = "#23232a";
+                e.currentTarget.style.transform = "";
+                e.currentTarget.style.boxShadow =
+                  "0 2px 8px rgba(60,64,67,0.07)";
               }}
             >
               <i className="bi bi-envelope-at"></i>

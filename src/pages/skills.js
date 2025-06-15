@@ -142,7 +142,15 @@ const Skills = () => (
     <div className="d-flex flex-wrap gap-4 mt-3">
       <div
         className="card rounded-4 shadow-sm border-0 px-4 py-3"
-        style={{ flex: "1 1 48%" }}
+        style={{
+          flex: "1 1 48%",
+          transition:
+            "box-shadow 0.4s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1)",
+        }}
+        onMouseEnter={(e) =>
+          (e.currentTarget.style.transform = "translateY(-4px) scale(1.012)")
+        }
+        onMouseLeave={(e) => (e.currentTarget.style.transform = "none")}
       >
         <div className="d-flex align-items-center mb-4">
           <i
@@ -171,7 +179,15 @@ const Skills = () => (
 
       <div
         className="card rounded-4 shadow-sm border-0 px-4 py-3"
-        style={{ flex: "1 1 48%" }}
+        style={{
+          flex: "1 1 48%",
+          transition:
+            "box-shadow 0.4s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1)",
+        }}
+        onMouseEnter={(e) =>
+          (e.currentTarget.style.transform = "translateY(-4px) scale(1.012)")
+        }
+        onMouseLeave={(e) => (e.currentTarget.style.transform = "none")}
       >
         <div className="d-flex align-items-center mb-4">
           <i className="bi bi-palette fs-4 me-2" style={{ color: "#000" }}></i>
