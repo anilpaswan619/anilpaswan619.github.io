@@ -3,6 +3,16 @@ import React, { useState } from "react";
 // Add a 'category' and 'tags' property to each project and reorder for best/most complex first
 const projects = [
   {
+    title: "DOBBY",
+    description:
+      "The future of home maintenance\nBeing a homeowner is hard enough.\nLet Dobby tackle your to-do list with the best pros, transparent pricing, and lots of love.",
+    imageUrl: "/assets/dobby.png", // Make sure to add this image to your assets folder
+    liveLink: "https://dobby-anil.vercel.app/", // Replace with actual link if available
+    githubLink: "https://github.com/anilpaswan619/dobby", // Replace with actual link if available
+    category: "React",
+    tags: ["#React", "#Next.js"], // Added "#Next.js"
+  },
+  {
     title: "Edusync",
     description:
       "Edusync is an online education platform that connects students and teachers. It provides a seamless learning experience with interactive lessons and real-time collaboration.",
@@ -52,20 +62,12 @@ const projects = [
     category: "HTML/CSS",
     tags: ["#HTML", "#CSS"],
   },
-  {
-    title: "Horse Riding",
-    description:
-      "Horse Riding is a website for horse enthusiasts to find information about horse riding lessons, trails, and events. It also offers resources for horse care and training.",
-    imageUrl: "/assets/horse-riding.JPG",
-    liveLink: "https://anilpaswan619.netlify.app/",
-    githubLink: "https://github.com/anilpaswan619/Horse-Riding",
-    category: "HTML/CSS",
-    tags: ["#HTML", "#CSS"],
-  },
 ];
 
-// Extract unique tags for filters
-const allTags = [...new Set(projects.flatMap((p) => p.tags))];
+// Extract unique tags for filters, excluding "#Next.js"
+const allTags = [...new Set(projects.flatMap((p) => p.tags))].filter(
+  (tag) => tag !== "#Next.js"
+);
 
 const Project = () => {
   const [selectedTag, setSelectedTag] = useState("All");
