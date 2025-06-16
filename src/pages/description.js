@@ -143,9 +143,6 @@ const Description = () => {
                     color: "#666",
                   }}
                 >
-                  <p className="mb-2 ">
-                    Master of Technology in Computer Science
-                  </p>
                   Bachelor of Technology in Information Technology
                 </div>
               </div>
