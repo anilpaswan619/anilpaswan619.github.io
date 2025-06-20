@@ -94,10 +94,24 @@ const About = ({ descriptionRef }) => {
     }
   };
 
+  // Animation state for slide-in effect
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setAnimate(true), 100);
+  }, []);
+
   return (
     <div id="about" className="container empty-space-top-20 pb-5">
       <div className="row align-items-center">
-        <div className="about-me-left-container col-md-6 text-center text-md-start px-4 py-4 d-flex flex-column justify-content-center mt-lg-5">
+        <div
+          className="about-me-left-container col-md-6 text-center text-md-start px-4 py-4 d-flex flex-column justify-content-center mt-lg-5"
+          style={{
+            transition:
+              "transform 0.8s cubic-bezier(.4,2,.6,1), opacity 0.8s cubic-bezier(.4,2,.6,1)",
+            transform: animate ? "translateX(0)" : "translateX(-60px)",
+            opacity: animate ? 1 : 0,
+          }}
+        >
           <p className="fw-bold intro-text mb-2 mt-2">Hello, I'm</p>
           <h3 className="fw-bold my-3 name-text text-body-secondary">
             Anil Paswan
@@ -232,7 +246,15 @@ const About = ({ descriptionRef }) => {
           </div>
         </div>
         {/* Right: Illustration or Profile */}
-        <div className="col-md-6 text-center mb-4 mb-md-0 d-flex align-items-center justify-content-center">
+        <div
+          className="col-md-6 text-center mb-4 mb-md-0 d-flex align-items-center justify-content-center"
+          style={{
+            transition:
+              "transform 0.8s cubic-bezier(.4,2,.6,1), opacity 0.8s cubic-bezier(.4,2,.6,1)",
+            transform: animate ? "translateX(0)" : "translateX(60px)",
+            opacity: animate ? 1 : 0,
+          }}
+        >
           <div
             style={{
               background: "linear-gradient(135deg, #232329 60%, #18181b 100%)",

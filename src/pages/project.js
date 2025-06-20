@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Add a 'category' and 'tags' property to each project and reorder for best/most complex first
 const projects = [
@@ -71,6 +71,11 @@ const allTags = [...new Set(projects.flatMap((p) => p.tags))].filter(
 
 const Project = () => {
   const [selectedTag, setSelectedTag] = useState("All");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filteredProjects =
     selectedTag === "All"
@@ -110,7 +115,18 @@ const Project = () => {
       </div>
       <div className="row my-5">
         {filteredProjects.map((project, index) => (
-          <div key={index} className="col-md-6 col-lg-4 mb-4 d-flex">
+          <div
+            key={index}
+            className="col-md-6 col-lg-4 mb-4 d-flex"
+            style={{
+              transition:
+                "transform 0.8s cubic-bezier(.4,2,.6,1), opacity 0.8s cubic-bezier(.4,2,.6,1)",
+              transform: mounted ? "translateY(0)" : "translateY(60px)",
+              opacity: mounted ? 1 : 0,
+              transitionDelay: mounted ? `${index * 120 + 100}ms` : "0ms",
+              willChange: "transform, opacity",
+            }}
+          >
             <div
               className="card project-card glass-card border-0 rounded-4 d-flex flex-column h-100 w-100"
               style={{
