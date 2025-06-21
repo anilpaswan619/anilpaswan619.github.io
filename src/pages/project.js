@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // Add a 'category' and 'tags' property to each project and reorder for best/most complex first
 const projects = [
@@ -71,16 +71,47 @@ const allTags = [...new Set(projects.flatMap((p) => p.tags))].filter(
 
 const Project = () => {
   const [selectedTag, setSelectedTag] = useState("All");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const [visibleCards, setVisibleCards] = useState([]);
+  const cardRefs = useRef([]);
 
   const filteredProjects =
     selectedTag === "All"
       ? projects
       : projects.filter((p) => p.tags.includes(selectedTag));
+
+  // Reset visible cards when filter changes
+  useEffect(() => {
+    setVisibleCards([]);
+  }, [selectedTag]);
+
+  // Intersection Observer for scroll-based animation
+  useEffect(() => {
+    if (!cardRefs.current) return;
+    const refsSnapshot = [...cardRefs.current];
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const idx = Number(entry.target.getAttribute("data-index"));
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) =>
+              prev.includes(idx) ? prev : [...prev, idx]
+            );
+          }
+        });
+      },
+      {
+        threshold: 0.18,
+      }
+    );
+    refsSnapshot.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+    return () => {
+      refsSnapshot.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, [filteredProjects]);
 
   return (
     <div id="projects" className="container empty-space-40">
@@ -117,14 +148,21 @@ const Project = () => {
         {filteredProjects.map((project, index) => (
           <div
             key={index}
+            ref={(el) => (cardRefs.current[index] = el)}
+            data-index={index}
             className="col-md-6 col-lg-4 mb-4 d-flex"
             style={{
+              opacity: visibleCards.includes(index) ? 1 : 0,
+              transform: visibleCards.includes(index)
+                ? "translateY(0) scale(1)"
+                : "translateY(60px) scale(0.97)",
+              filter: visibleCards.includes(index) ? "blur(0)" : "blur(8px)",
               transition:
-                "transform 0.8s cubic-bezier(.4,2,.6,1), opacity 0.8s cubic-bezier(.4,2,.6,1)",
-              transform: mounted ? "translateY(0)" : "translateY(60px)",
-              opacity: mounted ? 1 : 0,
-              transitionDelay: mounted ? `${index * 120 + 100}ms` : "0ms",
-              willChange: "transform, opacity",
+                "opacity 0.9s cubic-bezier(.4,2,.6,1), transform 0.9s cubic-bezier(.4,2,.6,1), filter 0.9s cubic-bezier(.4,2,.6,1)",
+              transitionDelay: visibleCards.includes(index)
+                ? `${index * 120 + 120}ms`
+                : "0ms",
+              willChange: "transform, opacity, filter",
             }}
           >
             <div
