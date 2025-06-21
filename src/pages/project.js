@@ -5,7 +5,7 @@ const projects = [
   {
     title: "DOBBY",
     description:
-      "The future of home maintenance\nBeing a homeowner is hard enough.\nLet Dobby tackle your to-do list with the best pros, transparent pricing, and lots of love.",
+      "The future of home maintenance\nBeing a homeowner is hard enough.\nLet Dobby tackle your to-do list with the best pros, transparent pricing, and lots of love. Ang get your home back to being a home.",
     imageUrl: "/assets/dobby.png", // Make sure to add this image to your assets folder
     liveLink: "https://dobby-anil.vercel.app/", // Replace with actual link if available
     githubLink: "https://github.com/anilpaswan619/dobby", // Replace with actual link if available
@@ -161,13 +161,12 @@ const Project = () => {
               <div
                 className="card-body d-flex flex-column pb-0"
                 style={{
-                  padding: "1.7rem 1.1rem 1.1rem 1.1rem",
+                  padding: "1.8rem .1rem",
                   flex: 1,
                   display: "flex",
                   flexDirection: "column",
                 }}
               >
-                <div className="d-flex gap-2 mb-4 flex-wrap"></div>
                 <h5
                   className="fw-bold card-title"
                   style={{ fontSize: "1.13rem" }}
@@ -181,7 +180,7 @@ const Project = () => {
                 <p className="card-text" style={{ minHeight: 70 }}>
                   {project.description}
                 </p>
-                <div className="d-flex gap-2 mb-4 flex-wrap mt-auto">
+                <div className="d-flex gap-2 pb-2 flex-wrap mt-auto">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
