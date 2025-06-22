@@ -645,64 +645,6 @@ const Description = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-20px) rotate(180deg);
-          }
-        }
-
-        @keyframes pulse {
-          0%,
-          100% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          50% {
-            transform: scale(1.1);
-            opacity: 0.8;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-
-          h2 {
-            font-size: 2.5rem !important;
-          }
-
-          .col-lg-8,
-          .col-lg-4 {
-            padding: 0.75rem !important;
-          }
-
-          div[style*="padding: 2.5rem"] {
-            padding: 1.5rem !important;
-          }
-
-          div[style*="padding: 2rem"] {
-            padding: 1.5rem !important;
-          }
-
-          div[style*="grid-template-columns: 1fr 1fr"] {
-            grid-template-columns: 1fr !important;
-            gap: 0.75rem !important;
-          }
-
-          div[style*="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))"] {
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 0.75rem !important;
-          }
-        }
-      `}</style>
     </div>
   );
 };
