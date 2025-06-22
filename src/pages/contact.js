@@ -264,7 +264,7 @@ const Contact = () => {
 
           <h2
             style={{
-              fontSize: "clamp(2rem, 6vw, 4rem)",
+              fontSize: "clamp(2rem, 6vw, 3rem)",
               fontWeight: "800",
               background:
                 "linear-gradient(135deg, #6366F1 0%, #EC4899 50%, #F59E0B 100%)",
@@ -664,7 +664,7 @@ const Contact = () => {
                     style={{
                       background: loading
                         ? "rgba(148, 163, 184, 0.3)"
-                        : "linear-gradient(135deg, #6366F1 0%, #EC4899 100%)",
+                        : "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)", // Match resume/live button
                       color: "#F1F5F9",
                       border: "none",
                       borderRadius: "12px",
@@ -688,6 +688,8 @@ const Contact = () => {
                         e.target.style.transform = "translateY(-2px)";
                         e.target.style.boxShadow =
                           "0 12px 35px rgba(99, 102, 241, 0.5)";
+                        e.target.style.background =
+                          "linear-gradient(135deg, #5856EB 0%, #7C3AED 100%)";
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -695,6 +697,8 @@ const Contact = () => {
                         e.target.style.transform = "translateY(0)";
                         e.target.style.boxShadow =
                           "0 8px 25px rgba(99, 102, 241, 0.4)";
+                        e.target.style.background =
+                          "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)";
                       }
                     }}
                   >

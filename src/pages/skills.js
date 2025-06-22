@@ -459,7 +459,7 @@ const Skills = () => {
 
           <h2
             style={{
-              fontSize: "clamp(2rem, 6vw, 4rem)",
+              fontSize: "clamp(2rem, 6vw, 3rem)",
               fontWeight: "800",
               background:
                 "linear-gradient(135deg, #6366F1 0%, #EC4899 50%, #F59E0B 100%)",

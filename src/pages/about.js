@@ -180,7 +180,7 @@ const About = ({ descriptionRef }) => {
             {/* Name with enhanced typography */}
             <h2
               style={{
-                fontSize: "clamp(1.5rem, 5vw, 4rem)",
+                fontSize: "clamp(1.5rem, 5vw, 3.5rem)",
                 fontWeight: "800",
                 background: "linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%)",
                 WebkitBackgroundClip: "text",

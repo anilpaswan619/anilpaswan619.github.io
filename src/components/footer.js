@@ -5,6 +5,7 @@ const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
   const [hoveredSocial, setHoveredSocial] = useState(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Removed isMobile effect as it was unused
   useEffect(() => {
@@ -36,6 +37,15 @@ const Footer = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // Show scroll-to-top button after scrolling down 200px
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 200);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Custom scroll with offset for sticky header
   const handleFooterLinkClick = (to, e) => {
     e.preventDefault();
@@ -45,6 +55,11 @@ const Footer = () => {
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
+  };
+
+  // Scroll to top handler
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Use the same icons as in header for consistency
@@ -166,8 +181,11 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Anil Paswan. All rights reserved.
           </div>
           <div className="footer-crafted">
-            Crafted with <span className="footer-heart">♥</span> for innovation,
-            excellence & impact
+            Crafted with{" "}
+            <span className="footer-heart" role="img" aria-label="heart">
+              ♥
+            </span>{" "}
+            for innovation, excellence & impact
           </div>
           <div className="footer-description">
             This portfolio showcases my professional journey, technical
@@ -177,6 +195,51 @@ const Footer = () => {
             <span>✨ Open for collaboration & exciting opportunities! ✨</span>
           </div>
         </div>
+
+        {/* Scroll to Top Button */}
+        {showScrollTop && (
+          <button
+            className="footer-scroll-top-btn"
+            onClick={handleScrollToTop}
+            aria-label="Scroll to top"
+            style={{
+              position: "fixed",
+              right: "2rem",
+              bottom: "2.5rem",
+              zIndex: 100,
+              background: "linear-gradient(135deg, #6366F1, #EC4899)",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              width: "48px",
+              height: "48px",
+              boxShadow: "0 8px 24px rgba(99,102,241,0.18)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "1.5rem",
+              cursor: "pointer",
+              transition: "all 0.3s cubic-bezier(0.4,0,0.2,1)",
+              opacity: 0.95,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-6px) scale(1.08)";
+              e.currentTarget.style.boxShadow =
+                "0 16px 32px rgba(236,72,153,0.25)";
+              e.currentTarget.style.background =
+                "linear-gradient(135deg, #EC4899, #6366F1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
+              e.currentTarget.style.boxShadow =
+                "0 8px 24px rgba(99,102,241,0.18)";
+              e.currentTarget.style.background =
+                "linear-gradient(135deg, #6366F1, #EC4899)";
+            }}
+          >
+            <i className="bi bi-arrow-up-short" />
+          </button>
+        )}
       </div>
     </footer>
   );
