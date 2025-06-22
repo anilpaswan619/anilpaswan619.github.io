@@ -477,12 +477,10 @@ const Skills = () => {
               color: "#94A3B8",
               fontSize: "1.2rem",
               margin: "0 auto",
-              maxWidth: "600px",
               lineHeight: "1.6",
             }}
           >
-            Crafting exceptional digital experiences with modern technologies
-            and cutting-edge design principles
+            Creating standout digital experiences with modern tech and design.
           </p>
         </div>
 

@@ -123,7 +123,7 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: "💼",
+      icon: <i className="bi bi-linkedin" />, // LinkedIn icon
       title: "LinkedIn",
       content: "Connect with me professionally",
       link: "https://www.linkedin.com/in/anil-paswan-91466578/",
@@ -132,7 +132,7 @@ const Contact = () => {
       bgGradient: "linear-gradient(135deg, #0A66C2 0%, #004182 100%)",
     },
     {
-      icon: "🐙",
+      icon: <i className="bi bi-github" />, // GitHub icon
       title: "GitHub",
       content: "Check out my projects",
       link: "https://github.com/anilpaswan619",
@@ -141,7 +141,7 @@ const Contact = () => {
       bgGradient: "linear-gradient(135deg, #24292e 0%, #000000 100%)",
     },
     {
-      icon: "📧",
+      icon: <i className="bi bi-envelope-at" />, // Contact Me (email) icon
       title: "Email",
       content: "Drop me a line anytime",
       link: "mailto:anilpaswan619@gmail.com",
@@ -286,8 +286,7 @@ const Contact = () => {
               lineHeight: "1.6",
             }}
           >
-            Have a project in mind or just want to chat? I'd love to hear from
-            you and discuss how we can work together
+            Got an opportunity or just want to chat? Let’s connect!
           </p>
         </div>
 
@@ -390,7 +389,7 @@ const Contact = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     marginRight: "1.5rem",
-                    boxShadow: "0 12px 24px rgba(99, 102, 241, 0.4)",
+                    boxShadow: "0 12px 24px rgba(99, 102,241, 0.4)",
                     border: "2px solid rgba(255, 255, 255, 0.1)",
                   }}
                 >
@@ -733,6 +732,23 @@ const Contact = () => {
               justifyContent: "center",
               width: "100%",
               boxSizing: "border-box",
+              transform: isVisible
+                ? "translateY(0) scale(1)"
+                : "translateY(30px) scale(0.95)",
+              opacity: isVisible ? 1 : 0,
+              transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-5px) scale(1.02)";
+              e.currentTarget.style.boxShadow =
+                "0 30px 60px rgba(99, 102,241, 0.2)";
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.08)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
+              e.currentTarget.style.boxShadow =
+                "0 20px 40px rgba(0, 0, 0, 0.3)";
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
             }}
           >
             <div
