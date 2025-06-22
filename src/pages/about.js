@@ -106,8 +106,7 @@ const About = ({ descriptionRef }) => {
           "linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%)",
         position: "relative",
         overflow: "hidden",
-        paddingTop: "2rem",
-        paddingBottom: "2rem",
+        paddingBottom: "4rem",
       }}
     >
       {/* Animated background elements */}

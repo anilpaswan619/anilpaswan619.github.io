@@ -385,7 +385,7 @@ const Project = () => {
               key={index}
               ref={(el) => (cardRefs.current[index] = el)}
               data-index={index}
-              className="col-lg-4 col-md-6 col-12"
+              className="col-lg-4 col-md-6 col-12 pt-0"
               style={{
                 opacity: visibleCards.includes(index) ? 1 : 0,
                 transform: visibleCards.includes(index)
@@ -398,7 +398,7 @@ const Project = () => {
               }}
             >
               <div
-                className="card border-0 h-100 position-relative overflow-hidden p-1 pt-0"
+                className="card border-0  position-relative overflow-hidden p-1 pt-0"
                 style={{
                   background: "rgba(255, 255, 255, 0.05)",
                   backdropFilter: "blur(20px)",
@@ -460,7 +460,7 @@ const Project = () => {
                 <div
                   className="position-relative overflow-hidden m-0 mt-1"
                   style={{
-                    height: "300px",
+                    height: "205px",
                     margin: "12px 12px 0 12px",
                     borderRadius: "16px",
                   }}
@@ -501,7 +501,7 @@ const Project = () => {
                 </div>
 
                 {/* Enhanced Card Body */}
-                <div className="card-body pt-4 px-3 d-flex flex-column h-100">
+                <div className="card-body pt-4 px-3 d-flex flex-column">
                   <div className="mb-3">
                     <h5
                       className="fw-bold mb-3"
@@ -561,7 +561,7 @@ const Project = () => {
                   </div>
 
                   {/* Enhanced Action Buttons */}
-                  <div className="mt-auto d-flex gap-3">
+                  <div className="my-3 d-flex gap-3">
                     <a
                       href={project.liveLink}
                       target="_blank"

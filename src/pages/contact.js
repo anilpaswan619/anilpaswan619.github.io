@@ -13,6 +13,10 @@ const Contact = () => {
   const rightRef = useRef(null);
   const [sectionHeight, setSectionHeight] = useState("auto");
   const [isMobile, setIsMobile] = useState(false);
+  const [leftSectionVisible, setLeftSectionVisible] = useState(false);
+  const [rightSectionVisible, setRightSectionVisible] = useState(false);
+  const leftSectionRef = useRef(null);
+  const rightSectionRef = useRef(null);
 
   // Intersection observer for animations
   useEffect(() => {
@@ -65,6 +69,48 @@ const Contact = () => {
     window.addEventListener("resize", syncHeights);
     return () => window.removeEventListener("resize", syncHeights);
   }, [submitted, errors, isVisible]);
+
+  // Intersection Observer for left section (form)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setLeftSectionVisible(true), 300);
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "-50px 0px -50px 0px",
+      }
+    );
+
+    if (leftSectionRef.current) {
+      observer.observe(leftSectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Intersection Observer for right section (contact info)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setRightSectionVisible(true), 600);
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "-50px 0px -50px 0px",
+      }
+    );
+
+    if (rightSectionRef.current) {
+      observer.observe(rightSectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const validateForm = () => {
     const newErrors = {};
@@ -302,481 +348,51 @@ const Contact = () => {
           className="contact-grid"
         >
           {/* --- Contact Form (left) --- */}
-          <div
-            ref={leftRef}
-            style={{
-              background: "rgba(255, 255, 255, 0.05)",
-              backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: isMobile ? "1.5rem 1rem" : "2.5rem",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
-              transform: isVisible
-                ? "translateY(0) scale(1)"
-                : "translateY(30px) scale(0.95)",
-              opacity: isVisible ? 1 : 0,
-              transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
-              position: "relative",
-              overflow: "hidden",
-              minHeight: sectionHeight,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              width: "100%",
-              boxSizing: "border-box",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px) scale(1.02)";
-              e.currentTarget.style.boxShadow =
-                "0 30px 60px rgba(99, 102,241, 0.2)";
-              e.currentTarget.style.background = "rgba(255, 255, 255, 0.08)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0) scale(1)";
-              e.currentTarget.style.boxShadow =
-                "0 20px 40px rgba(0, 0, 0, 0.3)";
-              e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
-            }}
-          >
-            {/* Decorative gradient */}
+          <div ref={leftSectionRef}>
             <div
+              ref={leftRef}
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "4px",
-                background:
-                  "linear-gradient(90deg, #6366F1 0%, #EC4899 50%, #F59E0B 100%)",
-                borderRadius: "24px 24px 0 0",
-              }}
-            />
-
-            {/* Floating background elements */}
-            <div
-              style={{
-                position: "absolute",
-                top: "10%",
-                right: "10%",
-                width: "100px",
-                height: "100px",
-                borderRadius: "50%",
-                background:
-                  "radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%)",
-                animation: "float 8s ease-in-out infinite",
-              }}
-            />
-
-            <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
-              {/* Form header */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginBottom: "2rem",
-                  paddingBottom: "1.5rem",
-                  borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-                }}
-              >
-                <div
-                  style={{
-                    width: "56px",
-                    height: "56px",
-                    borderRadius: "16px",
-                    background:
-                      "linear-gradient(135deg, #6366F1 0%, #EC4899 100%)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginRight: "1.5rem",
-                    boxShadow: "0 12px 24px rgba(99, 102,241, 0.4)",
-                    border: "2px solid rgba(255, 255, 255, 0.1)",
-                  }}
-                >
-                  <span style={{ fontSize: "1.8rem" }}>💬</span>
-                </div>
-                <div>
-                  <h3
-                    style={{
-                      fontSize: "1.8rem",
-                      fontWeight: "700",
-                      color: "#F1F5F9",
-                      margin: 0,
-                      letterSpacing: "-0.025em",
-                      background:
-                        "linear-gradient(135deg, #F1F5F9 0%, #CBD5E1 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    Send Message
-                  </h3>
-                </div>
-              </div>
-
-              {submitted ? (
-                <div
-                  style={{
-                    textAlign: "center",
-                    padding: "3rem 2rem",
-                    background:
-                      "linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%)",
-                    borderRadius: "16px",
-                    border: "1px solid rgba(16, 185, 129, 0.2)",
-                  }}
-                >
-                  <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>
-                    ✅
-                  </div>
-                  <h4
-                    style={{
-                      fontWeight: "600",
-                      marginBottom: "0.5rem",
-                      color: "#10B981",
-                    }}
-                  >
-                    Message Sent Successfully!
-                  </h4>
-                  <p style={{ color: "#94A3B8", marginBottom: "1.5rem" }}>
-                    Thank you for reaching out! I'll get back to you as soon as
-                    possible.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    style={{
-                      background: "rgba(16, 185, 129, 0.1)",
-                      border: "1px solid rgba(16, 185, 129, 0.3)",
-                      borderRadius: "8px",
-                      padding: "0.75rem 1.5rem",
-                      color: "#10B981",
-                      cursor: "pointer",
-                      transition: "all 0.2s",
-                      fontWeight: "500",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.background = "rgba(16, 185, 129, 0.2)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.background = "rgba(16, 185, 129, 0.1)";
-                    }}
-                  >
-                    Send Another Message
-                  </button>
-                </div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "1.5rem",
-                  }}
-                >
-                  <div>
-                    <label
-                      htmlFor="name"
-                      style={{
-                        display: "block",
-                        marginBottom: "0.5rem",
-                        fontWeight: "600",
-                        color: "#F1F5F9",
-                        fontSize: "0.9rem",
-                      }}
-                    >
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Enter your full name"
-                      style={{
-                        width: "100%",
-                        padding: "0.875rem 1rem",
-                        borderRadius: "12px",
-                        border: errors.name
-                          ? "2px solid #EF4444"
-                          : "2px solid rgba(255, 255, 255, 0.1)",
-                        fontSize: "1rem",
-                        transition: "all 0.2s",
-                        background: "rgba(255, 255, 255, 0.05)",
-                        color: "#F1F5F9",
-                        backdropFilter: "blur(10px)",
-                        boxSizing: "border-box",
-                      }}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = "#6366F1";
-                        e.target.style.boxShadow =
-                          "0 0 0 3px rgba(99, 102,241, 0.1)";
-                        e.target.style.background = "rgba(255, 255, 255, 0.08)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = errors.name
-                          ? "#EF4444"
-                          : "rgba(255, 255, 255, 0.1)";
-                        e.target.style.boxShadow = "none";
-                        e.target.style.background = "rgba(255, 255, 255, 0.05)";
-                      }}
-                    />
-                    {errors.name && (
-                      <p
-                        style={{
-                          color: "#EF4444",
-                          fontSize: "0.875rem",
-                          marginTop: "0.25rem",
-                        }}
-                      >
-                        {errors.name}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      style={{
-                        display: "block",
-                        marginBottom: "0.5rem",
-                        fontWeight: "600",
-                        color: "#F1F5F9",
-                        fontSize: "0.9rem",
-                      }}
-                    >
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="Enter your email address"
-                      style={{
-                        width: "100%",
-                        padding: "0.875rem 1rem",
-                        borderRadius: "12px",
-                        border: errors.email
-                          ? "2px solid #EF4444"
-                          : "2px solid rgba(255, 255, 255, 0.1)",
-                        fontSize: "1rem",
-                        transition: "all 0.2s",
-                        background: "rgba(255, 255, 255, 0.05)",
-                        color: "#F1F5F9",
-                        backdropFilter: "blur(10px)",
-                        boxSizing: "border-box",
-                      }}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = "#6366F1";
-                        e.target.style.boxShadow =
-                          "0 0 0 3px rgba(99, 102,241, 0.1)";
-                        e.target.style.background = "rgba(255, 255, 255, 0.08)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = errors.email
-                          ? "#EF4444"
-                          : "rgba(255, 255, 255, 0.1)";
-                        e.target.style.boxShadow = "none";
-                        e.target.style.background = "rgba(255, 255, 255, 0.05)";
-                      }}
-                    />
-                    {errors.email && (
-                      <p
-                        style={{
-                          color: "#EF4444",
-                          fontSize: "0.875rem",
-                          marginTop: "0.25rem",
-                        }}
-                      >
-                        {errors.email}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      style={{
-                        display: "block",
-                        marginBottom: "0.5rem",
-                        fontWeight: "600",
-                        color: "#F1F5F9",
-                        fontSize: "0.9rem",
-                      }}
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      rows="5"
-                      placeholder="Tell me about your project or just say hello!"
-                      style={{
-                        width: "100%",
-                        padding: "0.875rem 1rem",
-                        borderRadius: "12px",
-                        border: errors.message
-                          ? "2px solid #EF4444"
-                          : "2px solid rgba(255, 255, 255, 0.1)",
-                        fontSize: "1rem",
-                        transition: "all 0.2s",
-                        background: "rgba(255, 255, 255, 0.05)",
-                        color: "#F1F5F9",
-                        resize: "vertical",
-                        minHeight: "120px",
-                        backdropFilter: "blur(10px)",
-                        boxSizing: "border-box",
-                      }}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = "#6366F1";
-                        e.target.style.boxShadow =
-                          "0 0 0 3px rgba(99, 102,241, 0.1)";
-                        e.target.style.background = "rgba(255, 255, 255, 0.08)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = errors.message
-                          ? "#EF4444"
-                          : "rgba(255, 255, 255, 0.1)";
-                        e.target.style.boxShadow = "none";
-                        e.target.style.background = "rgba(255, 255, 255, 0.05)";
-                      }}
-                    />
-                    {errors.message && (
-                      <p
-                        style={{
-                          color: "#EF4444",
-                          fontSize: "0.875rem",
-                          marginTop: "0.25rem",
-                        }}
-                      >
-                        {errors.message}
-                      </p>
-                    )}
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    style={{
-                      background: loading
-                        ? "rgba(148, 163, 184, 0.3)"
-                        : "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)", // Match resume/live button
-                      color: "#F1F5F9",
-                      border: "none",
-                      borderRadius: "12px",
-                      padding: "1rem 2rem",
-                      fontSize: "1rem",
-                      fontWeight: "600",
-                      cursor: loading ? "not-allowed" : "pointer",
-                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "0.5rem",
-                      boxShadow: loading
-                        ? "none"
-                        : "0 8px 25px rgba(99, 102, 241, 0.4)",
-                      transform: "translateY(0)",
-                      backdropFilter: "blur(10px)",
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!loading) {
-                        e.target.style.transform = "translateY(-2px)";
-                        e.target.style.boxShadow =
-                          "0 12px 35px rgba(99, 102, 241, 0.5)";
-                        e.target.style.background =
-                          "linear-gradient(135deg, #5856EB 0%, #7C3AED 100%)";
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (!loading) {
-                        e.target.style.transform = "translateY(0)";
-                        e.target.style.boxShadow =
-                          "0 8px 25px rgba(99, 102, 241, 0.4)";
-                        e.target.style.background =
-                          "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)";
-                      }
-                    }}
-                  >
-                    {loading ? (
-                      <>
-                        <div
-                          style={{
-                            width: "20px",
-                            height: "20px",
-                            border: "2px solid rgba(241, 245, 249, 0.3)",
-                            borderTop: "2px solid #F1F5F9",
-                            borderRadius: "50%",
-                            animation: "spin 1s linear infinite",
-                          }}
-                        />
-                        Sending...
-                      </>
-                    ) : (
-                      <>🚀 Send Message</>
-                    )}
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-
-          {/* --- Contact Info Section (right) --- */}
-          <div
-            ref={rightRef}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: isMobile ? "1.5rem" : "2rem",
-              minHeight: sectionHeight,
-              justifyContent: "center",
-              width: "100%",
-              boxSizing: "border-box",
-              transform: isVisible
-                ? "translateY(0) scale(1)"
-                : "translateY(30px) scale(0.95)",
-              opacity: isVisible ? 1 : 0,
-              transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px) scale(1.02)";
-              e.currentTarget.style.boxShadow =
-                "0 30px 60px rgba(99, 102,241, 0.2)";
-              e.currentTarget.style.background = "rgba(255, 255, 255, 0.08)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0) scale(1)";
-              e.currentTarget.style.boxShadow =
-                "0 20px 40px rgba(0, 0, 0, 0.3)";
-              e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
-            }}
-          >
-            <div
-              style={{
-                background: "rgba(255,255,255,0.05)",
+                background: "rgba(255, 255, 255, 0.05)",
+                backdropFilter: "blur(20px)",
                 borderRadius: "24px",
-                border: "1px solid rgba(255,255,255,0.13)",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.18)",
-                padding: isMobile ? "1.5rem 1rem" : "2.5rem 2rem",
+                padding: isMobile ? "1.5rem 1rem" : "2.5rem",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+                transform: leftSectionVisible
+                  ? "translateX(0) scale(1)"
+                  : "translateX(-80px) scale(0.95)",
+                opacity: leftSectionVisible ? 1 : 0,
+                filter: leftSectionVisible ? "blur(0)" : "blur(2px)",
+                transition: "all 1.2s cubic-bezier(0.4, 0, 0.2, 1)",
                 position: "relative",
                 overflow: "hidden",
-                backdropFilter: "blur(20px)",
-                minHeight: isMobile ? "auto" : "420px",
+                minHeight: sectionHeight,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                alignItems: "stretch",
-                transition: "all 0.5s cubic-bezier(0.4,0,0.2,1)",
-                height: "100%",
                 width: "100%",
                 boxSizing: "border-box",
               }}
+              onMouseEnter={(e) => {
+                if (leftSectionVisible) {
+                  e.currentTarget.style.transform = "translateX(0) scale(1.02)";
+                  e.currentTarget.style.boxShadow =
+                    "0 30px 60px rgba(99, 102,241, 0.2)";
+                  e.currentTarget.style.background =
+                    "rgba(255, 255, 255, 0.08)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (leftSectionVisible) {
+                  e.currentTarget.style.transform = "translateX(0) scale(1)";
+                  e.currentTarget.style.boxShadow =
+                    "0 20px 40px rgba(0, 0, 0, 0.3)";
+                  e.currentTarget.style.background =
+                    "rgba(255, 255, 255, 0.05)";
+                }
+              }}
             >
-              {/* Decorative gradient border */}
+              {/* Decorative gradient */}
               <div
                 style={{
                   position: "absolute",
@@ -789,7 +405,8 @@ const Contact = () => {
                   borderRadius: "24px 24px 0 0",
                 }}
               />
-              {/* Floating background element */}
+
+              {/* Floating background elements */}
               <div
                 style={{
                   position: "absolute",
@@ -799,18 +416,20 @@ const Contact = () => {
                   height: "100px",
                   borderRadius: "50%",
                   background:
-                    "radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%)",
+                    "radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%)",
                   animation: "float 8s ease-in-out infinite",
-                  zIndex: 0,
                 }}
               />
-              <div style={{ position: "relative", zIndex: 1 }}>
+
+              <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
+                {/* Form header */}
                 <div
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: "1rem",
-                    marginBottom: "2.2rem",
+                    marginBottom: "2rem",
+                    paddingBottom: "1.5rem",
+                    borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
                   }}
                 >
                   <div
@@ -823,147 +442,598 @@ const Contact = () => {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      boxShadow: "0 12px 24px rgba(99,102,241,0.18)",
-                      border: "2px solid rgba(255,255,255,0.13)",
-                      fontSize: "2rem",
-                      color: "#fff",
+                      marginRight: "1.5rem",
+                      boxShadow: "0 12px 24px rgba(99, 102,241, 0.4)",
+                      border: "2px solid rgba(255, 255, 255, 0.1)",
                     }}
                   >
-                    <i className="bi bi-person-lines-fill"></i>
+                    <span style={{ fontSize: "1.8rem" }}>💬</span>
                   </div>
-                  <h3
+                  <div>
+                    <h3
+                      style={{
+                        fontSize: "1.8rem",
+                        fontWeight: "700",
+                        color: "#F1F5F9",
+                        margin: 0,
+                        letterSpacing: "-0.025em",
+                        background:
+                          "linear-gradient(135deg, #F1F5F9 0%, #CBD5E1 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      Send Message
+                    </h3>
+                  </div>
+                </div>
+
+                {submitted ? (
+                  <div
                     style={{
-                      fontSize: "1.5rem",
-                      fontWeight: "700",
-                      color: "#F1F5F9",
-                      margin: 0,
-                      letterSpacing: "-0.025em",
+                      textAlign: "center",
+                      padding: "3rem 2rem",
                       background:
-                        "linear-gradient(135deg, #F1F5F9 0%, #CBD5E1 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
+                        "linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%)",
+                      borderRadius: "16px",
+                      border: "1px solid rgba(16, 185, 129, 0.2)",
                     }}
                   >
-                    Contact Information
-                  </h3>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "1.5rem",
-                  }}
-                >
-                  {contactInfo.map((info, idx) => (
-                    <div
-                      key={info.title}
+                    <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>
+                      ✅
+                    </div>
+                    <h4
                       style={{
+                        fontWeight: "600",
+                        marginBottom: "0.5rem",
+                        color: "#10B981",
+                      }}
+                    >
+                      Message Sent Successfully!
+                    </h4>
+                    <p style={{ color: "#94A3B8", marginBottom: "1.5rem" }}>
+                      Thank you for reaching out! I'll get back to you as soon
+                      as possible.
+                    </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      style={{
+                        background: "rgba(16, 185, 129, 0.1)",
+                        border: "1px solid rgba(16, 185, 129, 0.3)",
+                        borderRadius: "8px",
+                        padding: "0.75rem 1.5rem",
+                        color: "#10B981",
+                        cursor: "pointer",
+                        transition: "all 0.2s",
+                        fontWeight: "500",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.background = "rgba(16, 185, 129, 0.2)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.background = "rgba(16, 185, 129, 0.1)";
+                      }}
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
+                ) : (
+                  <form
+                    onSubmit={handleSubmit}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "1.5rem",
+                    }}
+                  >
+                    <div>
+                      <label
+                        htmlFor="name"
+                        style={{
+                          display: "block",
+                          marginBottom: "0.5rem",
+                          fontWeight: "600",
+                          color: "#F1F5F9",
+                          fontSize: "0.9rem",
+                        }}
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Enter your full name"
+                        style={{
+                          width: "100%",
+                          padding: "0.875rem 1rem",
+                          borderRadius: "12px",
+                          border: errors.name
+                            ? "2px solid #EF4444"
+                            : "2px solid rgba(255, 255, 255, 0.1)",
+                          fontSize: "1rem",
+                          transition: "all 0.2s",
+                          background: "rgba(255, 255, 255, 0.05)",
+                          color: "#F1F5F9",
+                          backdropFilter: "blur(10px)",
+                          boxSizing: "border-box",
+                        }}
+                        onFocus={(e) => {
+                          e.target.style.borderColor = "#6366F1";
+                          e.target.style.boxShadow =
+                            "0 0 0 3px rgba(99, 102,241, 0.1)";
+                          e.target.style.background =
+                            "rgba(255, 255, 255, 0.08)";
+                        }}
+                        onBlur={(e) => {
+                          e.target.style.borderColor = errors.name
+                            ? "#EF4444"
+                            : "rgba(255, 255, 255, 0.1)";
+                          e.target.style.boxShadow = "none";
+                          e.target.style.background =
+                            "rgba(255, 255, 255, 0.05)";
+                        }}
+                      />
+                      {errors.name && (
+                        <p
+                          style={{
+                            color: "#EF4444",
+                            fontSize: "0.875rem",
+                            marginTop: "0.25rem",
+                          }}
+                        >
+                          {errors.name}
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="email"
+                        style={{
+                          display: "block",
+                          marginBottom: "0.5rem",
+                          fontWeight: "600",
+                          color: "#F1F5F9",
+                          fontSize: "0.9rem",
+                        }}
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="Enter your email address"
+                        style={{
+                          width: "100%",
+                          padding: "0.875rem 1rem",
+                          borderRadius: "12px",
+                          border: errors.email
+                            ? "2px solid #EF4444"
+                            : "2px solid rgba(255, 255, 255, 0.1)",
+                          fontSize: "1rem",
+                          transition: "all 0.2s",
+                          background: "rgba(255, 255, 255, 0.05)",
+                          color: "#F1F5F9",
+                          backdropFilter: "blur(10px)",
+                          boxSizing: "border-box",
+                        }}
+                        onFocus={(e) => {
+                          e.target.style.borderColor = "#6366F1";
+                          e.target.style.boxShadow =
+                            "0 0 0 3px rgba(99, 102,241, 0.1)";
+                          e.target.style.background =
+                            "rgba(255, 255, 255, 0.08)";
+                        }}
+                        onBlur={(e) => {
+                          e.target.style.borderColor = errors.email
+                            ? "#EF4444"
+                            : "rgba(255, 255, 255, 0.1)";
+                          e.target.style.boxShadow = "none";
+                          e.target.style.background =
+                            "rgba(255, 255, 255, 0.05)";
+                        }}
+                      />
+                      {errors.email && (
+                        <p
+                          style={{
+                            color: "#EF4444",
+                            fontSize: "0.875rem",
+                            marginTop: "0.25rem",
+                          }}
+                        >
+                          {errors.email}
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="message"
+                        style={{
+                          display: "block",
+                          marginBottom: "0.5rem",
+                          fontWeight: "600",
+                          color: "#F1F5F9",
+                          fontSize: "0.9rem",
+                        }}
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        rows="5"
+                        placeholder="Tell me about your project or just say hello!"
+                        style={{
+                          width: "100%",
+                          padding: "0.875rem 1rem",
+                          borderRadius: "12px",
+                          border: errors.message
+                            ? "2px solid #EF4444"
+                            : "2px solid rgba(255, 255, 255, 0.1)",
+                          fontSize: "1rem",
+                          transition: "all 0.2s",
+                          background: "rgba(255, 255, 255, 0.05)",
+                          color: "#F1F5F9",
+                          resize: "vertical",
+                          minHeight: "120px",
+                          backdropFilter: "blur(10px)",
+                          boxSizing: "border-box",
+                        }}
+                        onFocus={(e) => {
+                          e.target.style.borderColor = "#6366F1";
+                          e.target.style.boxShadow =
+                            "0 0 0 3px rgba(99, 102,241, 0.1)";
+                          e.target.style.background =
+                            "rgba(255, 255, 255, 0.08)";
+                        }}
+                        onBlur={(e) => {
+                          e.target.style.borderColor = errors.message
+                            ? "#EF4444"
+                            : "rgba(255, 255, 255, 0.1)";
+                          e.target.style.boxShadow = "none";
+                          e.target.style.background =
+                            "rgba(255, 255, 255, 0.05)";
+                        }}
+                      />
+                      {errors.message && (
+                        <p
+                          style={{
+                            color: "#EF4444",
+                            fontSize: "0.875rem",
+                            marginTop: "0.25rem",
+                          }}
+                        >
+                          {errors.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      style={{
+                        background: loading
+                          ? "rgba(148, 163, 184, 0.3)"
+                          : "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)", // Match resume/live button
+                        color: "#F1F5F9",
+                        border: "none",
+                        borderRadius: "12px",
+                        padding: "1rem 2rem",
+                        fontSize: "1rem",
+                        fontWeight: "600",
+                        cursor: loading ? "not-allowed" : "pointer",
+                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                         display: "flex",
                         alignItems: "center",
-                        gap: "1.2rem",
-                        background: "rgba(255,255,255,0.07)",
-                        borderRadius: "16px",
-                        border: "1.5px solid rgba(255,255,255,0.13)",
-                        padding: "1.1rem 1.2rem",
-                        boxShadow: "0 4px 18px rgba(99,102,241,0.07)",
-                        cursor: info.link ? "pointer" : "default",
-                        transition: "all 0.25s cubic-bezier(0.4,0,0.2,1)",
-                        position: "relative",
-                        overflow: "hidden",
+                        justifyContent: "center",
+                        gap: "0.5rem",
+                        boxShadow: loading
+                          ? "none"
+                          : "0 8px 25px rgba(99, 102, 241, 0.4)",
+                        transform: "translateY(0)",
+                        backdropFilter: "blur(10px)",
                       }}
-                      onClick={() =>
-                        info.link && window.open(info.link, "_blank")
-                      }
                       onMouseEnter={(e) => {
-                        if (info.link) {
-                          e.currentTarget.style.background =
-                            "rgba(255,255,255,0.13)";
-                          e.currentTarget.style.transform =
-                            "translateY(-2px) scale(1.03)";
-                          e.currentTarget.style.boxShadow = `0 12px 32px ${info.color}22`;
+                        if (!loading) {
+                          e.target.style.transform = "translateY(-2px)";
+                          e.target.style.boxShadow =
+                            "0 12px 35px rgba(99, 102, 241, 0.5)";
+                          e.target.style.background =
+                            "linear-gradient(135deg, #5856EB 0%, #7C3AED 100%)";
                         }
                       }}
                       onMouseLeave={(e) => {
-                        if (info.link) {
-                          e.currentTarget.style.background =
-                            "rgba(255,255,255,0.07)";
-                          e.currentTarget.style.transform =
-                            "translateY(0) scale(1)";
-                          e.currentTarget.style.boxShadow =
-                            "0 4px 18px rgba(99,102,241,0.07)";
+                        if (!loading) {
+                          e.target.style.transform = "translateY(0)";
+                          e.target.style.boxShadow =
+                            "0 8px 25px rgba(99, 102, 241, 0.4)";
+                          e.target.style.background =
+                            "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)";
                         }
                       }}
                     >
-                      {/* Icon */}
+                      {loading ? (
+                        <>
+                          <div
+                            style={{
+                              width: "20px",
+                              height: "20px",
+                              border: "2px solid rgba(241, 245, 249, 0.3)",
+                              borderTop: "2px solid #F1F5F9",
+                              borderRadius: "50%",
+                              animation: "spin 1s linear infinite",
+                            }}
+                          />
+                          Sending...
+                        </>
+                      ) : (
+                        <>🚀 Send Message</>
+                      )}
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* --- Contact Info Section (right) --- */}
+          <div ref={rightSectionRef}>
+            <div
+              ref={rightRef}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: isMobile ? "1.5rem" : "2rem",
+                minHeight: sectionHeight,
+                justifyContent: "center",
+                width: "100%",
+                boxSizing: "border-box",
+                transform: rightSectionVisible
+                  ? "translateX(0) scale(1)"
+                  : "translateX(80px) scale(0.95)",
+                opacity: rightSectionVisible ? 1 : 0,
+                filter: rightSectionVisible ? "blur(0)" : "blur(2px)",
+                transition: "all 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                if (rightSectionVisible) {
+                  e.currentTarget.style.transform = "translateX(0) scale(1.02)";
+                  e.currentTarget.style.boxShadow =
+                    "0 30px 60px rgba(99, 102,241, 0.2)";
+                  e.currentTarget.style.background =
+                    "rgba(255, 255, 255, 0.08)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (rightSectionVisible) {
+                  e.currentTarget.style.transform = "translateX(0) scale(1)";
+                  e.currentTarget.style.boxShadow =
+                    "0 20px 40px rgba(0, 0, 0, 0.3)";
+                  e.currentTarget.style.background =
+                    "rgba(255, 255, 255, 0.05)";
+                }
+              }}
+            >
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  borderRadius: "24px",
+                  border: "1px solid rgba(255,255,255,0.13)",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.18)",
+                  padding: isMobile ? "1.5rem 1rem" : "2.5rem 2rem",
+                  position: "relative",
+                  overflow: "hidden",
+                  backdropFilter: "blur(20px)",
+                  minHeight: isMobile ? "auto" : "420px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "stretch",
+                  transition: "all 0.5s cubic-bezier(0.4,0,0.2,1)",
+                  height: "100%",
+                  width: "100%",
+                  boxSizing: "border-box",
+                }}
+              >
+                {/* Decorative gradient border */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "4px",
+                    background:
+                      "linear-gradient(90deg, #6366F1 0%, #EC4899 50%, #F59E0B 100%)",
+                    borderRadius: "24px 24px 0 0",
+                  }}
+                />
+                {/* Floating background element */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "10%",
+                    right: "10%",
+                    width: "100px",
+                    height: "100px",
+                    borderRadius: "50%",
+                    background:
+                      "radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%)",
+                    animation: "float 8s ease-in-out infinite",
+                    zIndex: 0,
+                  }}
+                />
+                <div style={{ position: "relative", zIndex: 1 }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "1rem",
+                      marginBottom: "2.2rem",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "56px",
+                        height: "56px",
+                        borderRadius: "16px",
+                        background:
+                          "linear-gradient(135deg, #6366F1 0%, #EC4899 100%)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: "0 12px 24px rgba(99,102,241,0.18)",
+                        border: "2px solid rgba(255,255,255,0.13)",
+                        fontSize: "2rem",
+                        color: "#fff",
+                      }}
+                    >
+                      <i className="bi bi-person-lines-fill"></i>
+                    </div>
+                    <h3
+                      style={{
+                        fontSize: "1.5rem",
+                        fontWeight: "700",
+                        color: "#F1F5F9",
+                        margin: 0,
+                        letterSpacing: "-0.025em",
+                        background:
+                          "linear-gradient(135deg, #F1F5F9 0%, #CBD5E1 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      Contact Information
+                    </h3>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "1.5rem",
+                    }}
+                  >
+                    {contactInfo.map((info, idx) => (
                       <div
+                        key={info.title}
                         style={{
-                          width: "48px",
-                          height: "48px",
-                          borderRadius: "12px",
-                          background: info.bgGradient,
                           display: "flex",
                           alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "1.6rem",
-                          color: "#fff",
-                          boxShadow: `0 4px 16px ${info.color}33`,
-                          flexShrink: 0,
-                          border: "2px solid rgba(255,255,255,0.13)",
+                          gap: "1.2rem",
+                          background: "rgba(255,255,255,0.07)",
+                          borderRadius: "16px",
+                          border: "1.5px solid rgba(255,255,255,0.13)",
+                          padding: "1.1rem 1.2rem",
+                          boxShadow: "0 4px 18px rgba(99,102,241,0.07)",
+                          cursor: info.link ? "pointer" : "default",
+                          transition: "all 0.25s cubic-bezier(0.4,0,0.2,1)",
+                          position: "relative",
+                          overflow: "hidden",
+                        }}
+                        onClick={() =>
+                          info.link && window.open(info.link, "_blank")
+                        }
+                        onMouseEnter={(e) => {
+                          if (info.link) {
+                            e.currentTarget.style.background =
+                              "rgba(255,255,255,0.13)";
+                            e.currentTarget.style.transform =
+                              "translateY(-2px) scale(1.03)";
+                            e.currentTarget.style.boxShadow = `0 12px 32px ${info.color}22`;
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (info.link) {
+                            e.currentTarget.style.background =
+                              "rgba(255,255,255,0.07)";
+                            e.currentTarget.style.transform =
+                              "translateY(0) scale(1)";
+                            e.currentTarget.style.boxShadow =
+                              "0 4px 18px rgba(99,102,241,0.07)";
+                          }
                         }}
                       >
-                        {info.icon}
+                        {/* Icon */}
+                        <div
+                          style={{
+                            width: "48px",
+                            height: "48px",
+                            borderRadius: "12px",
+                            background: info.bgGradient,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            fontSize: "1.6rem",
+                            color: "#fff",
+                            boxShadow: `0 4px 16px ${info.color}33`,
+                            flexShrink: 0,
+                            border: "2px solid rgba(255,255,255,0.13)",
+                          }}
+                        >
+                          {info.icon}
+                        </div>
+                        {/* Info text */}
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div
+                            style={{
+                              fontWeight: 700,
+                              fontSize: "1.08rem",
+                              color: "#F1F5F9",
+                              marginBottom: "0.1rem",
+                            }}
+                          >
+                            {info.title}
+                          </div>
+                          <div
+                            style={{
+                              color: "#94A3B8",
+                              fontSize: "0.97rem",
+                              marginBottom: "0.1rem",
+                              fontWeight: 500,
+                            }}
+                          >
+                            {info.content}
+                          </div>
+                          <div
+                            style={{
+                              color: info.color,
+                              fontWeight: 600,
+                              fontSize: "0.97rem",
+                              wordBreak: "break-all",
+                              letterSpacing: "0.01em",
+                            }}
+                          >
+                            {info.linkText}
+                          </div>
+                        </div>
+                        {/* Arrow for links */}
+                        {info.link && (
+                          <div
+                            style={{
+                              fontSize: "1.2rem",
+                              color: "#718096",
+                              opacity: 0.6,
+                              marginLeft: "0.5rem",
+                              transition: "color 0.2s",
+                            }}
+                          >
+                            <i className="bi bi-arrow-up-right"></i>
+                          </div>
+                        )}
                       </div>
-                      {/* Info text */}
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div
-                          style={{
-                            fontWeight: 700,
-                            fontSize: "1.08rem",
-                            color: "#F1F5F9",
-                            marginBottom: "0.1rem",
-                          }}
-                        >
-                          {info.title}
-                        </div>
-                        <div
-                          style={{
-                            color: "#94A3B8",
-                            fontSize: "0.97rem",
-                            marginBottom: "0.1rem",
-                            fontWeight: 500,
-                          }}
-                        >
-                          {info.content}
-                        </div>
-                        <div
-                          style={{
-                            color: info.color,
-                            fontWeight: 600,
-                            fontSize: "0.97rem",
-                            wordBreak: "break-all",
-                            letterSpacing: "0.01em",
-                          }}
-                        >
-                          {info.linkText}
-                        </div>
-                      </div>
-                      {/* Arrow for links */}
-                      {info.link && (
-                        <div
-                          style={{
-                            fontSize: "1.2rem",
-                            color: "#718096",
-                            opacity: 0.6,
-                            marginLeft: "0.5rem",
-                            transition: "color 0.2s",
-                          }}
-                        >
-                          <i className="bi bi-arrow-up-right"></i>
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

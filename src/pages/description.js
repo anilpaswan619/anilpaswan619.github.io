@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const Description = () => {
   const [animate, setAnimate] = useState(false);
+  const [leftSectionVisible, setLeftSectionVisible] = useState(false);
+  const [rightSectionVisible, setRightSectionVisible] = useState(false);
+  const leftSectionRef = useRef(null);
+  const rightSectionRef = useRef(null);
 
   const achievements = [
     { number: "7+", label: "Years Experience", icon: "bi bi-calendar-check" },
@@ -12,6 +16,48 @@ const Description = () => {
 
   useEffect(() => {
     setTimeout(() => setAnimate(true), 200);
+  }, []);
+
+  // Intersection Observer for left section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setLeftSectionVisible(true), 300);
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "-50px 0px -50px 0px",
+      }
+    );
+
+    if (leftSectionRef.current) {
+      observer.observe(leftSectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Intersection Observer for right section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setRightSectionVisible(true), 600);
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "-50px 0px -50px 0px",
+      }
+    );
+
+    if (rightSectionRef.current) {
+      observer.observe(rightSectionRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -137,7 +183,7 @@ const Description = () => {
         {/* Main Content Grid */}
         <div className="row g-4">
           {/* Left Column - About Content */}
-          <div className="col-lg-8">
+          <div className="col-lg-8" ref={leftSectionRef}>
             <div
               style={{
                 background: "rgba(255, 255, 255, 0.05)",
@@ -148,10 +194,12 @@ const Description = () => {
                 height: "100%",
                 position: "relative",
                 overflow: "hidden",
-                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                transform: animate ? "translateX(0)" : "translateX(-30px)",
-                opacity: animate ? 1 : 0,
-                transitionDelay: "0.3s",
+                transition: "all 1.2s cubic-bezier(0.4, 0, 0.2, 1)",
+                transform: leftSectionVisible
+                  ? "translateX(0) scale(1)"
+                  : "translateX(-80px) scale(0.95)",
+                opacity: leftSectionVisible ? 1 : 0,
+                filter: leftSectionVisible ? "blur(0)" : "blur(2px)",
               }}
             >
               {/* Gradient Border */}
@@ -469,13 +517,19 @@ const Description = () => {
           </div>
 
           {/* Right Column - Stats */}
-          <div className="col-lg-4">
+          <div className="col-lg-4" ref={rightSectionRef}>
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
                 gap: "1.5rem",
                 height: "100%",
+                transition: "all 1.2s cubic-bezier(0.4, 0, 0.2, 1)",
+                transform: rightSectionVisible
+                  ? "translateX(0) scale(1)"
+                  : "translateX(80px) scale(0.95)",
+                opacity: rightSectionVisible ? 1 : 0,
+                filter: rightSectionVisible ? "blur(0)" : "blur(2px)",
               }}
             >
               {/* Quick Stats */}

@@ -112,7 +112,7 @@ const Footer = () => {
               <div className="footer-logo-shimmer" />
             </div>
             <div className="footer-brand-text">
-              <h2>Anil Paswan</h2>
+              <h3 className="text-start fw-bold mb-1">Anil Paswan</h3>
               <p>Frontend Developer</p>
             </div>
           </div>
