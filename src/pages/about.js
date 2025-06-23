@@ -319,7 +319,7 @@ const About = ({ descriptionRef }) => {
               }}
             >
               <a
-                href="/assets/doc/Anil_Paswan_Frontend_Developer_Resume.pdf"
+                href="/resume.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

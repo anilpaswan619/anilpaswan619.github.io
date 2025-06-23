@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anil Paswan - Frontend Developer | UI Engineer Resume</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+        line-height: 1.5;
+        color: #2c3e50;
+        background: #f8f9fa;
+        padding: 32px;
+      }
+
+      .resume-container {
+        max-width: 8.5in;
+        margin: 0 auto;
+        background: #fff;
+        box-shadow: 0 10px 40px rgba(44, 62, 80, 0.13),
+          0 1.5px 8px rgba(44, 62, 80, 0.07);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1.5px solid #e9ecef;
+      }
+
+      /* Header Section */
+      .header {
+        background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
+        color: #fff;
+        padding: 30px 40px;
+        position: relative;
+        border-bottom: none; /* revert to original */
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
+        clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+        opacity: 1;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        gap: 0; /* revert to original */
+      }
+
+      .name-title {
+        flex: 1;
+      }
+
+      .name {
+        font-size: 2.2rem; /* reduced */
+        font-weight: 800;
+        margin-bottom: 6px;
+        letter-spacing: -0.8px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+        background-clip: initial;
+      }
+
+      .title {
+        font-size: 1.2rem; /* reduced */
+        font-weight: 300;
+        opacity: 0.95;
+        letter-spacing: 0.3px;
+        color: #f8fafc;
+        margin-bottom: 0.2rem;
+      }
+
+      .contact-info {
+        display: flex;
+        gap: 25px;
+        font-size: 0.85rem; /* reduced */
+        align-items: center;
+      }
+
+      .contact-left,
+      .contact-right {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .contact-item {
+        display: flex;
+        gap: 8px;
+        transition: all 0.3s;
+        padding: 2px 0;
+        font-size: 0.95rem; /* reduced */
+      }
+
+      .contact-item:hover {
+        transform: translateX(4px) scale(1.03);
+      }
+
+      .contact-icon,
+      .contact-item i {
+        width: 16px;
+        height: 16px;
+        font-size: 1rem;
+        color: #fff;
+        vertical-align: middle;
+        transition: color 0.3s, transform 0.3s;
+      }
+
+      .contact-item:hover .contact-icon,
+      .contact-item:hover i {
+        color: #e9ecef;
+        transform: scale(1.15);
+      }
+
+      .contact-item a {
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem; /* reduced */
+      }
+
+      .contact-item a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background: #fff;
+        transition: width 0.3s;
+      }
+
+      .contact-item a:hover {
+        color: #e9ecef;
+      }
+
+      .contact-item a:hover::after {
+        width: 100%;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 36px 48px 36px 48px;
+      }
+
+      .section {
+        margin-bottom: 32px;
+      }
+
+      .section-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #2c5aa0;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 6px;
+        background: linear-gradient(90deg, #2c5aa0, #1e3f73);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Summary */
+      .summary {
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: justify;
+        color: #495057;
+        background: #f8f9ff;
+        padding: 18px 20px;
+        border-left: 5px solid #2c5aa0;
+        border-radius: 6px;
+        margin-bottom: 0;
+      }
+
+      /* Experience */
+      .experience-item {
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+
+      .job-info h3 {
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: #2c5aa0;
+        margin-bottom: 2px;
+      }
+
+      .company {
+        font-size: 1rem;
+        color: #6c757d;
+        font-weight: 600;
+      }
+
+      .date-location {
+        font-size: 0.95rem;
+        color: #6c757d;
+        text-align: right;
+        background: #f8f9ff;
+        padding: 4px 10px;
+        border-radius: 12px;
+        white-space: nowrap;
+      }
+
+      .responsibilities {
+        list-style: none;
+        margin-top: 8px;
+        margin-bottom: 0;
+        padding-left: 0;
+      }
+
+      .responsibilities li {
+        font-size: 0.98rem;
+        line-height: 1.5;
+        margin-bottom: 4px;
+        padding-left: 16px;
+        position: relative;
+        text-align: justify;
+      }
+
+      .responsibilities li:before {
+        content: "•";
+        color: #2c5aa0;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      /* Skills */
+      .skills-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .skills-section {
+        background: #f8f9ff;
+        padding: 16px 18px;
+        border-radius: 8px;
+        border-left: 4px solid #2c5aa0;
+        margin-bottom: 0;
+      }
+
+      .skills-section h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #2c5aa0;
+        margin-bottom: 8px;
+      }
+
+      .skills-list {
+        font-size: 0.97rem;
+        line-height: 1.5;
+        color: #495057;
+      }
+
+      /* Projects */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .project-item {
+        background: #f8f9ff;
+        padding: 14px 16px;
+        border-radius: 8px;
+        border-left: 4px solid #2c5aa0;
+        box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+        transition: box-shadow 0.3s, transform 0.3s;
+      }
+
+      .project-item:hover {
+        box-shadow: 0 8px 24px rgba(44, 62, 80, 0.13);
+        transform: translateY(-3px) scale(1.01);
+      }
+
+      .project-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #2c5aa0;
+        margin-bottom: 6px;
+        display: flex;
+        gap: 8px;
+      }
+
+      .project-title a {
+        color: #2c5aa0;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.3s;
+        position: relative;
+      }
+
+      .project-title a:hover {
+        color: #1e3f73;
+      }
+
+      .project-title a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background: #2c5aa0;
+        transition: width 0.3s;
+      }
+
+      .project-title a:hover::after {
+        width: 100%;
+      }
+
+      .project-icon {
+        width: 18px;
+        height: 18px;
+        fill: #2c5aa0;
+        vertical-align: middle;
+      }
+
+      .project-description {
+        font-size: 0.97rem;
+        line-height: 1.4;
+        color: #495057;
+        margin-bottom: 5px;
+      }
+
+      .project-tech {
+        font-size: 0.93rem;
+        color: #6c757d;
+        font-style: italic;
+        margin-bottom: 4px;
+      }
+
+      /* Education & Certifications */
+      .two-column {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 36px;
+      }
+
+      .education-item {
+        margin-bottom: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .education-details {
+        flex: 1;
+      }
+
+      .degree {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #2c5aa0;
+      }
+
+      .institution {
+        font-size: 0.97rem;
+        color: #6c757d;
+        margin-top: 2px;
+      }
+
+      .edu-date {
+        font-size: 0.93rem;
+        color: #6c757d;
+        background: #f8f9ff;
+        padding: 2px 8px;
+        border-radius: 8px;
+        white-space: nowrap;
+      }
+
+      .cert-item {
+        font-size: 0.97rem;
+        color: #495057;
+        margin-bottom: 8px;
+        padding: 8px 12px;
+        background: #f8f9ff;
+        border-radius: 6px;
+        border-left: 3px solid #2c5aa0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: background 0.3s, border-color 0.3s;
+        cursor: default;
+      }
+
+      .cert-item:hover {
+        background: #e9ecef;
+        border-left: 3px solid #1e3f73;
+      }
+
+      .cert-icon {
+        width: 18px;
+        height: 18px;
+        font-size: 1.1rem;
+        color: #2c5aa0;
+        flex-shrink: 0;
+        transition: color 0.3s;
+      }
+
+      .cert-item:hover .cert-icon {
+        color: #1e3f73;
+      }
+
+      /* Print Styles */
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+
+        .resume-container {
+          box-shadow: none;
+          border-radius: 0;
+          max-width: none;
+          margin: 0;
+        }
+
+        .header::after {
+          display: none;
+        }
+
+        .section {
+          margin-bottom: 20px;
+        }
+
+        .experience-item,
+        .project-item {
+          break-inside: avoid;
+        }
+
+        .main-content {
+          padding: 20px 30px;
+        }
+
+        .header {
+          padding: 20px 30px;
+        }
+
+        * {
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .main-content,
+        .header {
+          padding: 24px 10px;
+        }
+
+        .resume-container {
+          border-radius: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          text-align: center;
+          gap: 18px;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .contact-left,
+        .contact-right {
+          align-items: center;
+        }
+
+        .skills-container,
+        .two-column,
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume-container">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-content">
+          <div class="name-title">
+            <h1 class="name">ANIL PASWAN</h1>
+            <p class="title">Frontend Developer | UI Engineer</p>
+          </div>
+          <div class="contact-info">
+            <div class="contact-left">
+              <div class="contact-item">
+                <i class="bi bi-envelope-fill contact-icon"></i>
+                anilpaswan619@gmail.com
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-telephone-fill contact-icon"></i>
+                +91-8586848849
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-geo-alt-fill contact-icon"></i>
+                165 – Shaheed Vihar, Lucknow, 226025 (UP)
+              </div>
+            </div>
+            <div class="contact-right">
+              <div class="contact-item">
+                <i class="bi bi-globe2 contact-icon"></i>
+                <a href="https://anilpaswan619.github.io" target="_blank"
+                  >Portfolio</a
+                >
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-linkedin contact-icon"></i>
+                <a
+                  href="https://linkedin.com/in/anil-paswan-91466578"
+                  target="_blank"
+                  >LinkedIn</a
+                >
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-github contact-icon"></i>
+                <a href="https://github.com/anilpaswan619" target="_blank"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <!-- About Me -->
+        <div class="section">
+          <h2 class="section-title">About Me</h2>
+          <p class="summary">
+            Passionate Frontend Developer with 7+ years of experience in
+            building modern, responsive, and user-centric web applications.
+            Skilled in enhancing UI/UX quality and delivering scalable frontend
+            solutions using React, Angular, and modern CSS frameworks. Adept at
+            turning complex designs into clean, efficient code while ensuring
+            high performance and cross-platform consistency. Dedicated to
+            leveraging technology to build impactful, design-driven web
+            interfaces and contribute to business growth through continuous
+            innovation.
+          </p>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+          <h2 class="section-title">Professional Experience</h2>
+
+          <div class="experience-item">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Technical Lead – UI/Frontend Developer</h3>
+                <p class="company">Royal Cyber Private Limited</p>
+              </div>
+              <div class="date-location">
+                Dec 2021 – Jun 2025<br />Bangalore, India (Remote)
+              </div>
+            </div>
+            <ul class="responsibilities">
+              <li>
+                Developed innovative and responsive user interfaces for
+                large-scale enterprise applications such as AMEX Bahrain, CMS
+                Vendor Management and Optimizely Fortify, improving performance
+                and user engagement
+              </li>
+              <li>
+                Resolved UI/UX issues across devices to ensure seamless
+                cross-platform compatibility, resulting in a consistent
+                experience for mobile, tablet, and desktop users
+              </li>
+              <li>
+                Customized and extended Bootstrap, Tailwind CSS, and Material-UI
+                frameworks to align with global brand standards and enhance
+                design scalability
+              </li>
+              <li>
+                Built and reused common UI components, reducing redundancy and
+                accelerating development cycles across projects
+              </li>
+              <li>
+                Translated interactive Figma/Adobe XD prototypes into polished,
+                production-ready interfaces, improving delivery speed and client
+                satisfaction
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Web Developer Intern</h3>
+                <p class="company">LetsAlign | Advids</p>
+              </div>
+              <div class="date-location">
+                Sep 2021 – Nov 2021<br />Mumbai, India (Remote)
+              </div>
+            </div>
+            <ul class="responsibilities">
+              <li>
+                Assisted in developing reusable components and converting Figma
+                designs into interactive UI using HTML, CSS, and JavaScript
+              </li>
+              <li>
+                Optimized UI performance by refactoring CSS and improving
+                component rendering efficiency
+              </li>
+              <li>
+                Participated in sprint planning and code reviews to support
+                product updates
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Contact Center Associate</h3>
+                <p class="company">Webhelp India Private Limited</p>
+              </div>
+              <div class="date-location">
+                Oct 2019 – Nov 2021<br />Gurugram, India (Hybrid)
+              </div>
+            </div>
+            <ul class="responsibilities">
+              <li>
+                Delivered real-time support to clients and customers, resolving
+                queries with a focus on service-level compliance and timely
+                solutions
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Customer Care Executive</h3>
+                <p class="company">
+                  CRM Services India Private Limited (Teleperformance)
+                </p>
+              </div>
+              <div class="date-location">
+                Sep 2018 – Sep 2019<br />Gurugram, India
+              </div>
+            </div>
+            <ul class="responsibilities">
+              <li>
+                Handled high-volume ticket support, logging and categorizing
+                issues systematically to streamline escalation, ensure SLA
+                adherence, and contribute to knowledge base documentation
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Customer Care Executive</h3>
+                <p class="company">Bird Information Systems Private Limited</p>
+              </div>
+              <div class="date-location">
+                Jul 2017 – Sep 2018<br />Gurugram, India
+              </div>
+            </div>
+            <ul class="responsibilities">
+              <li>
+                Monitored and troubleshot payment gateways including PayU,
+                Razorpay, and UPI to ensure seamless transaction flows and
+                promptly resolve payment-related issues
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="skills-container">
+            <div class="skills-section">
+              <h4>
+                <i class="bi bi-filetype-html project-icon"></i>
+                Frontend Technologies
+              </h4>
+              <div class="skills-list">
+                JavaScript, React, TypeScript, Next.js, Angular, HTML/HTML5,
+                CSS/CSS3, SCSS/Sass
+              </div>
+            </div>
+            <div class="skills-section">
+              <h4>
+                <i class="bi bi-bootstrap project-icon"></i>
+                Frameworks & Libraries
+              </h4>
+              <div class="skills-list">
+                Tailwind CSS, Bootstrap, Material-UI, Styled Components
+              </div>
+            </div>
+            <div class="skills-section">
+              <h4>
+                <i class="bi bi-palette project-icon"></i>
+                UX Tools
+              </h4>
+              <div class="skills-list">
+                Adobe XD, Figma, Photoshop, Zeplin, Mockup
+              </div>
+            </div>
+            <div class="skills-section">
+              <h4>
+                <i class="bi bi-git project-icon"></i>
+                Development Tools & Miscellaneous
+              </h4>
+              <div class="skills-list">
+                Git/GitHub, GitLab, VS Code, IntelliJ, Chrome DevTools, Jira,
+                Confluence, Teams, Slack, RESTful APIs, Postman
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Projects -->
+        <div class="section">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects-grid">
+            <div class="project-item">
+              <div class="project-title">
+                <i class="bi bi-lightning-fill project-icon"></i>
+                <a href="https://www.nouraa.ai/" target="_blank">Nouraa AI</a>
+              </div>
+              <div class="project-description">
+                AI-powered answering service for seamless client interaction and
+                smart call handling.
+              </div>
+              <div class="project-tech">
+                JavaScript, TypeScript, React, Next.js, Bootstrap, SCSS, HTML
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">
+                <i class="bi bi-mortarboard-fill project-icon"></i>
+                <a href="https://edusync-anil.vercel.app/home" target="_blank"
+                  >EduSync</a
+                >
+              </div>
+              <div class="project-description">
+                Education management platform for collaboration between parents,
+                teachers, and students.
+              </div>
+              <div class="project-tech">
+                TypeScript, Angular, Material UI, SCSS, Tailwind CSS, HTML
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">
+                <i class="bi bi-egg-fried project-icon"></i>
+                <a href="https://cookpedia-anil.vercel.app/" target="_blank"
+                  >Cookpedia</a
+                >
+              </div>
+              <div class="project-description">
+                Recipe sharing platform to discover, share, and save favorite
+                recipes.
+              </div>
+              <div class="project-tech">
+                TypeScript, Angular, SCSS, Bootstrap, HTML
+              </div>
+            </div>
+            <div class="project-item">
+              <div class="project-title">
+                <i class="bi bi-house-door-fill project-icon"></i>
+                <a href="https://dobby-anil.vercel.app/" target="_blank"
+                  >Dobby</a
+                >
+              </div>
+              <div class="project-description">
+                Home maintenance platform for managing tasks and hiring trusted
+                professionals.
+              </div>
+              <div class="project-tech">
+                JavaScript, React, Next.js, Bootstrap, SCSS, CSS, HTML,
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education & Certifications -->
+        <div class="section">
+          <div class="two-column">
+            <div>
+              <h2 class="section-title">Education</h2>
+              <div class="education-item">
+                <div class="education-details">
+                  <div class="degree">B.Tech Information Technology</div>
+                  <div class="institution">
+                    Dr. A.P.J. Abdul Kalam Technical University, Lucknow
+                  </div>
+                </div>
+                <div class="edu-date">Jul 2011 – Jun 2015</div>
+              </div>
+              <div class="education-item">
+                <div class="education-details">
+                  <div class="degree">U.P Board Intermediate (Class XII)</div>
+                  <div class="institution">
+                    Board of High School and Intermediate Education, Prayagraj
+                  </div>
+                </div>
+                <div class="edu-date">Jul 2009 – Jun 2011</div>
+              </div>
+              <div class="education-item">
+                <div class="education-details">
+                  <div class="degree">U.P Board High School (Class X)</div>
+                  <div class="institution">
+                    Board of High School and Intermediate Education, Prayagraj
+                  </div>
+                </div>
+                <div class="edu-date">Jul 2008 – Jun 2009</div>
+              </div>
+            </div>
+            <div>
+              <h2 class="section-title">Certifications</h2>
+              <div class="cert-item">
+                <i class="bi bi-cpu-fill cert-icon"></i>
+                Artificial Intelligence – SIC
+              </div>
+              <div class="cert-item">
+                <i class="bi bi-code-slash cert-icon"></i>
+                Web Development Course – Masai School
+              </div>
+              <div class="cert-item">
+                <i class="bi bi-shield-lock-fill cert-icon"></i>
+                Cyber Security Skilling Program – IITK & DST
+              </div>
+              <h2 class="section-title" style="margin-top: 15px">Languages</h2>
+              <div class="cert-item">
+                <i class="bi bi-translate cert-icon"></i>
+                English (Professional), Hindi (Native)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
