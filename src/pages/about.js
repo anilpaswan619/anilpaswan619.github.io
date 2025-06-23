@@ -319,7 +319,7 @@ const About = ({ descriptionRef }) => {
               }}
             >
               <a
-                href="/resume.html"
+                href="/resume/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
