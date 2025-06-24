@@ -110,9 +110,9 @@ const Footer = () => {
               className="footer-logo"
               style={{
                 // Match header logo color
-                width: "68px",
-                height: "68px",
-                borderRadius: "10px",
+                width: "65px",
+                height: "65px",
+                borderRadius: "15px",
                 background: "linear-gradient(135deg, #6366f1, #ec4899)",
                 display: "flex",
                 alignItems: "center",
@@ -128,7 +128,7 @@ const Footer = () => {
               }}
             >
               <span
-                className="footer-logo-text"
+                className="footer-logo-text fs-3"
                 style={{ position: "relative", zIndex: 2 }}
               >
                 AP
