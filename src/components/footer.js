@@ -103,12 +103,36 @@ const Footer = () => {
       <div className={`footer-bg-blob-3${isVisible ? " visible" : ""}`} />
 
       <div className="footer-content">
-        {/* Minimal Brand Section */}
+        {/* Brand Section */}
         <div className="footer-brand">
           <div className="footer-brand-wrapper">
-            <div className="footer-logo">
-              <div className="footer-logo-bg" />
-              <span className="footer-logo-text">AP</span>
+            <div
+              className="footer-logo"
+              style={{
+                // Match header logo color
+                width: "68px",
+                height: "68px",
+                borderRadius: "10px",
+                background: "linear-gradient(135deg, #6366f1, #ec4899)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "1.2rem",
+                color: "white",
+                letterSpacing: "1px",
+                marginRight: 10,
+                boxShadow: "0 8px 25px rgba(99,102,241,0.18)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <span
+                className="footer-logo-text"
+                style={{ position: "relative", zIndex: 2 }}
+              >
+                AP
+              </span>
               <div className="footer-logo-shimmer" />
             </div>
             <div className="footer-brand-text">
