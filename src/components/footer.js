@@ -110,8 +110,8 @@ const Footer = () => {
               className="footer-logo"
               style={{
                 // Match header logo color
-                width: "65px",
-                height: "65px",
+                width: "55px",
+                height: "55px",
                 borderRadius: "15px",
                 background: "linear-gradient(135deg, #6366f1, #ec4899)",
                 display: "flex",
@@ -136,7 +136,7 @@ const Footer = () => {
               <div className="footer-logo-shimmer" />
             </div>
             <div className="footer-brand-text">
-              <h3 className="text-start fw-bold mb-1">Anil Paswan</h3>
+              <h4 className="text-start fw-bold mb-0">Anil Paswan</h4>
               <p>Frontend Developer</p>
             </div>
           </div>
@@ -172,25 +172,62 @@ const Footer = () => {
         {/* Social Links */}
         <div className="footer-social">
           <div className="footer-social-links">
-            {socialLinks.map((social, index) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={social.label}
-                className={`footer-social-link${
-                  hoveredSocial === social.label ? " hovered" : ""
-                }`}
-                style={{
-                  transitionDelay: `${1.5 + index * 0.1}s`,
-                }}
-                onMouseEnter={() => setHoveredSocial(social.label)}
-                onMouseLeave={() => setHoveredSocial(null)}
-              >
-                <i className={social.icon}></i>
-              </a>
-            ))}
+            <div
+              style={{
+                display: "flex",
+                gap: "1rem",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {[
+                {
+                  href: "https://github.com/anilpaswan619",
+                  icon: "bi bi-github",
+                  label: "GitHub",
+                },
+                {
+                  href: "https://www.linkedin.com/in/anil-paswan-91466578/",
+                  icon: "bi bi-linkedin",
+                  label: "LinkedIn",
+                },
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={social.label}
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    borderRadius: "12px",
+                    background: "rgba(255, 255, 255, 0.05)",
+                    backdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#94A3B8",
+                    fontSize: "1.2rem",
+                    textDecoration: "none",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = "rgba(255, 255, 255, 0.1)";
+                    e.target.style.color = "white";
+                    e.target.style.transform = "translateY(-2px) scale(1.05)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = "rgba(255, 255, 255, 0.05)";
+                    e.target.style.color = "#94A3B8";
+                    e.target.style.transform = "translateY(0) scale(1)";
+                  }}
+                >
+                  <i className={social.icon}></i>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

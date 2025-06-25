@@ -444,7 +444,6 @@ const Contact = () => {
                       justifyContent: "center",
                       marginRight: "1.5rem",
                       boxShadow: "0 12px 24px rgba(99, 102,241, 0.4)",
-                      border: "2px solid rgba(255, 255, 255, 0.1)",
                     }}
                   >
                     <span style={{ fontSize: "1.8rem" }}>💬</span>
@@ -893,7 +892,6 @@ const Contact = () => {
                         alignItems: "center",
                         justifyContent: "center",
                         boxShadow: "0 12px 24px rgba(99,102,241,0.18)",
-                        border: "2px solid rgba(255,255,255,0.13)",
                         fontSize: "2rem",
                         color: "#fff",
                       }}
