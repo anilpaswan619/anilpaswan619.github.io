@@ -4,7 +4,6 @@ const Footer = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
-  const [hoveredSocial, setHoveredSocial] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Removed isMobile effect as it was unused
@@ -68,23 +67,6 @@ const Footer = () => {
     { id: "projects", label: "Projects", icon: "bi bi-kanban" },
     { id: "skills", label: "Skills", icon: "bi bi-lightning-charge" },
     { id: "contact", label: "Contact Me", icon: "bi bi-envelope-at" },
-  ];
-
-  const socialLinks = [
-    {
-      href: "https://github.com/anilpaswan619",
-      icon: "bi bi-github",
-      label: "GitHub",
-      color: "#333",
-      hoverColor: "#6366F1",
-    },
-    {
-      href: "https://www.linkedin.com/in/anil-paswan-91466578/",
-      icon: "bi bi-linkedin",
-      label: "LinkedIn",
-      color: "#0077B5",
-      hoverColor: "#EC4899",
-    },
   ];
 
   return (
