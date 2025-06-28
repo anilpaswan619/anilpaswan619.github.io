@@ -73,7 +73,6 @@ const CircularSkill = ({ value, label, color, bgColor, index }) => {
         opacity: isVisible ? 1 : 0,
         position: "relative",
         overflow: "hidden",
-        cursor: "pointer",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "translateY(-8px) scale(1.05)";
