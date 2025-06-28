@@ -121,47 +121,11 @@ const Project = () => {
     };
   }, [filteredProjects]);
 
-  const getTagColor = (tag) => {
-    const colors = {
-      "#React": {
-        bg: "rgba(97, 218, 251, 0.1)",
-        border: "#61dafb",
-        text: "#0891b2",
-      },
-      "#Angular": {
-        bg: "rgba(255, 255, 255, 0.1)",
-        border: "#60a5fa",
-        text: "#60a5fa",
-      },
-      "#JavaScript": {
-        bg: "rgba(247, 223, 30, 0.1)",
-        border: "#f7df1e",
-        text: "#ca8a04",
-      },
-      "#HTML": {
-        bg: "rgba(227, 79, 38, 0.1)",
-        border: "#e34f26",
-        text: "#ea580c",
-      },
-      "#CSS": {
-        bg: "rgba(21, 114, 182, 0.1)",
-        border: "#1572b6",
-        text: "#2563eb",
-      },
-      "#Dashboard": {
-        bg: "rgba(139, 92, 246, 0.1)",
-        border: "#8b5cf6",
-        text: "#7c3aed",
-      },
-    };
-    return (
-      colors[tag] || {
-        bg: "rgba(255, 255, 255, 0.1)",
-        border: "#94A3B8",
-        text: "#94A3B8",
-      }
-    );
-  };
+  const getTagColor = () => ({
+    bg: "rgba(99, 102, 241, 0.13)", // Indigo, matches theme
+    border: "#6366F1",
+    text: "#6366F1",
+  });
 
   const getFilterButtonStyle = (tag, isActive) => {
     if (isActive) {
@@ -538,7 +502,7 @@ const Project = () => {
                   {/* Enhanced Tags */}
                   <div className="mb-4 d-flex flex-wrap gap-2">
                     {project.tags.map((tag) => {
-                      const tagColor = getTagColor(tag);
+                      const tagColor = getTagColor();
                       return (
                         <span
                           key={tag}
@@ -546,12 +510,15 @@ const Project = () => {
                           style={{
                             background: tagColor.bg,
                             color: tagColor.text,
-                            border: `1px solid ${tagColor.border}`,
-                            fontSize: "0.85rem",
+                            border: "1px solid rgba(255, 255, 255, 0.1)",
+                            fontSize: "0.92rem",
                             fontWeight: "600",
                             letterSpacing: "0.02em",
                             backdropFilter: "blur(10px)",
-                            boxShadow: `0 4px 12px ${tagColor.border}20`,
+                            boxShadow: `0 4px 12px ${tagColor.border}22`,
+                            transition: "all 0.3s",
+                            textTransform: "none",
+                            marginBottom: "2px",
                           }}
                         >
                           {tag}
