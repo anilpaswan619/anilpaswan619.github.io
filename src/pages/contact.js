@@ -794,7 +794,7 @@ const Contact = () => {
                 flexDirection: "column",
                 gap: isMobile ? "1.5rem" : "2rem",
                 minHeight: sectionHeight,
-                justifyContent: "center",
+
                 width: "100%",
                 boxSizing: "border-box",
                 transform: rightSectionVisible
