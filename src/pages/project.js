@@ -310,7 +310,7 @@ const Project = () => {
           }}
         >
           <button
-            className="btn rounded-pill px-4 py-2 fw-semibold border"
+            className="btn rounded-pill px-4 py-2 fw-semibold"
             style={{
               ...getFilterButtonStyle("All", selectedTag === "All"),
               transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -343,7 +343,7 @@ const Project = () => {
           {allTags.map((tag) => (
             <button
               key={tag}
-              className="btn rounded-pill px-4 py-2 fw-semibold border"
+              className="btn rounded-pill px-4 py-2 fw-semibold"
               style={{
                 ...getFilterButtonStyle(tag, selectedTag === tag),
                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",

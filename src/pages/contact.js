@@ -803,6 +803,8 @@ const Contact = () => {
                 opacity: rightSectionVisible ? 1 : 0,
                 filter: rightSectionVisible ? "blur(0)" : "blur(2px)",
                 transition: "all 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                borderRadius: "24px",
               }}
               onMouseEnter={(e) => {
                 if (rightSectionVisible) {
