@@ -398,7 +398,7 @@ const Project = () => {
               }}
             >
               <div
-                className="card border-0  position-relative overflow-hidden p-1 pt-0"
+                className="card   position-relative overflow-hidden p-1 pt-0"
                 style={{
                   background: "rgba(255, 255, 255, 0.05)",
                   backdropFilter: "blur(20px)",
