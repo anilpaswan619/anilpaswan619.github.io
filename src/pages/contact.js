@@ -559,21 +559,20 @@ const Contact = () => {
                           color: "#F1F5F9",
                           backdropFilter: "blur(10px)",
                           boxSizing: "border-box",
+                          outline: "none",
                         }}
                         onFocus={(e) => {
                           e.target.style.borderColor = "#6366F1";
                           e.target.style.boxShadow =
-                            "0 0 0 3px rgba(99, 102,241, 0.1)";
-                          e.target.style.background =
-                            "rgba(255, 255, 255, 0.08)";
+                            "0 0 0 3px rgba(99,102,241,0.18)";
+                          e.target.style.background = "rgba(255,255,255,0.09)";
                         }}
                         onBlur={(e) => {
                           e.target.style.borderColor = errors.name
                             ? "#EF4444"
-                            : "rgba(255, 255, 255, 0.1)";
+                            : "rgba(255,255,255,0.1)";
                           e.target.style.boxShadow = "none";
-                          e.target.style.background =
-                            "rgba(255, 255, 255, 0.05)";
+                          e.target.style.background = "rgba(255,255,255,0.05)";
                         }}
                       />
                       {errors.name && (
@@ -622,21 +621,20 @@ const Contact = () => {
                           color: "#F1F5F9",
                           backdropFilter: "blur(10px)",
                           boxSizing: "border-box",
+                          outline: "none",
                         }}
                         onFocus={(e) => {
                           e.target.style.borderColor = "#6366F1";
                           e.target.style.boxShadow =
-                            "0 0 0 3px rgba(99, 102,241, 0.1)";
-                          e.target.style.background =
-                            "rgba(255, 255, 255, 0.08)";
+                            "0 0 0 3px rgba(99,102,241,0.18)";
+                          e.target.style.background = "rgba(255,255,255,0.09)";
                         }}
                         onBlur={(e) => {
                           e.target.style.borderColor = errors.email
                             ? "#EF4444"
-                            : "rgba(255, 255, 255, 0.1)";
+                            : "rgba(255,255,255,0.1)";
                           e.target.style.boxShadow = "none";
-                          e.target.style.background =
-                            "rgba(255, 255, 255, 0.05)";
+                          e.target.style.background = "rgba(255,255,255,0.05)";
                         }}
                       />
                       {errors.email && (
@@ -687,21 +685,20 @@ const Contact = () => {
                           minHeight: "120px",
                           backdropFilter: "blur(10px)",
                           boxSizing: "border-box",
+                          outline: "none",
                         }}
                         onFocus={(e) => {
                           e.target.style.borderColor = "#6366F1";
                           e.target.style.boxShadow =
-                            "0 0 0 3px rgba(99, 102,241, 0.1)";
-                          e.target.style.background =
-                            "rgba(255, 255, 255, 0.08)";
+                            "0 0 0 3px rgba(99,102,241,0.18)";
+                          e.target.style.background = "rgba(255,255,255,0.09)";
                         }}
                         onBlur={(e) => {
                           e.target.style.borderColor = errors.message
                             ? "#EF4444"
-                            : "rgba(255, 255, 255, 0.1)";
+                            : "rgba(255,255,255,0.1)";
                           e.target.style.boxShadow = "none";
-                          e.target.style.background =
-                            "rgba(255, 255, 255, 0.05)";
+                          e.target.style.background = "rgba(255,255,255,0.05)";
                         }}
                       />
                       {errors.message && (
