@@ -995,9 +995,9 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(15, 15, 35, 0.95);
+  background: #131628;
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #131628;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 
@@ -1007,9 +1007,8 @@ body {
 }
 
 .custom-header-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .custom-navbar {

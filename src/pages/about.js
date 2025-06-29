@@ -223,7 +223,6 @@ const About = ({ descriptionRef }) => {
                   fontSize: "1.1rem",
                   maxWidth: "500px",
                   lineHeight: "1.6",
-                  margin: "0 auto",
                 }}
               >
                 Crafting beautiful, responsive web experiences with modern
@@ -248,7 +247,7 @@ const About = ({ descriptionRef }) => {
                   display: "flex",
                   flexWrap: "wrap",
                   gap: "12px",
-                  justifyContent: "center",
+
                   alignItems: "center",
                 }}
               >
@@ -313,7 +312,6 @@ const About = ({ descriptionRef }) => {
                 display: "flex",
                 flexDirection: window.innerWidth < 768 ? "column" : "row",
                 gap: "1rem",
-                justifyContent: "center",
                 alignItems: "center",
                 marginBottom: "2rem",
               }}
@@ -396,7 +394,6 @@ const About = ({ descriptionRef }) => {
               style={{
                 display: "flex",
                 gap: "1rem",
-                justifyContent: "center",
                 alignItems: "center",
               }}
             >

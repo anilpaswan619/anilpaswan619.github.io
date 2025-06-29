@@ -70,7 +70,9 @@ const Header = () => {
     <>
       <div style={{ height: "80px" }} />
       <header
-        className={`custom-header${scrolled ? " custom-header-scrolled" : ""}`}
+        className={`container-fluid custom-header${
+          scrolled ? " custom-header-scrolled" : ""
+        }`}
       >
         <div className="custom-header-container">
           <nav className="navbar custom-navbar">
