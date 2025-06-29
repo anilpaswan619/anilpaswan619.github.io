@@ -196,7 +196,7 @@ const About = ({ descriptionRef }) => {
             <div style={{ marginBottom: "2rem" }}>
               <h1
                 style={{
-                  fontSize: "clamp(1rem, 4vw, 3rem)",
+                  fontSize: "clamp(2rem, 4vw, 3rem)",
                   fontWeight: "700",
                   background:
                     "linear-gradient(135deg, #6366F1, #EC4899, #F59E0B)",
@@ -218,6 +218,7 @@ const About = ({ descriptionRef }) => {
                 </span>
               </h1>
               <p
+                className="mx-auto mx-lg-0"
                 style={{
                   color: "#94A3B8",
                   fontSize: "1.1rem",
@@ -243,11 +244,11 @@ const About = ({ descriptionRef }) => {
                 Technologies I work with
               </p>
               <div
+                className="justify-content-center justify-content-lg-start"
                 style={{
                   display: "flex",
                   flexWrap: "wrap",
                   gap: "12px",
-
                   alignItems: "center",
                 }}
               >
@@ -308,6 +309,7 @@ const About = ({ descriptionRef }) => {
 
             {/* Enhanced action buttons */}
             <div
+              className="justify-content-center justify-content-lg-start"
               style={{
                 display: "flex",
                 flexDirection: window.innerWidth < 768 ? "column" : "row",
@@ -391,6 +393,7 @@ const About = ({ descriptionRef }) => {
 
             {/* Social links with enhanced styling */}
             <div
+              className="justify-content-center justify-content-lg-start"
               style={{
                 display: "flex",
                 gap: "1rem",
