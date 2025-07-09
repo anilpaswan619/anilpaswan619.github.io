@@ -3,6 +3,17 @@ import React, { useState, useEffect, useRef } from "react";
 // Add a 'category' and 'tags' property to each project and reorder for best/most complex first
 const projects = [
   {
+    title: "CompareHub",
+    description:
+      "Product Comparison App is a responsive React-based web application designed to allow users to compare features of multiple products side-by-side in an intuitive, user-friendly interface.",
+    imageUrl: "/assets/prodcuct-compare.png",
+    liveLink: "https://product-comparion-anil.netlify.app",
+    githubLink: "https://github.com/anilpaswan619/Product-Comparison-App",
+    category: "React",
+    tags: ["#React"],
+    featured: true,
+  },
+  {
     title: "DOBBY",
     description:
       "The future of home maintenance. Being a homeowner is hard enough. Let Dobby tackle your to-do list with the best pros, transparent pricing, and lots of love. And get your home back to being a home.",
@@ -62,7 +73,7 @@ const projects = [
     liveLink: "https://actoro-paswan-anil.netlify.app/",
     githubLink: "https://github.com/anilpaswan619/Actoro",
     category: "HTML/CSS",
-    tags: ["#HTML", "#CSS"],
+    tags: ["#HTML/CSS"],
   },
 ];
 
