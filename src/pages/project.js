@@ -88,9 +88,10 @@ const Project = () => {
   const [animate, setAnimate] = useState(false);
   const cardRefs = useRef([]);
 
+  // Filtered projects logic
   const filteredProjects =
     selectedTag === "All"
-      ? projects
+      ? projects.slice(0, projects.length - 1) // Hide last project on "All"
       : projects.filter((p) => p.tags.includes(selectedTag));
 
   // Reset visible cards when filter changes
