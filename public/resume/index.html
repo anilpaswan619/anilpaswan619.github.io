@@ -20,30 +20,42 @@
       }
 
       body {
-        font-family: "Inter", "Roboto", "Segoe UI", Arial, Helvetica, sans-serif;
-        line-height: 1.5;
-        color: #2c3e50;
-        background: #f8f9fa;
-        padding: 32px;
+        font-family: "Inter", "Segoe UI", Helvetica, sans-serif;
+        line-height: 1.6;
+        color: #3f4b5c;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 20px;
+        min-height: 100vh;
       }
 
       .resume-container {
         max-width: 8.5in;
         margin: 0 auto;
-        background: #fff;
-        box-shadow: 0 10px 40px rgba(44, 62, 80, 0.13),
-          0 1.5px 8px rgba(44, 62, 80, 0.07);
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1.5px solid #e9ecef;
+        background: #ffffff;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        border-radius: 16px;
+        overflow: visible;
+        border: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .resume-container:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
       }
 
       .header {
         background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
         color: #fff;
-        padding: 35px 40px;
+        padding: 32px 40px;
         position: relative;
-        border-bottom: none;
+        overflow: visible;
+        margin-bottom: 10px;
+        border-radius: 16px 16px 0 0;
+      }
+
+      .header::before {
+        display: none;
       }
 
       .header::after {
@@ -61,10 +73,10 @@
       .header-content {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         position: relative;
         z-index: 2;
-        gap: 0;
+        gap: 32px;
       }
 
       .name-title {
@@ -72,90 +84,90 @@
       }
 
       .name {
-        font-size: 2.2rem;
-        font-weight: 800;
+        font-size: 2rem;
+        font-weight: 700;
         margin-bottom: 6px;
-        letter-spacing: 0.3px;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        background: none;
-        -webkit-background-clip: initial;
-        -webkit-text-fill-color: initial;
-        background-clip: initial;
+        letter-spacing: 0.5px;
+        color: #fff;
       }
 
       .title {
-        font-size: 1rem;
-        font-weight: 300;
-        opacity: 0.95;
-        letter-spacing: 0.3px;
-        color: #f8fafc;
-        margin-bottom: 0.2rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        letter-spacing: 0px;
+        text-transform: none;
+        color: #d0d8e8;
+        margin: 0;
       }
 
       .contact-info {
         display: flex;
-        gap: 25px;
+        gap: 20px;
         font-size: 0.85rem;
-        align-items: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
 
       .contact-left,
       .contact-right {
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 8px;
       }
 
       .contact-item {
         display: flex;
         gap: 8px;
-        transition: all 0.3s;
-        padding: 2px 0;
-        font-size: 0.9rem;
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        padding: 0;
+        font-size: 0.85rem;
+        align-items: center;
       }
 
       .contact-item:hover {
-        transform: translateX(4px) scale(1.03);
+        transform: translateX(3px);
       }
 
       .contact-icon,
       .contact-item i {
         width: 16px;
         height: 16px;
-        font-size: 1rem;
-        color: #fff;
+        font-size: 0.9rem;
+        color: #9db3d0;
         vertical-align: middle;
-        transition: color 0.3s, transform 0.3s;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
       }
 
       .contact-item:hover .contact-icon,
       .contact-item:hover i {
-        color: #e9ecef;
-        transform: scale(1.15);
+        color: #fff;
+        transform: scale(1.2) rotate(5deg);
       }
 
       .contact-item a {
-        color: #fff;
+        color: #d6e5f5;
         text-decoration: none;
         position: relative;
-        transition: color 0.3s;
+        transition: color 0.3s ease;
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
 
       .contact-item a::after {
         content: "";
         position: absolute;
         width: 0;
-        height: 2px;
-        bottom: -2px;
+        height: 1.5px;
+        bottom: -3px;
         left: 0;
-        background: #fff;
-        transition: width 0.3s;
+        background: #5b8fc7;
+        transition: width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
       .contact-item a:hover {
-        color: #e9ecef;
+        color: #fff;
       }
 
       .contact-item a:hover::after {
@@ -163,73 +175,94 @@
       }
 
       .main-content {
-        padding: 36px 48px 36px 48px;
+        padding: 32px 40px;
       }
 
       .section {
-        margin-bottom: 32px;
+        margin-bottom: 24px;
+      }
+
+      .section:last-child {
+        margin-bottom: 0;
       }
 
       .section-title {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         font-weight: 800;
-        color: #2c5aa0;
-        margin-bottom: 14px;
+        color: #1a2e4a;
+        margin-bottom: 16px;
         text-transform: uppercase;
-        letter-spacing: 0.7px;
-        border-bottom: 2px solid #e9ecef;
-        padding-bottom: 6px;
-        background: linear-gradient(90deg, #2c5aa0, #1e3f73);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        letter-spacing: 1.2px;
+        border-bottom: 3px solid #2c5aa0;
+        padding-bottom: 8px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 30%;
+        height: 3px;
+        background: linear-gradient(90deg, #2c5aa0, #5b8fc7);
       }
 
       .summary {
-        font-size: 1rem;
+        font-size: 0.95rem;
         line-height: 1.7;
         text-align: justify;
-        color: #495057;
-        background: #f8f9ff;
-        padding: 18px 20px;
+        color: #3f4b5c;
+        background: linear-gradient(135deg, #f5f7fa 0%, #eff3f8 100%);
+        padding: 16px 18px;
         border-left: 5px solid #2c5aa0;
-        border-radius: 6px;
+        border-radius: 8px;
         margin-bottom: 0;
       }
 
       .experience-item {
-        margin-bottom: 24px;
+        margin-bottom: 20px;
         page-break-inside: avoid;
+        padding: 16px 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .experience-item:last-child {
+        border-bottom: none;
       }
 
       .job-header {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
+        gap: 12px;
       }
 
       .job-info h3 {
-        font-size: 1.08rem;
-        font-weight: 700;
+        font-size: 1.03rem;
+        font-weight: 800;
         color: #2c5aa0;
         margin-bottom: 2px;
       }
 
       .company {
-        font-size: 1rem;
-        color: #6c757d;
-        font-weight: 600;
+        font-size: 0.93rem;
+        color: #6b7280;
+        font-weight: 500;
       }
 
       .date-location {
-        font-size: 0.95rem;
-        color: #6c757d;
+        font-size: 0.9rem;
+        color: #6b7280;
         text-align: right;
-        background: #f8f9ff;
-        padding: 4px 10px;
-        border-radius: 12px;
+        background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+        padding: 6px 12px;
+        border-radius: 6px;
         white-space: nowrap;
+        border: 1px solid #d1d5db;
+        font-weight: 500;
       }
 
       .responsibilities {
@@ -240,77 +273,97 @@
       }
 
       .responsibilities li {
-        font-size: 0.98rem;
-        line-height: 1.5;
-        margin-bottom: 4px;
-        padding-left: 16px;
+        font-size: 0.93rem;
+        line-height: 1.7;
+        margin-bottom: 5px;
+        padding-left: 18px;
         position: relative;
         text-align: justify;
+        color: #3f4b5c;
       }
 
       .responsibilities li:before {
-        content: "•";
+        content: "▸";
         color: #2c5aa0;
         position: absolute;
         left: 0;
         font-weight: bold;
-        font-size: 1.2em;
+        font-size: 1rem;
       }
 
       .skills-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 18px;
+        gap: 20px;
       }
 
       .skills-section {
-        background: #f8f9ff;
+        background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%);
         padding: 16px 18px;
-        border-radius: 8px;
-        border-left: 4px solid #2c5aa0;
+        border-radius: 10px;
+        border: 1px solid #e5e7eb;
+        border-left: 5px solid #2c5aa0;
         margin-bottom: 0;
+        transition: all 0.3s ease;
+      }
+
+      .skills-section:hover {
+        border-color: #5b8fc7;
+        box-shadow: 0 4px 12px rgba(44, 90, 160, 0.1);
+        transform: translateY(-2px);
       }
 
       .skills-section h4 {
-        font-size: 1rem;
-        font-weight: 700;
+        font-size: 0.99rem;
+        font-weight: 800;
         color: #2c5aa0;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
 
       .skills-list {
-        font-size: 0.97rem;
-        line-height: 1.5;
-        color: #495057;
+        font-size: 0.93rem;
+        line-height: 1.7;
+        color: #3f4b5c;
+      }
+
+      .skills-list strong {
+        color: #1a2e4a;
+        font-weight: 700;
       }
 
       .projects-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 18px;
+        gap: 20px;
       }
 
       .project-item {
-        background: #f8f9ff;
-        padding: 14px 16px;
-        border-radius: 8px;
-        border-left: 4px solid #2c5aa0;
-        box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
-        transition: box-shadow 0.3s, transform 0.3s;
+        background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        padding: 16px 18px;
+        border-radius: 10px;
+        border: 1px solid #e5e7eb;
+        border-left: 5px solid #2c5aa0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
       .project-item:hover {
-        box-shadow: 0 8px 24px rgba(44, 62, 80, 0.13);
-        transform: translateY(-3px) scale(1.01);
+        box-shadow: 0 12px 30px rgba(44, 90, 160, 0.15);
+        transform: translateY(-4px);
+        border-color: #5b8fc7;
       }
 
       .project-title {
-        font-size: 1.05rem;
-        font-weight: 700;
+        font-size: 1.02rem;
+        font-weight: 800;
         color: #2c5aa0;
         margin-bottom: 6px;
         display: flex;
         gap: 8px;
+        align-items: center;
       }
 
       .project-title a {
@@ -319,12 +372,12 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        transition: color 0.3s;
+        transition: color 0.3s ease;
         position: relative;
       }
 
       .project-title a:hover {
-        color: #1e3f73;
+        color: #1e3f5a;
       }
 
       .project-title a::after {
@@ -332,10 +385,10 @@
         position: absolute;
         width: 0;
         height: 2px;
-        bottom: -2px;
+        bottom: -4px;
         left: 0;
         background: #2c5aa0;
-        transition: width 0.3s;
+        transition: width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
       .project-title a:hover::after {
@@ -350,30 +403,31 @@
       }
 
       .project-description {
-        font-size: 0.97rem;
-        line-height: 1.4;
-        color: #495057;
-        margin-bottom: 5px;
+        font-size: 0.93rem;
+        line-height: 1.6;
+        color: #3f4b5c;
+        margin-bottom: 6px;
       }
 
       .project-tech {
-        font-size: 0.93rem;
-        color: #6c757d;
+        font-size: 0.88rem;
+        color: #6b7280;
         font-style: italic;
-        margin-bottom: 4px;
+        margin-bottom: 0;
       }
 
       .two-column {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
-        gap: 36px;
+        gap: 28px;
       }
 
       .education-item {
-        margin-bottom: 14px;
+        margin-bottom: 12px;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        gap: 12px;
       }
 
       .education-details {
@@ -381,57 +435,62 @@
       }
 
       .degree {
-        font-size: 1.05rem;
-        font-weight: 700;
+        font-size: 1.01rem;
+        font-weight: 800;
         color: #2c5aa0;
       }
 
       .institution {
-        font-size: 0.97rem;
-        color: #6c757d;
+        font-size: 0.92rem;
+        color: #6b7280;
         margin-top: 2px;
       }
 
       .edu-date {
-        font-size: 0.93rem;
-        color: #6c757d;
-        background: #f8f9ff;
-        padding: 2px 8px;
-        border-radius: 8px;
+        font-size: 0.9rem;
+        color: #6b7280;
+        background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+        padding: 4px 10px;
+        border-radius: 6px;
         white-space: nowrap;
+        border: 1px solid #d1d5db;
+        font-weight: 500;
       }
 
       .cert-item {
-        font-size: 0.97rem;
-        color: #495057;
+        font-size: 0.93rem;
+        color: #1a2e4a;
         margin-bottom: 8px;
-        padding: 8px 12px;
-        background: #f8f9ff;
-        border-radius: 6px;
-        border-left: 3px solid #2c5aa0;
+        padding: 12px 14px;
+        background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%);
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+        border-left: 4px solid #2c5aa0;
         display: flex;
-
         gap: 10px;
-        transition: background 0.3s, border-color 0.3s;
+        transition: all 0.3s ease;
         cursor: default;
       }
 
       .cert-item:hover {
-        background: #e9ecef;
-        border-left: 3px solid #1e3f73;
+        background: linear-gradient(135deg, #f0f4f8 0%, #eff3f8 100%);
+        border-left: 4px solid #2c5aa0;
+        box-shadow: 0 4px 12px rgba(44, 90, 160, 0.1);
+        transform: translateX(2px);
       }
 
       .cert-icon {
         width: 18px;
         height: 18px;
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: #2c5aa0;
         flex-shrink: 0;
-        transition: color 0.3s;
+        transition: all 0.3s ease;
       }
 
       .cert-item:hover .cert-icon {
-        color: #1e3f73;
+        color: #1e3f5a;
+        transform: scale(1.15);
       }
 
       @media print {
@@ -445,11 +504,18 @@
           border-radius: 0;
           max-width: none;
           margin: 0;
+          transform: none !important;
         }
 
-        .header::after {
+        .resume-container:hover {
+          transform: none !important;
+          box-shadow: none !important;
+        }
+
+        .header::before {
           display: none;
         }
+      }
 
         .section {
           margin-bottom: 20px;
@@ -465,9 +531,7 @@
           padding: 20px 30px;
         }
 
-        .header {
-          padding: 20px 30px;
-        }
+    
 
         * {
           print-color-adjust: exact;
@@ -478,127 +542,175 @@
       @media (max-width: 900px) {
         .main-content,
         .header {
-          padding: 18px 4vw;
+          padding: 28px 3vw;
         }
         .resume-container {
-          border-radius: 0;
+          border-radius: 12px;
         }
-        .header {
+        .header-content {
           flex-direction: column;
+          gap: 20px;
+        }
+        .contact-info {
+          justify-content: flex-start;
         }
       }
 
       @media (max-width: 768px) {
+        body {
+          padding: 12px;
+        }
+
         .header-content {
           flex-direction: column;
-          text-align: center;
-          gap: 14px;
+          text-align: left;
+          gap: 16px;
         }
+
         .contact-info {
           flex-direction: column;
-          align-items: center;
-          gap: 8px;
+          align-items: flex-start;
+          gap: 4px;
         }
+
         .contact-left,
         .contact-right {
-          align-items: center;
+          align-items: flex-start;
         }
+
         .skills-container,
         .two-column,
         .projects-grid {
           grid-template-columns: 1fr;
-          gap: 14px;
+          gap: 12px;
         }
+
         .main-content {
-          padding: 18px 2vw;
+          padding: 24px 3vw;
         }
+
         .section {
-          margin-bottom: 20px;
-          margin-top: 2rem;
+          margin-bottom: 18px;
         }
+
         .header {
-          padding: 18px 2vw;
+          padding: 24px 3vw;
         }
+
         .name {
-          font-size: 1.3rem;
+          font-size: 1.8rem;
         }
+
         .title {
-          font-size: 0.95rem;
-        }
-        .contact-item {
           font-size: 0.9rem;
         }
+
+        .contact-item {
+          font-size: 0.8rem;
+        }
+
         .section-title {
-          font-size: 1rem;
-          padding-bottom: 4px;
-        }
-        .summary {
           font-size: 0.95rem;
-          padding: 10px 8px;
+          padding-bottom: 6px;
         }
+
+        .summary {
+          font-size: 0.93rem;
+          padding: 14px 16px;
+        }
+
         .job-info h3 {
-          font-size: 0.98rem;
+          font-size: 1rem;
         }
+
         .company,
         .date-location {
           font-size: 0.85rem;
         }
+
         .responsibilities li {
-          font-size: 0.92rem;
+          font-size: 0.9rem;
         }
+
         .skills-section h4 {
-          font-size: 0.97rem;
+          font-size: 0.95rem;
         }
+
         .skills-list {
-          font-size: 0.92rem;
+          font-size: 0.9rem;
         }
+
         .project-title {
-          font-size: 0.97rem;
+          font-size: 0.98rem;
         }
+
         .project-description {
-          font-size: 0.92rem;
+          font-size: 0.9rem;
         }
+
         .project-tech {
-          font-size: 0.89rem;
-        }
-        .degree {
-          font-size: 0.97rem;
-        }
-        .institution,
-        .edu-date {
           font-size: 0.85rem;
         }
+
+        .degree {
+          font-size: 1rem;
+        }
+
+        .institution,
+        .edu-date {
+          font-size: 0.83rem;
+        }
+
         .cert-item {
-          font-size: 0.92rem;
-          padding: 6px 7px;
+          font-size: 0.9rem;
+          padding: 8px 10px;
         }
       }
 
       @media (max-width: 480px) {
         .resume-container {
           max-width: 100vw;
-          border-radius: 0;
+          border-radius: 8px;
         }
+
+        body {
+          padding: 8px;
+        }
+
         .main-content,
         .header {
-          padding: 8px 2vw;
+          padding: 16px 2.5vw;
         }
+
         .section {
-          margin-bottom: 14px;
+          margin-bottom: 12px;
         }
+
         .skills-section,
         .project-item {
-          padding: 8px 6px;
+          padding: 12px 12px;
         }
+
         .cert-item {
-          padding: 5px 5px;
+          padding: 6px 8px;
+          font-size: 0.85rem;
         }
+
         .education-item {
           flex-direction: column;
-          gap: 2px;
+          gap: 4px;
         }
+
         .two-column {
-          gap: 10px;
+          gap: 16px;
+        }
+
+        .name {
+          font-size: 1.4rem;
+        }
+
+        .contact-info {
+          flex-wrap: wrap;
         }
       }
     </style>
@@ -610,7 +722,7 @@
         <div class="header-content">
           <div class="name-title">
             <h1 class="name">ANIL PASWAN</h1>
-            <p class="title">Frontend Developer | UI Engineer</p>
+            <p class="title">Sr Frontend Developer | UI Engineer</p>
           </div>
           <div class="contact-info">
             <div class="contact-left">
@@ -624,7 +736,7 @@
               </div>
               <div class="contact-item">
                 <i class="bi bi-geo-alt-fill contact-icon"></i>
-                D-7/4, Faridabad, Haryana - 121002
+                165 – Shaheed Vihar, Lucknow, 226025
               </div>
             </div>
             <div class="contact-right">
@@ -661,7 +773,7 @@
         <div class="section">
           <h2 class="section-title">Professional Summary</h2>
           <p class="summary">
-            Senior Frontend Developer with 7+ years of proven experience in building scalable, high-performance web applications using React, Angular, and modern JavaScript frameworks. Expert in responsive design, cross-browser compatibility, and user experience optimization. Successfully delivered 25+ enterprise-level projects, improving application performance by 40% and user engagement by 35%. Skilled in Agile methodologies, code reviews, and mentoring junior developers. Strong background in UI/UX design principles, accessibility standards (WCAG), and SEO optimization.
+            Senior Frontend Engineer & AI-Driven Product Developer (8+ years) with deep expertise in TypeScript-first architectures, large-scale React/Angular applications, and Generative AI integration. Specializes in agentic AI systems, LLM integration (GPT-4, Claude), RAG pipelines, and intelligent automation. Expert in building component-driven design systems, microfrontend architectures, edge-computing frontends (Vercel, Cloudflare), and cloud-native solutions. Strong focus on AI-powered UX, Core Web Vitals, accessibility (WCAG 2.1 AA+), observability, and zero-trust security. Proven ability to develop AI-first features, mentor high-performance teams, and deliver business-critical, scalable solutions in rapidly evolving AI/ML landscape.
           </p>
         </div>
 
@@ -672,7 +784,42 @@
           <div class="experience-item">
             <div class="job-header">
               <div class="job-info">
-                <h3>Technical Lead – UI/Frontend Developer</h3>
+                <h3>Sr Analyst II Software Engineering</h3>
+                <p class="company">DXC Technology</p>
+              </div>
+              <div class="date-location">
+                12 Aug 2025 – Present<br />Noida, India  (Remote)
+              </div>
+            </div>
+            <ul class="responsibilities">
+              <li>
+                Developed AI-powered insurance frontend platform using Angular, TypeScript, and Generative AI integration for claims automation and policy recommendations; achieved 50% reduction in user processing time
+              </li>
+              <li>
+                Designed and implemented intelligent document processing UI with LLM-backed form extraction, reducing manual data entry by 70% and improving accuracy to 99.2%
+              </li>
+              <li>
+                Built AI-driven assistant component leveraging GPT-4 API with RAG (Retrieval Augmented Generation) for context-aware policy guidance; improved customer satisfaction by 42%
+              </li>
+              <li>
+                Developed reusable component libraries and design-system primitives using modern tooling (Storybook, TypeScript strict mode) to accelerate team velocity by 45%
+              </li>
+              <li>
+                Integrated REST/GraphQL APIs with intelligent caching strategies, RxJS-based reactive state management, and real-time WebSocket updates for claims tracking
+              </li>
+              <li>
+                Achieved 95+ Lighthouse scores through core web vitals optimization, image lazy-loading, and edge-side rendering; implemented observability with Sentry and LogRocket
+              </li>
+              <li>
+                Implemented comprehensive test coverage (Jest, Karma, Cypress, Playwright) with 88% code coverage; mentored junior developers on AI-powered testing automation using GitHub Copilot
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Technical Lead – UI & Frontend Developer</h3>
                 <p class="company">Royal Cyber Private Limited</p>
               </div>
               <div class="date-location">
@@ -681,22 +828,25 @@
             </div>
             <ul class="responsibilities">
               <li>
-                Architected and developed responsive user interfaces for 15+ large-scale enterprise applications including AMEX Bahrain, CMS Vendor Management, and Optimizely Fortify, resulting in 40% performance improvement and 35% increased user engagement
+                Led team of 6 developers developing headless CMS solutions with AI-powered content personalization engine; leveraged LLMs for intelligent content tagging, meta-description generation, and SEO optimization across 15+ enterprise applications
               </li>
               <li>
-                Led cross-functional teams of 5+ developers, implementing Agile methodologies and code review processes, reducing development time by 30% and bug reports by 45%
+                Designed intelligent content delivery pipeline integrating Optimizely CMS with ML models for user segmentation and dynamic content recommendations; increased conversion rates by 38%
               </li>
               <li>
-                Optimized application performance through code splitting, lazy loading, and bundle optimization, achieving 60% faster load times and 95+ Lighthouse scores
+                Built AI-driven A/B testing framework using edge functions (Vercel) and statistical models for real-time optimization; reduced experimentation cycle from 2 weeks to 48 hours
               </li>
               <li>
-                Engineered responsive, cross-platform solutions ensuring 100% compatibility across mobile, tablet, and desktop devices, serving 50K+ daily active users
+                Developed microfrontend federation strategy using Module Federation and Vite, enabling 30+ autonomous squads to deploy independently while maintaining design system consistency
               </li>
               <li>
-                Customized and extended Bootstrap, Tailwind CSS, and Material-UI frameworks, creating reusable component libraries that reduced development time by 25%
+                Implemented intelligent image optimization pipeline using AI-powered compression and WebP conversion; achieved 55% improvement in Core Web Vitals and 98 Lighthouse score
               </li>
               <li>
-                Collaborated with UX/UI designers to transform Figma and Adobe XD prototypes into pixel-perfect, production-ready interfaces, improving design-to-development workflow by 50%
+                Pioneered zero-trust security model with OAuth 2.0/OIDC, CSP headers, and runtime threat detection; maintained SOC 2 Type II compliance for 50K+ daily active users across 4 continents
+              </li>
+              <li>
+                Mentored 8 junior developers on modern practices (React 19, TypeScript generics, AI code generation); implemented GitHub Copilot workflows reducing boilerplate by 60%
               </li>
             </ul>
           </div>
@@ -713,7 +863,7 @@
             </div>
             <ul class="responsibilities">
               <li>
-                Developed 10+ responsive React components and converted 25+ Figma designs into interactive, pixel-perfect user interfaces using HTML5, CSS3, and ES6+ JavaScript
+                Developed 15+ responsive React components and converted 5+ Figma designs into interactive, pixel-perfect user interfaces using HTML5, CSS3, and ES6+ JavaScript
               </li>
               <li>
                 Implemented performance optimization techniques including code minification, image compression, and lazy loading, improving page load speeds by 35%
@@ -794,67 +944,67 @@
             <div class="skills-section">
               <h4>
                 <i class="bi bi-code-slash project-icon"></i>
-                Frontend Technologies
+                Frontend Technologies & AI/ML
               </h4>
               <div class="skills-list">
-                <strong>Languages:</strong> JavaScript (ES6+), TypeScript, HTML5, CSS3<br>
-                <strong>Frameworks:</strong> React.js, Next.js, Angular, Vue.js<br>
-                <strong>Styling:</strong> SCSS/Sass, Less, CSS-in-JS, Responsive Design
+                <strong>Languages:</strong> HTML5, CSS3 (SASS/LESS), JavaScript (ES6+), TypeScript<br>
+                <strong>Frameworks:</strong> React 19, Next.js 14, Angular 18<br>
+                <strong>AI/GenAI:</strong> LLM Integration (GPT-4, Claude, Llama), RAG Pipelines, Prompt Engineering, Vector Databases (Pinecone, Weaviate)
               </div>
             </div>
             <div class="skills-section">
               <h4>
                 <i class="bi bi-palette project-icon"></i>
-                CSS Frameworks & UI Libraries
+                CMS, State Management & UI
               </h4>
               <div class="skills-list">
-                <strong>CSS Frameworks:</strong> Tailwind CSS, Bootstrap 5, Bulma<br>
-                <strong>Component Libraries:</strong> Material-UI, Ant Design, Styled Components<br>
-                <strong>State Management:</strong> Redux, Context API, Zustand
+                <strong>Headless CMS:</strong> Optimizely CMS<br>
+                <strong>State Management:</strong> NgRx, Redux Toolkit, Zustand<br>
+                <strong>UI & Design:</strong> Material-UI, Tailwind CSS, Shadcn/ui, Bootstrap, Storybook
               </div>
             </div>
             <div class="skills-section">
               <h4>
                 <i class="bi bi-tools project-icon"></i>
-                Development Tools & Testing
+                Testing, Build & DevOps
               </h4>
               <div class="skills-list">
-                <strong>Version Control:</strong> Git, GitHub, GitLab, Bitbucket<br>
-                <strong>IDEs:</strong> VS Code, WebStorm, IntelliJ IDEA<br>
-                <strong>Testing:</strong> Jest, React Testing Library, Cypress
+                <strong>Testing:</strong> Jest, Vitest, Playwright, Cypress, Testing Library<br>
+                <strong>Build Tools:</strong> Vite, Webpack 5, Turbopack, Module Federation, esbuild, Babel<br>
+                <strong>DevOps & CI/CD:</strong> GitHub Actions, Jenkins, GitLab CI, Docker, Kubernetes
+              </div>
+            </div>
+            <div class="skills-section">
+              <h4>
+                <i class="bi bi-cloud-check project-icon"></i>
+                Cloud, APIs & Deployment
+              </h4>
+              <div class="skills-list">
+                <strong>Cloud Platforms:</strong> Vercel, Netlify, AWS (S3, CloudFront, Lambda), Azure, Cloudflare Workers<br>
+                <strong>APIs & Data:</strong> REST APIs, GraphQL, OpenAPI/Swagger, WebSocket<br>
+                <strong>Version Control:</strong> Git, GitHub, Bitbucket, GitLab
               </div>
             </div>
             <div class="skills-section">
               <h4>
                 <i class="bi bi-diagram-3 project-icon"></i>
-                Design & Collaboration Tools
+                Design Tools & Collaboration
               </h4>
               <div class="skills-list">
-                <strong>Design Tools:</strong> Adobe XD, Figma, Photoshop<br>
-                <strong>Prototyping:</strong> Zeplin, Mockup<br>
-                <strong>Collaboration:</strong> Jira, Confluence, Teams, Slack
-              </div>
-            </div>
-            <div class="skills-section">
-              <h4>
-                <i class="bi bi-gear project-icon"></i>
-                DevOps & API Integration
-              </h4>
-              <div class="skills-list">
-                <strong>CI/CD:</strong> GitHub Actions, Jenkins, Docker, Vercel<br>
-                <strong>API Integration:</strong> REST APIs, GraphQL, Axios, Fetch<br>
-                <strong>Build Tools:</strong> Webpack, Vite, Parcel, Rollup
+                <strong>Design & Prototyping:</strong> Figma, Adobe XD, Framer, Zeplin<br>
+                <strong>Productivity & Collaboration:</strong> Jira, Linear, Notion, Confluence, Slack, Microsoft Teams<br>
+                <strong>AI Dev Tools:</strong> GitHub Copilot, Cursor IDE, ChatGPT, Claude API
               </div>
             </div>
             <div class="skills-section">
               <h4>
                 <i class="bi bi-speedometer2 project-icon"></i>
-                Performance & Optimization
+                Performance, Security & Observability
               </h4>
               <div class="skills-list">
-                <strong>Performance:</strong> Lighthouse, Web Vitals, Core Web Vitals<br>
-                <strong>Accessibility:</strong> WCAG 2.1, ARIA, Screen Readers<br>
-                <strong>SEO:</strong> Technical SEO, Meta Tags, Schema Markup
+                <strong>Performance Monitoring:</strong> Core Web Vitals, Lighthouse, Sentry, LogRocket, New Relic, DataDog<br>
+                <strong>Security & Compliance:</strong> OAuth 2.0, OIDC, CSP, Zero-trust Architecture, WCAG 2.1 AA+, ARIA<br>
+                <strong>Methodologies:</strong> Agile, Scrum, Kanban, Pair Programming, Code Review Leadership
               </div>
             </div>
           </div>
@@ -866,46 +1016,46 @@
           <div class="skills-container">
             <div class="skills-section">
               <h4>
-                <i class="bi bi-trophy project-icon"></i>
-                Performance & Optimization
+                <i class="bi bi-robot project-icon"></i>
+                AI & Automation Impact
               </h4>
               <div class="skills-list">
-                • Improved application performance by 40% through code optimization<br>
-                • Achieved 95+ Lighthouse scores across all projects<br>
-                • Reduced bundle size by 35% using code splitting techniques
+                • Implemented LLM-powered features reducing user workflows by 50-70%<br>
+                • Built RAG pipelines increasing search relevance from 62% to 96%<br>
+                • Automated 65% of testing workflows using AI and intelligent test generation
               </div>
             </div>
             <div class="skills-section">
               <h4>
                 <i class="bi bi-people project-icon"></i>
-                Leadership & Collaboration
+                Leadership & Team Scaling
               </h4>
               <div class="skills-list">
-                • Led cross-functional teams of 5+ developers<br>
-                • Mentored 3 junior developers to senior positions<br>
-                • Reduced development time by 30% through process improvements
+                • Led 6+ developer teams across distributed locations (US, India, EU)<br>
+                • Mentored 6 junior developers; 4 promoted to senior engineer roles<br>
+                • Built AI-driven onboarding reducing ramp-up time from 8 weeks to 2 weeks
               </div>
             </div>
             <div class="skills-section">
               <h4>
                 <i class="bi bi-graph-up project-icon"></i>
-                Business Impact
+                Business Transformation
               </h4>
               <div class="skills-list">
-                • Delivered 25+ enterprise-level applications<br>
-                • Increased user engagement by 35% through UX improvements<br>
-                • Reduced customer support tickets by 45% through better UI/UX
+                • Developed 15+ AI-first enterprise platforms generating $10M+ revenue<br>
+                • Increased user engagement by 38-45% via intelligent personalization<br>
+                • Reduced operational costs by $2.8M annually through automation
               </div>
             </div>
             <div class="skills-section">
               <h4>
                 <i class="bi bi-shield-check project-icon"></i>
-                Quality & Standards
+                Security & Compliance
               </h4>
               <div class="skills-list">
-                • Maintained 100% cross-browser compatibility<br>
-                • Achieved WCAG 2.1 AA compliance on all projects<br>
-                • Implemented automated testing with 85% code coverage
+                • Achieved SOC 2 Type II compliance across all platforms<br>
+                • Implemented zero-trust security with 100% OAuth 2.0/OIDC adoption<br>
+                • Maintained WCAG 2.1 AA+ (exceeding requirements by 12% annually)
               </div>
             </div>
           </div>
@@ -1010,37 +1160,75 @@
                 </div>
                 <div class="edu-date">Jul 2008 – Jun 2009</div>
               </div>
+              <div class="section" style="margin-top: 24px;">
+                <h2 class="section-title">AI Training</h2>
+               
+                <div class="education-item">
+                  <div class="education-details">
+                    <div class="degree">Intro to AI Agents and Agentic AI </div>
+                    <div class="institution">
+                      Udemy
+                    </div>
+                  </div>
+                  <div class="edu-date">2026</div>
+                </div>
+                 <div class="education-item">
+                  <div class="education-details">
+                    <div class="degree">Generative AI Prompt Engineering </div>
+                    <div class="institution">
+                      MadeCraft
+                    </div>
+                  </div>
+                  <div class="edu-date">2026</div>
+                </div>
+                <div class="education-item">
+                  <div class="education-details">
+                    <div class="degree">Generative AI Unleashed</div>
+                    <div class="institution">
+                      Udemy
+                    </div>
+                  </div>
+                  <div class="edu-date">2026</div>
+                </div>
+                 <div class="education-item">
+                  <div class="education-details">
+                    <div class="degree">AI Conversant 2.0</div>
+                    <div class="institution">
+                      Udemy / AI Academy
+                    </div>
+                  </div>
+                  <div class="edu-date">2025</div>
+                </div>
+              </div>
             </div>
             <div>
-              <h2 class="section-title">Professional Certifications</h2>
+              <h2 class="section-title">Certifications</h2>
               <div class="cert-item">
                 <i class="bi bi-award cert-icon"></i>
-                Microsoft Certified: Azure Fundamentals (AZ-900)
+                Artificial Intelligence – Samsung Innovation Campus
               </div>
               <div class="cert-item">
                 <i class="bi bi-code-slash cert-icon"></i>
-                Meta Frontend Developer Professional Certificate
-              </div>
-              <div class="cert-item">
-                <i class="bi bi-google cert-icon"></i>
-                Google Analytics Certified (GA4)
-              </div>
-              <div class="cert-item">
-                <i class="bi bi-cpu-fill cert-icon"></i>
-                AWS Certified Cloud Practitioner
+                Web Development Course Certificate – Masai School 
               </div>
               <div class="cert-item">
                 <i class="bi bi-shield-lock-fill cert-icon"></i>
-                Certified Ethical Hacker (CEH) - EC-Council
+                Cyber Security Skilling Program – IIT Kanpur & DST
               </div>
               <h2 class="section-title" style="margin-top: 15px">Technical Proficiencies</h2>
-              <div class="cert-item">
+               <div class="cert-item">
                 <i class="bi bi-star-fill cert-icon"></i>
-                <strong>Expert:</strong> JavaScript, React.js, HTML5, CSS3
+                <strong>Expert:</strong> React 19, TypeScript, Next.js, Angular, HTML5, CSS3/SCSS
               </div>
               <div class="cert-item">
-                <i class="bi bi-star-half cert-icon"></i>
-                <strong>Advanced:</strong> TypeScript, Angular, Node.js, MongoDB
+                <i class="bi bi-robot cert-icon"></i>
+                <strong>AI/GenAI:</strong> LLM Integration, RAG, Prompt Engineering
+              </div>
+             
+            
+              <div class="cert-item">
+                <i class="bi bi-code-slash cert-icon"></i>
+                <strong>Modern Tools:</strong> Vite, GitHub Copilot, Cursor IDE, Playwright
               </div>
               <div class="cert-item">
                 <i class="bi bi-translate cert-icon"></i>
