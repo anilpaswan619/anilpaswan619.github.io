@@ -27,7 +27,13 @@
         padding: 20px;
         min-height: 100vh;
       }
-
+@media print {
+        body {
+          background: white;
+          padding: 0;
+          overflow: visible;
+        }
+      }
       .resume-container {
         max-width: 8.5in;
         margin: 0 auto;
@@ -1002,8 +1008,8 @@
                 Performance, Security & Observability
               </h4>
               <div class="skills-list">
-                <strong>Performance Monitoring:</strong> Core Web Vitals, Lighthouse, Sentry, LogRocket, New Relic, DataDog<br>
-                <strong>Security & Compliance:</strong> OAuth 2.0, OIDC, CSP, Zero-trust Architecture, WCAG 2.1 AA+, ARIA<br>
+                <strong>Performance Monitoring:</strong> Core Web Vitals, Lighthouse, Sentry, LogRocket, New Relic<br>
+                <strong>Security & Compliance:</strong> OAuth 2.0, CSP, Zero-trust Architecture, WCAG 2.1 AA+, ARIA<br>
                 <strong>Methodologies:</strong> Agile, Scrum, Kanban, Pair Programming, Code Review Leadership
               </div>
             </div>
